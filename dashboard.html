@@ -1,0 +1,1537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Services</title>
+    <link rel="icon" href="./Assets/icon.webp" />
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <a href="index.html" class="brand">
+            <img src="./Assets/logo.webp" alt="logo" class="logo" />
+          </a>
+          <button class="mobile-toggle" id="close-sidebar">
+            <span class="material-symbols-outlined" style="color: beige">
+              <i class="fa-solid fa-x"></i>
+            </span>
+          </button>
+        </div>
+
+        <nav class="nav-menu">
+          <!-- Main Service Label -->
+          <p class="nav-label">Neural Command</p>
+
+          <!-- Changed from Portfolio Overview -->
+          <button class="nav-item active" data-target="view-home">
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-brain"></i>
+            </span>
+            Neural Overview
+          </button>
+
+          <!-- Changed from Asset Classes -->
+          <button class="nav-item" data-target="view-models">
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-microchip"></i>
+            </span>
+            Active Models
+          </button>
+
+          <!-- Changed from Treasury Hub -->
+          <button class="nav-item" data-target="view-training">
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-layer-group"></i>
+            </span>
+            Training Sets
+          </button>
+
+          <!-- Changed from Risk Protocols -->
+          <button class="nav-item" data-target="view-api">
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-terminal"></i>
+            </span>
+            API Gateways
+          </button>
+
+          <!-- Changed from Settlement History -->
+          <button class="nav-item" data-target="view-usage">
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-chart-line"></i>
+            </span>
+            Token Usage
+          </button>
+
+          <!-- Secondary Service Label -->
+          <p class="nav-label">System Architecture</p>
+
+          <button
+            onclick="window.location.href = './error.html'"
+            class="nav-item"
+          >
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-sliders"></i>
+            </span>
+            Profile settings
+          </button>
+
+          <button
+            onclick="window.location.href = 'login.html'"
+            class="nav-item"
+          >
+            <span class="material-symbols-outlined">
+              <i class="fa-solid fa-power-off"></i>
+            </span>
+            Back to login
+          </button>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="top-navbar">
+          <div style="display: flex; align-items: center; gap: 12px">
+            <button class="mobile-toggle" id="open-sidebar">
+              <span class="material-symbols-outlined">
+                <i class="fa-solid fa-bars"></i>
+              </span>
+            </button>
+            <h3
+              class="brand-font"
+              style="
+                color: rgb(120, 2, 120);
+                font-weight: 400;
+                letter-spacing: 1px;
+              "
+            >
+              <span style="font-weight: 700">Stackly</span> AI Services
+            </h3>
+          </div>
+
+          <div class="user-controls">
+            <button
+              onclick="window.location.href = './error.html'"
+              class="icon-btn"
+              style="position: relative"
+            >
+              <span
+                class="material-symbols-outlined"
+                style="color: rgba(255, 255, 255, 0.6)"
+              >
+                <i class="fa-solid fa-bell"></i>
+              </span>
+              <span
+                style="
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  width: 8px;
+                  height: 8px;
+                  background: rgb(120, 2, 120);
+                  border-radius: 50%;
+                  border: 2px solid #000;
+                  box-shadow: 0 0 5px rgb(120, 2, 120);
+                "
+              ></span>
+            </button>
+
+            <div class="profile-menu-wrap">
+              <div
+                class="avatar"
+                id="profile-avatar"
+                style="background: rgb(120, 2, 120)"
+              >
+                JD
+              </div>
+
+              <div class="profile-dropdown glass-panel" id="profile-dropdown">
+                <div class="dropdown-user-info">
+                  <div
+                    class="avatar"
+                    style="
+                      width: 36px;
+                      height: 36px;
+                      font-size: 0.9rem;
+                      background: rgb(120, 2, 120);
+                    "
+                  >
+                    JD
+                  </div>
+                  <div>
+                    <p class="dropdown-name">John Doe</p>
+                    <p
+                      id="userEmailDisplay"
+                      style="font-size: 0.75rem; opacity: 0.7"
+                    >
+                      Institutional Partner
+                    </p>
+                  </div>
+                </div>
+
+                <div class="dropdown-divider"></div>
+
+                <a href="./error.html" class="dropdown-item">
+                  <span class="material-symbols-outlined">
+                    <i class="fa-solid fa-user-shield"></i>
+                  </span>
+                  Security Settings
+                </a>
+                <a href="./error.html" class="dropdown-item">
+                  <span class="material-symbols-outlined">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                  </span>
+                  Transaction Logs
+                </a>
+                <a href="./error.html" class="dropdown-item">
+                  <span class="material-symbols-outlined">
+                    <i class="fa-solid fa-layer-group"></i>
+                  </span>
+                  Asset Portfolio
+                </a>
+
+                <div class="dropdown-divider"></div>
+
+                <a href="login.html" class="dropdown-item logout-action">
+                  <span class="material-symbols-outlined">
+                    <i class="fa-solid fa-power-off"></i>
+                  </span>
+                  Secure Terminate
+                </a>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="dashboard-body">
+          <section id="view-home" class="content-section active-section">
+            <div style="margin-bottom: 32px">
+              <h1 class="page-title">Welcome Back, Neural Architect</h1>
+              <p style="color: var(--text-muted)">
+                <span
+                  class="live-indicator"
+                  style="
+                    background: rgb(120, 2, 120);
+                    box-shadow: 0 0 10px rgb(120, 2, 120);
+                  "
+                ></span>
+                Inference Nodes Online • Neural Sync: Just now
+              </p>
+            </div>
+
+            <div class="grid-4">
+              <!-- KPI 1: Processing Power -->
+              <div
+                class="glass-panel"
+                style="
+                  margin-bottom: 0;
+                  border-left: 3px solid rgb(120, 2, 120);
+                "
+              >
+                <div class="kpi-header">
+                  <span>Total Inferences</span>
+                  <span
+                    class="material-symbols-outlined"
+                    style="color: rgb(120, 2, 120)"
+                  >
+                    <i class="fa-solid fa-microchip"></i>
+                  </span>
+                </div>
+                <div class="kpi-value">1.2B</div>
+                <div
+                  style="
+                    color: rgb(120, 2, 120);
+                    font-size: 0.85rem;
+                    font-weight: 500;
+                  "
+                >
+                  +18.2% neural load
+                </div>
+              </div>
+
+              <!-- KPI 2: Accuracy/Rate -->
+              <div
+                class="glass-panel"
+                style="
+                  margin-bottom: 0;
+                  border-left: 3px solid rgb(120, 2, 120);
+                "
+              >
+                <div class="kpi-header">
+                  <span>Model Precision</span>
+                  <span
+                    class="material-symbols-outlined"
+                    style="color: rgb(120, 2, 120)"
+                  >
+                    <i class="fa-solid fa-bullseye"></i>
+                  </span>
+                </div>
+                <div class="kpi-value">
+                  99<span style="font-size: 1.5rem; color: var(--text-muted)"
+                    >.92%</span
+                  >
+                </div>
+                <div
+                  style="
+                    color: rgb(120, 2, 120);
+                    font-size: 0.85rem;
+                    font-weight: 500;
+                  "
+                >
+                  Optimal Convergence
+                </div>
+              </div>
+
+              <!-- KPI 3: Active Jobs -->
+              <div
+                class="glass-panel"
+                style="
+                  margin-bottom: 0;
+                  border-left: 3px solid rgb(120, 2, 120);
+                "
+              >
+                <div class="kpi-header">
+                  <span>Active Training</span>
+                  <span
+                    class="material-symbols-outlined"
+                    style="color: rgb(120, 2, 120)"
+                  >
+                    <i class="fa-solid fa-gears"></i>
+                  </span>
+                </div>
+                <div class="kpi-value">14</div>
+                <div
+                  style="color: #ff4d4d; font-size: 0.85rem; font-weight: 500"
+                >
+                  3 nodes pending optimization
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-2-layout">
+              <!-- Chart Section -->
+              <div
+                class="glass-panel"
+                style="display: flex; flex-direction: column"
+              >
+                <div class="kpi-header" style="margin-bottom: 24px">
+                  <h3 style="color: var(--text-main); font-size: 1.1rem">
+                    Neural Throughput Analysis (Tokens/sec)
+                  </h3>
+                </div>
+                <div style="position: relative; height: 250px">
+                  <div class="canvas-holder">
+                    <canvas id="throughputChart"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Activity Section -->
+              <div class="glass-panel">
+                <div class="kpi-header" style="margin-bottom: 24px">
+                  <h3 style="color: var(--text-main); font-size: 1.1rem">
+                    Recent Model Deployment Activity
+                  </h3>
+                </div>
+                <div class="table-container">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td
+                          style="
+                            font-family: &quot;DM Sans&quot;;
+                            font-weight: 500;
+                          "
+                        >
+                          GPT-Core Cluster Alpha
+                        </td>
+                        <td>
+                          <span
+                            class="status-pill"
+                            style="
+                              background: rgba(120, 2, 120, 0.1);
+                              color: rgb(120, 2, 120);
+                              border: 1px solid rgb(120, 2, 120);
+                            "
+                          >
+                            In Training
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            font-family: &quot;DM Sans&quot;;
+                            font-weight: 500;
+                          "
+                        >
+                          Neural Vision Node #4
+                        </td>
+                        <td>
+                          <span
+                            class="status-pill"
+                            style="
+                              background: rgba(0, 255, 255, 0.1);
+                              color: #00ffff;
+                              border: 1px solid #00ffff;
+                            "
+                          >
+                            Deployed
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td
+                          style="
+                            font-family: &quot;DM Sans&quot;;
+                            font-weight: 500;
+                          "
+                        >
+                          Recursive Feedback Loop
+                        </td>
+                        <td>
+                          <span
+                            class="status-pill"
+                            style="
+                              background: rgba(255, 165, 0, 0.1);
+                              color: orange;
+                              border: 1px solid orange;
+                            "
+                          >
+                            Awaiting Data
+                          </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-3">
+              <!-- Resource Allocation -->
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">Resource Allocation</h3>
+                <div style="display: flex; flex-direction: column; gap: 12px">
+                  <div>
+                    <p style="font-size: 0.85rem">GPU Compute Load</p>
+                    <div class="progress-track">
+                      <div
+                        class="progress-fill"
+                        style="width: 80%; background: rgb(120, 2, 120)"
+                      ></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p style="font-size: 0.85rem">Neural Memory (VRAM)</p>
+                    <div class="progress-track">
+                      <div
+                        class="progress-fill"
+                        style="width: 65%; background: #00ffff"
+                      ></div>
+                    </div>
+                  </div>
+                  <div>
+                    <p style="font-size: 0.85rem">Dataset Utilization</p>
+                    <div class="progress-track">
+                      <div
+                        class="progress-fill"
+                        style="width: 45%; background: #9d00ff"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- System Logs -->
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">System Logs</h3>
+                <ul
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    font-size: 0.9rem;
+                  "
+                >
+                  <li>🧠 Model: Weights updated for LLM-70B</li>
+                  <li>📡 Network: Edge node Singapore connected</li>
+                  <li>⚠️ Alert: High latency in Transformer Block 7</li>
+                </ul>
+              </div>
+
+              <!-- Terminal Integrity -->
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">Neural Integrity</h3>
+                <div style="display: flex; flex-direction: column; gap: 10px">
+                  <p>Security: <strong>Zero-Trust Neural</strong></p>
+                  <p>Inference: <strong>1.8ms Latency</strong></p>
+                  <p>Architecture: <strong>Distributed Mesh</strong></p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-models" class="content-section">
+            <div
+              class="myflex"
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                margin-bottom: 32px;
+              "
+            >
+              <div>
+                <h1 class="page-title">Neural Model Registry</h1>
+                <p style="color: var(--text-muted)">
+                  Monitor model architecture, training convergence, and live
+                  inference deployment across the neural mesh.
+                </p>
+              </div>
+              <button
+                onclick="window.location.href = './error.html'"
+                class="btn-primary"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  background: rgb(120, 2, 120);
+                  color: #fff;
+                  border: none;
+                  padding: 10px 20px;
+                  border-radius: 8px;
+                  font-weight: bold;
+                  cursor: pointer;
+                  box-shadow: 0 0 15px rgba(120, 2, 120, 0.4);
+                "
+              >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-size: 1.2rem"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                </span>
+                Deploy New weights
+              </button>
+            </div>
+
+            <div class="glass-panel">
+              <div style="display: flex; gap: 16px; margin-bottom: 24px">
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn"
+                  style="
+                    border-radius: 8px;
+                    width: auto;
+                    padding: 0 16px;
+                    display: flex;
+                    gap: 8px;
+                    border: 1px solid rgba(120, 2, 120, 0.3);
+                    color: rgb(120, 2, 120);
+                  "
+                >
+                  <span class="material-symbols-outlined">
+                    <i class="fa-solid fa-filter"></i>
+                  </span>
+                  Architecture Filters
+                </button>
+              </div>
+
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Model ID</th>
+                      <th>Architecture & Type</th>
+                      <th>Deployment Status</th>
+                      <th>Throughput / Latency</th>
+                      <th>Neural Integrity</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="background: rgba(120, 2, 120, 0.03)">
+                      <td
+                        style="
+                          font-family: &quot;DM Sans&quot;;
+                          font-weight: 500;
+                        "
+                      >
+                        LLM-70B-PROX
+                      </td>
+                      <td>Transformer (Autoregressive)</td>
+                      <td>
+                        <span
+                          style="
+                            color: rgb(120, 2, 120);
+                            font-weight: 600;
+                            font-size: 0.85rem;
+                          "
+                        >
+                          <span
+                            class="material-symbols-outlined"
+                            style="font-size: 1rem; vertical-align: middle"
+                          >
+                            <i class="fa-solid fa-bolt"></i>
+                          </span>
+                          PRODUCTION LIVE
+                        </span>
+                      </td>
+                      <td>120 t/s • 1.2ms Latency</td>
+                      <td>
+                        <span
+                          class="status-pill"
+                          style="
+                            background: rgba(120, 2, 120, 0.1);
+                            color: rgb(120, 2, 120);
+                            border: 1px solid rgb(120, 2, 120);
+                          "
+                        >
+                          <span
+                            class="live-indicator"
+                            style="
+                              width: 6px;
+                              height: 6px;
+                              background: rgb(120, 2, 120);
+                            "
+                          ></span>
+                          Verified 99.8%
+                        </span>
+                      </td>
+                      <td>
+                        <button
+                          onclick="window.location.href = './error.html'"
+                          class="icon-btn"
+                          style="
+                            width: 32px;
+                            height: 32px;
+                            color: rgb(120, 2, 120);
+                          "
+                        >
+                          <span
+                            class="material-symbols-outlined"
+                            style="font-size: 1.1rem"
+                          >
+                            <i class="fa-solid fa-chart-simple"></i>
+                          </span>
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        style="
+                          font-family: &quot;DM Sans&quot;;
+                          font-weight: 500;
+                        "
+                      >
+                        VIS-R-RESNET
+                      </td>
+                      <td>Computer Vision (ResNet-101)</td>
+                      <td style="color: var(--text-muted); font-size: 0.85rem">
+                        Fine-Tuning
+                      </td>
+                      <td>840 fps • 0.8ms Latency</td>
+                      <td>
+                        <span class="status-pill status-success"
+                          >Converged</span
+                        >
+                      </td>
+                      <td>
+                        <button
+                          onclick="window.location.href = './error.html'"
+                          class="icon-btn"
+                          style="width: 32px; height: 32px"
+                        >
+                          <span
+                            class="material-symbols-outlined"
+                            style="font-size: 1.1rem"
+                          >
+                            <i class="fa-solid fa-code-branch"></i>
+                          </span>
+                        </button>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td
+                        style="
+                          font-family: &quot;DM Sans&quot;;
+                          font-weight: 500;
+                        "
+                      >
+                        AUDIO-LYRIA-3
+                      </td>
+                      <td>Multimodal Diffusion</td>
+                      <td style="color: #ff4d4d; font-size: 0.85rem">
+                        Optimization Required
+                      </td>
+                      <td>Dynamic • 4.2ms Latency</td>
+                      <td>
+                        <span
+                          class="status-pill"
+                          style="
+                            background: rgba(255, 77, 77, 0.1);
+                            color: #ff4d4d;
+                            border: 1px solid #ff4d4d;
+                          "
+                        >
+                          High Loss Detected
+                        </span>
+                      </td>
+                      <td>
+                        <button
+                          onclick="window.location.href = './error.html'"
+                          class="icon-btn"
+                          style="width: 32px; height: 32px"
+                        >
+                          <span
+                            class="material-symbols-outlined"
+                            style="font-size: 1.1rem"
+                          >
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                          </span>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="grid-3">
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px; color: rgb(120, 2, 120)">
+                  Inference Analytics
+                </h3>
+                <p>Total Models: <strong>42 Registry Entries</strong></p>
+                <p>Active Instances: <strong>128 Deployed Nodes</strong></p>
+                <p>Training Queue: <strong>4 Epochs Remaining</strong></p>
+              </div>
+
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">Neural Feed</h3>
+                <ul
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    font-size: 0.9rem;
+                  "
+                >
+                  <li>🧠 Update: LLM-70B Weights Recalibrated</li>
+                  <li>⚙️ System: New CUDA Kernels Compiled</li>
+                  <li>✅ Stability: Zero-Knowledge Node Verified</li>
+                </ul>
+              </div>
+
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">Model Distribution</h3>
+                <p>Text Generation: 12 Models</p>
+                <p>Image Synthesis: 18 Models</p>
+                <p>Audio/Speech: 12 Models</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-training" class="content-section">
+            <div style="margin-bottom: 32px">
+              <h1 class="page-title">Dataset Orchestration</h1>
+              <p style="color: var(--text-muted)">
+                Provisioning and validating high-fidelity training cohorts for
+                medical device diagnostic algorithms and surgical robotics.
+              </p>
+            </div>
+
+            <div class="grid-3">
+              <!-- Card 1: Diagnostic Imaging Cohort -->
+              <div class="glass-panel" style="border-top: 2px solid rgb(120, 2, 120)">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                  "
+                >
+                  <div>
+                    <h3 style="margin-bottom: 4px">NEURO-SCAN V.4</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted)">
+                      ID: TRN-MRI-990 • MRI Synthetic Base
+                    </p>
+                  </div>
+                  <span
+                    class="status-pill"
+                    style="
+                      padding: 2px 8px;
+                      font-size: 0.65rem;
+                      background: rgb(120, 2, 120);
+                      color: white;
+                      border: none;
+                    "
+                  >
+                    <span
+                      class="live-indicator"
+                      style="width: 6px; height: 6px; background: white"
+                    ></span>
+                    ACTIVE INGESTION
+                  </span>
+                </div>
+
+                <div
+                  style="
+                    margin-top: 24px;
+                    background: rgba(0, 0, 0, 0.4);
+                    height: 120px;
+                    border-radius: 12px;
+                    border: var(--border-subtle);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    position: relative;
+                    overflow: hidden;
+                  "
+                >
+                  <i
+                    class="fa-solid fa-microscope"
+                    style="font-size: 2.5rem; color: rgba(139, 0, 0, 0.1)"
+                  ></i>
+                  <div
+                    style="
+                      position: absolute;
+                      bottom: 8px;
+                      left: 12px;
+                      font-family: monospace;
+                      font-size: 0.8rem;
+                      color: rgb(120, 2, 120);
+                    "
+                  >
+                    SYS_LOG: Brain-Lesion-Labeling.seq
+                  </div>
+                </div>
+
+                <div style="margin-top: 24px">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      font-size: 0.85rem;
+                      margin-bottom: 8px;
+                    "
+                  >
+                    <span>Validation Progress</span>
+                    <span style="color: rgb(120, 2, 120)">82%</span>
+                  </div>
+                  <div class="progress-track">
+                    <div
+                      class="progress-fill"
+                      style="
+                        width: 82%;
+                        background: linear-gradient(90deg, #228b22, rgb(120, 2, 120));
+                        box-shadow: 0 0 10px rgba(139, 0, 0, 0.3);
+                      "
+                    ></div>
+                  </div>
+                </div>
+
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 24px;
+                    border-top: var(--border-subtle);
+                    padding-top: 16px;
+                  "
+                >
+                  <div>
+                    <p
+                      style="
+                        font-size: 0.7rem;
+                        color: var(--text-muted);
+                        text-transform: uppercase;
+                      "
+                    >
+                      Precision Rating
+                    </p>
+                    <p style="font-weight: 500; color: rgb(120, 2, 120)">99.4% DSC</p>
+                  </div>
+                  <div style="text-align: right">
+                    <p
+                      style="
+                        font-size: 0.7rem;
+                        color: var(--text-muted);
+                        text-transform: uppercase;
+                      "
+                    >
+                      Last Sync
+                    </p>
+                    <p style="font-weight: 500">March 2026</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2: Wearable Biometrics -->
+              <div class="glass-panel" style="border-top: 2px solid #555">
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                  "
+                >
+                  <div>
+                    <h3 style="margin-bottom: 4px">CARDIAC-SYNC FLOW</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted)">
+                      ECG/PPG Waveforms • Wearables
+                    </p>
+                  </div>
+                  <span
+                    class="status-pill status-success"
+                    style="
+                      padding: 2px 8px;
+                      font-size: 0.65rem;
+                      border: 1px solid rgb(120, 2, 120);
+                      color: rgb(120, 2, 120);
+                    "
+                    >DATA READY</span
+                  >
+                </div>
+
+                <div
+                  style="
+                    margin-top: 24px;
+                    background: rgba(139, 0, 0, 0.05);
+                    padding: 16px;
+                    border-radius: 12px;
+                    border: var(--border-subtle);
+                    text-align: center;
+                  "
+                >
+                  <span
+                    class="material-symbols-outlined"
+                    style="font-size: 2rem; color: rgb(120, 2, 120); margin-bottom: 8px"
+                  >
+                    <i class="fa-solid fa-heart-pulse"></i>
+                  </span>
+                  <p style="font-size: 0.9rem; color: var(--text-muted)">
+                    Batch #1 Cleaned. Anonymized patient telemetry ready for
+                    arrhythmia detection training.
+                  </p>
+                </div>
+
+                <a href="./error.html">
+                  <button
+                    class="btn-primary"
+                    style="
+                      width: 100%;
+                      margin-top: 24px;
+                      background: rgb(120, 2, 120);
+                      color: #fff;
+                      border: none;
+                      padding: 10px;
+                      font-weight: bold;
+                      cursor: pointer;
+                      border-radius: 4px;
+                    "
+                  >
+                    <i
+                      class="fa-solid fa-database"
+                      style="margin-right: 8px"
+                    ></i>
+                    Inspect Batch
+                  </button>
+                </a>
+              </div>
+
+              <!-- Card 3: Surgical Robotics Dataset -->
+              <div
+                class="glass-panel"
+                style="border-top: 2px solid var(--amber)"
+              >
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                  "
+                >
+                  <div>
+                    <h3 style="margin-bottom: 4px">ROBO-SURGE KINEMATICS</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted)">
+                      Haptic Feedback • Tele-op Logs
+                    </p>
+                  </div>
+                  <span
+                    class="status-pill status-warning"
+                    style="padding: 2px 8px; font-size: 0.65rem"
+                    >AUDIT PENDING</span
+                  >
+                </div>
+
+                <div
+                  style="
+                    margin-top: 24px;
+                    background: rgba(245, 158, 11, 0.05);
+                    padding: 16px;
+                    border-radius: 12px;
+                    border: 1px solid rgba(245, 158, 11, 0.2);
+                  "
+                >
+                  <p
+                    style="
+                      font-size: 0.8rem;
+                      color: var(--amber);
+                      margin-bottom: 4px;
+                    "
+                  >
+                    ISO 13485 Compliance Due
+                  </p>
+                  <p style="font-weight: 500; font-size: 0.9rem">
+                    Safety-critical validation of robotic arm movement vectors
+                    against clinical benchmarks.
+                  </p>
+                </div>
+
+                <a href="./error.html">
+                  <button
+                    class="btn-primary"
+                    style="
+                      width: 100%;
+                      margin-top: 24px;
+                      background: transparent;
+                      color: var(--amber);
+                      border: 1px solid var(--amber);
+                    "
+                  >
+                    <i
+                      class="fa-solid fa-clipboard-check"
+                      style="margin-right: 8px"
+                    ></i>
+                    Review Ethics
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            <div class="grid-3">
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">Compute Uptime</h3>
+                <p>Node GPU Utilization (MTD)</p>
+                <h2 style="color: #fff">99.98%</h2>
+                <p style="margin-top: 10px">Highest Training Volume</p>
+                <h3 style="color: rgb(120, 2, 120)">Computer Vision</h3>
+              </div>
+
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">Queue Status</h3>
+                <ul
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    font-size: 0.9rem;
+                    color: var(--text-muted);
+                  "
+                >
+                  <li>
+                    <i
+                      class="fa-solid fa-dna"
+                      style="margin-right: 8px; color: rgb(120, 2, 120)"
+                    ></i>
+                    Genomic Sequencing — 14TB Pending
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-flask"
+                      style="margin-right: 8px; color: rgb(120, 2, 120)"
+                    ></i>
+                    Fluid Dynamics — Sim-Node 4
+                  </li>
+                  <li>
+                    <i
+                      class="fa-solid fa-virus"
+                      style="margin-right: 8px; color: rgb(120, 2, 120)"
+                    ></i>
+                    Pathogen Vector Modeling — Alpha
+                  </li>
+                </ul>
+              </div>
+
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 16px">Regulatory Compliance</h3>
+                <p style="color: rgb(120, 2, 120)">HIPAA: 2026 Certified</p>
+                <p style="margin-top: 10px">FDA Submission: April 22, 2026</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-api" class="content-section">
+            <div style="margin-bottom: 32px">
+              <h1 class="page-title">Interface Control Plane</h1>
+              <p style="color: var(--text-muted)">
+                <span
+                  class="live-indicator"
+                  style="background: rgb(120, 2, 120); box-shadow: 0 0 10px rgb(120, 2, 120)"
+                ></span>
+                System Status: 2 Latency Anomalies Detected in Clinical
+                Telemetry
+              </p>
+            </div>
+
+            <div class="grid-3">
+              <div class="glass-panel" style="border-left: 3px solid rgb(120, 2, 120)">
+                <div class="kpi-header">
+                  <span>Ingestion Errors</span>
+                  <i
+                    class="fa-solid fa-triangle-exclamation"
+                    style="color: rgb(120, 2, 120)"
+                  ></i>
+                </div>
+                <div class="kpi-value">02</div>
+                <div
+                  style="color: rgb(120, 2, 120); font-size: 0.85rem; font-weight: 500"
+                >
+                  HL7 Packet Corruption
+                </div>
+              </div>
+
+              <div class="glass-panel" style="border-left: 3px solid #f5c518">
+                <div class="kpi-header">
+                  <span>Secure Endpoints</span>
+                  <i
+                    class="fa-solid fa-shield-halved"
+                    style="color: #f5c518"
+                  ></i>
+                </div>
+                <div class="kpi-value">07</div>
+                <div
+                  style="color: #f5c518; font-size: 0.85rem; font-weight: 500"
+                >
+                  Pending OAuth Rotation
+                </div>
+              </div>
+
+              <div class="glass-panel" style="border-left: 3px solid #555">
+                <div class="kpi-header">
+                  <span>Active Streams</span>
+                  <i
+                    class="fa-solid fa-satellite-dish"
+                    style="color: rgb(120, 2, 120)"
+                  ></i>
+                </div>
+                <div class="kpi-value">14</div>
+                <div
+                  style="color: rgb(120, 2, 120); font-size: 0.85rem; font-weight: 500"
+                >
+                  Synchronized Medical Nodes
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-panel">
+              <h3 style="margin-bottom: 24px">Connectivity Command Center</h3>
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr
+                      style="
+                        color: var(--text-muted);
+                        font-size: 0.8rem;
+                        text-transform: uppercase;
+                      "
+                    >
+                      <th>Interface ID</th>
+                      <th>Payload Type</th>
+                      <th>Target System</th>
+                      <th>Health Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#FHIR-GATE-992</strong></td>
+                      <td>Patient Biometric JSON</td>
+                      <td>Hospital EHR Cluster</td>
+                      <td>
+                        <span
+                          class="status-pill"
+                          style="
+                            background: rgba(139, 0, 0, 0.2);
+                            color: #ff4d4d;
+                            border: 1px solid rgb(120, 2, 120);
+                          "
+                          >CRITICAL</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>#HL7-NODE-401</strong></td>
+                      <td>Radiology DICOM Stream</td>
+                      <td>Imaging Archive (PACS)</td>
+                      <td>
+                        <span
+                          class="status-pill"
+                          style="
+                            background: rgba(245, 197, 24, 0.1);
+                            color: #f5c518;
+                            border: 1px solid #f5c518;
+                          "
+                          >WARNING</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-usage" class="content-section">
+            <div style="margin-bottom: 32px">
+              <h1 class="page-title">Compute Resource & Licensing</h1>
+              <p style="color: var(--text-muted)">
+                Manage high-performance compute tokens, diagnostic algorithm
+                licensing, and regulatory data archival subscriptions.
+              </p>
+            </div>
+
+            <div class="grid-2-layout">
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 20px">
+                  Neural Processing Allocation
+                </h3>
+                <div
+                  style="
+                    padding: 20px;
+                    background: rgba(139, 0, 0, 0.05);
+                    border-radius: 12px;
+                    border: 1px solid rgba(139, 0, 0, 0.2);
+                  "
+                >
+                  <p
+                    style="
+                      font-size: 0.8rem;
+                      color: rgb(120, 2, 120);
+                      text-transform: uppercase;
+                    "
+                  >
+                    Enterprise Diagnostic Tier
+                  </p>
+                  <h2 style="margin: 10px 0">
+                    250.5M Tokens
+                    <span style="font-size: 1rem; color: var(--text-muted)"
+                      >/mo</span
+                    >
+                  </h2>
+                  <div class="progress-track" style="margin-top: 15px">
+                    <div
+                      class="progress-fill"
+                      style="width: 75%; background: rgb(120, 2, 120)"
+                    ></div>
+                  </div>
+                  <p
+                    style="
+                      font-size: 0.8rem;
+                      margin-top: 10px;
+                      color: var(--text-muted);
+                    "
+                  >
+                    75% of Monthly Processing Limit Invoiced
+                  </p>
+                </div>
+              </div>
+
+              <div class="glass-panel">
+                <h3 style="margin-bottom: 20px">Consumption Ledger</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                      padding-bottom: 10px;
+                    "
+                  >
+                    <div>
+                      <p style="margin: 0; font-weight: 500">RES-2026-089</p>
+                      <p
+                        style="
+                          margin: 0;
+                          font-size: 0.8rem;
+                          color: var(--text-muted);
+                        "
+                      >
+                        GPU Cluster: CT-Image Segmentation
+                      </p>
+                    </div>
+                    <span style="color: rgb(120, 2, 120)">14.2M Tokens</span>
+                  </div>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                    "
+                  >
+                    <div>
+                      <p style="margin: 0; font-weight: 500">RES-2026-088</p>
+                      <p
+                        style="
+                          margin: 0;
+                          font-size: 0.8rem;
+                          color: var(--text-muted);
+                        "
+                      >
+                        Secure Cloud Archival (HIPAA Vault)
+                      </p>
+                    </div>
+                    <span style="color: rgb(120, 2, 120)">8.9k Credits</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="grid-3" style="margin-top: 24px">
+              <div
+                class="glass-panel"
+                style="text-align: center; cursor: pointer"
+              >
+                <a href="./error.html">
+                  <i
+                    class="fa-solid fa-file-shield"
+                    style="font-size: 2rem; color: rgb(120, 2, 120); margin-bottom: 10px"
+                  ></i>
+                </a>
+                <p style="font-size: 0.9rem">Data Processing Agreement (DPA)</p>
+              </div>
+              <div
+                class="glass-panel"
+                style="text-align: center; cursor: pointer"
+              >
+                <a href="./error.html">
+                  <i
+                    class="fa-solid fa-microchip"
+                    style="font-size: 2rem; color: rgb(120, 2, 120); margin-bottom: 10px"
+                  ></i>
+                </a>
+                <p style="font-size: 0.9rem">Scale Compute Capacity</p>
+              </div>
+              <div
+                class="glass-panel"
+                style="text-align: center; cursor: pointer"
+              >
+                <a href="./error.html">
+                  <i
+                    class="fa-solid fa-stethoscope"
+                    style="font-size: 2rem; color: rgb(120, 2, 120); margin-bottom: 10px"
+                  ></i>
+                </a>
+                <p style="font-size: 0.9rem">Diagnostic License Terms</p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 1000,
+    easing: "ease-out-cubic",
+    startEvent: "aos:ready", // manual trigger
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const userEmail = sessionStorage.getItem("userEmail");
+    const adminEmail = sessionStorage.getItem("adminEmail");
+
+    const displayEmail = userEmail || adminEmail;
+
+    if (displayEmail) {
+      document.getElementById("userEmailDisplay").textContent =
+        "Welcome, " + displayEmail;
+    } else {
+      window.location.href = "login.html";
+    }
+  });
+</script> -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // ✅ Get email (clean way)
+    const emailEl = document.getElementById("userEmailDisplay");
+    const email = sessionStorage.getItem("loggedInUser");
+
+    if (email) {
+      emailEl.textContent = "Welcome, " + email;
+    } else {
+      window.location.href = "login.html";
+    }
+
+    // ✅ Sidebar toggle (Remains functional for the new layout)
+    const sidebar = document.getElementById("sidebar");
+
+    document
+      .getElementById("open-sidebar")
+      .addEventListener("click", () => sidebar.classList.add("open"));
+
+    document
+      .getElementById("close-sidebar")
+      .addEventListener("click", () => sidebar.classList.remove("open"));
+
+    // ✅ Hardware Utilization Chart (Operational Uptime)
+    const ctx = document.getElementById("throughputChart");
+
+    if (ctx) {
+      const context = ctx.getContext("2d");
+
+      // Medical/Tech Gradient: Lawn Green to Transparent
+      let gradient = context.createLinearGradient(0, 0, 0, 250);
+      gradient.addColorStop(0, "rgb(120, 2, 120)"); // Lawn Green
+      gradient.addColorStop(1, "rgb(120, 2, 120)"); // Transparent
+
+      new Chart(context, {
+        type: "line",
+        data: {
+          labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          datasets: [
+            {
+              label: "Fleet Uptime (Hours)",
+              data: [18, 22, 19, 24, 21, 14, 12], // Average hours active per day
+              borderColor: "rgb(32, 146, 192x)",
+              backgroundColor: gradient,
+              fill: true,
+              tension: 0.4, // Smooth curve for a high-end UI feel
+              pointRadius: 5,
+              pointBackgroundColor: "#000",
+              pointBorderColor: "rgb(32, 146, 192x)",
+              pointBorderWidth: 2,
+              pointHoverRadius: 7,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false, // Cleaner for analytical dashboards
+            },
+            tooltip: {
+              backgroundColor: "rgba(0, 0, 0, 0.8)",
+              titleColor: "rgb(32, 146, 192x)",
+              bodyColor: "#fff",
+              borderColor: "rgba(124, 252, 0, 0.3)",
+              borderWidth: 1,
+              displayColors: false,
+              callbacks: {
+                label: function (context) {
+                  return `Active: ${context.raw} Hours`;
+                },
+              },
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 24, // Cap at 24 hours for daily utilization
+              grid: {
+                color: "rgba(255, 255, 255, 0.05)",
+              },
+              ticks: {
+                color: "rgba(255, 255, 255, 0.5)",
+                callback: function (value) {
+                  return value + "h"; // Adds 'h' suffix to Y-axis
+                },
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+              },
+              ticks: {
+                color: "rgba(255, 255, 255, 0.5)",
+              },
+            },
+          },
+        },
+      });
+    }
+
+    // ✅ Navigation tabs (Updated to match Viewer Section IDs)
+    const navItems = document.querySelectorAll(".nav-item[data-target]");
+    const contentSections = document.querySelectorAll(".content-section");
+
+    navItems.forEach((item) => {
+      item.addEventListener("click", (e) => {
+        // Check if the button has a data-target (prevents breaking Logout/Home links)
+        const targetId = item.getAttribute("data-target");
+        if (!targetId) return;
+
+        e.preventDefault();
+
+        // 1. Reset active states on navigation
+        navItems.forEach((nav) => nav.classList.remove("active"));
+        item.classList.add("active");
+
+        // 2. Switch content sections
+        contentSections.forEach((section) =>
+          section.classList.remove("active-section"),
+        );
+
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.classList.add("active-section");
+        }
+
+        // 3. Mobile auto-close
+        if (window.innerWidth <= 768) {
+          sidebar.classList.remove("open");
+        }
+      });
+    });
+
+    // ✅ Profile dropdown (FIXED inside DOMContentLoaded)
+    const avatarBtn = document.getElementById("profile-avatar");
+    const profileDropdown = document.getElementById("profile-dropdown");
+
+    if (avatarBtn && profileDropdown) {
+      avatarBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        profileDropdown.classList.toggle("show");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          profileDropdown.classList.contains("show") &&
+          !profileDropdown.contains(event.target)
+        ) {
+          profileDropdown.classList.remove("show");
+        }
+      });
+    }
+  });
+</script>

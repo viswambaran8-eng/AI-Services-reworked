@@ -1,0 +1,752 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Services</title>
+    <link rel="stylesheet" href="./blog.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./Assets/logo.webp" alt="" />
+        </a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="./index.html" class="active-page">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="div">
+        <div class="div">
+          <a href="./login.html">
+            <button class="btn">Login</button>
+          </a>
+        </div>
+        <div class="menu-icon" id="menu-trigger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <!-- <div class="sidebar-logo">STACKLY<span>.</span></div> -->
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./Assets/logo.webp" alt="" />
+          </a>
+        </div>
+
+        <div class="close-icon" id="close-trigger">&times;</div>
+      </div>
+      <ul class="side-links">
+        <li class="side-item">
+          <a href="./index.html">Home</a>
+        </li>
+        <li class="side-item"><a href="./about.html">About</a></li>
+        <li class="side-item"><a href="./services.html">Services</a></li>
+        <li class="side-item"><a href="./blog.html">Blog</a></li>
+        <li class="side-item"><a href="./contact.html">Contact</a></li>
+        <li class="side-item"><a href="./login.html">Login</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <!-- <button class="side-log-btn">Open An Account</button> -->
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <section class="blog-hero">
+      <div class="liquid-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge gsap-reveal">New Updates</div>
+        <h1 class="gsap-reveal">
+          Insights into the <br /><span class="text-glow">World of AI</span>
+        </h1>
+        <p class="gsap-reveal">
+          Stay updated with the latest trends, tools, and innovations.
+        </p>
+
+        <div class="scroll-indicator gsap-reveal">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+          <span>Discover More</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-section">
+      <div class="featured-card gsap-reveal">
+        <div class="featured-badge">Editor's Choice</div>
+        <div class="featured-content">
+          <h2>The Future of AI in Business</h2>
+          <p>
+            Explore how AI is reshaping industries through neural intelligence
+            and automated decision-making pipelines.
+          </p>
+          <a
+            href="./error.html"
+            class="price-btn active gsap-magnetic-btn"
+            style="width: auto; display: inline-flex"
+          >
+            <div class="btn-shimmer"></div>
+            <span class="btn-text" style="color: blueviolet;">Read Analysis</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-grid-section">
+      <div class="section-header">
+        <div class="header-badge gsap-reveal-text">Investment</div>
+        <h2 class="gsap-reveal-text">Strategic Pricing Plans</h2>
+        <div class="header-line gsap-reveal-text"></div>
+      </div>
+
+      <div class="grid-container">
+        <div class="blog-card tall gsap-reveal">
+          <div class="card-img">
+            <img
+              src="./Assets/ml trends_11zon_11zon.webp"
+              alt="Trends"
+            />
+          </div>
+          <div class="card-body">
+            <span>Trend Analysis</span>
+            <h3>Top AI Trends in 2026</h3>
+          </div>
+        </div>
+        <div class="blog-card gsap-reveal">
+          <div class="card-img">
+            <img
+              src="./Assets/education_11zon_11zon.webp"
+              alt="ML"
+            />
+          </div>
+          <div class="card-body">
+            <span>Education</span>
+            <h3>Machine Learning Basics</h3>
+          </div>
+        </div>
+        <div class="blog-card gsap-reveal">
+          <div class="card-img">
+            <img
+              src="./Assets/healthcare_11zon_11zon.webp"
+              alt="Health"
+            />
+          </div>
+          <div class="card-body">
+            <span>Healthcare</span>
+            <h3>AI in Healthcare</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <div class="section-header">
+        <div class="header-badge gsap-reveal-text">Library</div>
+        <h2 class="gsap-reveal-text">Explore Knowledge Base</h2>
+        <div class="header-line gsap-reveal-text"></div>
+      </div>
+
+      <div class="filter-wrapper gsap-reveal">
+        <button class="filter-btn active" onclick="filterSelection('all')">
+          All Posts
+        </button>
+        <button class="filter-btn" onclick="filterSelection('trends')">
+          AI Trends
+        </button>
+        <button class="filter-btn" onclick="filterSelection('automation')">
+          Automation
+        </button>
+        <button class="filter-btn" onclick="filterSelection('data')">
+          Data Science
+        </button>
+        <button class="filter-btn" onclick="filterSelection('cases')">
+          Case Studies
+        </button>
+      </div>
+
+      <div class="grid-container" id="blogGrid">
+        <div class="grid-card gsap-reveal trends">
+          <div class="card-img">
+            <img
+              src="./Assets/Blog1_11zon.webp"
+              alt="Trends"
+            />
+          </div>
+          <div class="card-body">
+            <span>AI Trends</span>
+            <h3>Top AI Trends in 2026</h3>
+          </div>
+        </div>
+
+        <div class="grid-card gsap-reveal automation">
+          <div class="card-img">
+            <img
+              src="./Assets/blog2_11zon_11zon.webp"
+              alt="Automation"
+            />
+          </div>
+          <div class="card-body">
+            <span>Automation</span>
+            <h3>Machine Learning Basics</h3>
+          </div>
+        </div>
+
+        <div class="grid-card gsap-reveal cases">
+          <div class="card-img">
+            <img
+              src="./Assets/blog3_11zon.webp"
+              alt="Health"
+            />
+          </div>
+          <div class="card-body">
+            <span>Case Studies</span>
+            <h3>AI in Studies</h3>
+          </div>
+        </div>
+
+        <div class="grid-card gsap-reveal trends">
+          <div class="card-img">
+            <img
+              src="./Assets/blog4_11zon_11zon.webp"
+              alt="Trends"
+            />
+          </div>
+          <div class="card-body">
+            <span>AI Trends</span>
+            <h3>The 2026 Neural Shift</h3>
+          </div>
+        </div>
+        <div class="grid-card gsap-reveal trends">
+          <div class="card-img">
+            <img
+              src="./Assets/blog5_11zon.webp"
+              alt="Generative AI"
+            />
+          </div>
+          <div class="card-body">
+            <span>AI Trends</span>
+            <h3>Generative Intelligence</h3>
+          </div>
+        </div>
+
+        <div class="grid-card gsap-reveal automation">
+          <div class="card-img">
+            <img
+              src="./Assets/blog6_11zon_11zon.webp"
+              alt="Automation"
+            />
+          </div>
+          <div class="card-body">
+            <span>Automation</span>
+            <h3>Industrial Robotics 2.0</h3>
+          </div>
+        </div>
+        <div class="grid-card gsap-reveal automation">
+          <div class="card-img">
+            <img
+              src="./Assets/blog7_11zon.webp"
+              alt="Smart Workflow"
+            />
+          </div>
+          <div class="card-body">
+            <span>Automation</span>
+            <h3>Self-Evolving Workflows</h3>
+          </div>
+        </div>
+
+        <div class="grid-card gsap-reveal data">
+          <div class="card-img">
+            <img
+              src="./Assets/blog8_11zon_11zon.webp"
+              alt="Data Science"
+            />
+          </div>
+          <div class="card-body">
+            <span>Data Science</span>
+            <h3>Neural Data Processing</h3>
+          </div>
+        </div>
+        <div class="grid-card gsap-reveal data">
+          <div class="card-img">
+            <img
+              src="./Assets/blog9_11zon.webp"
+              alt="Analytics"
+            />
+          </div>
+          <div class="card-body">
+            <span>Data Science</span>
+            <h3>Predictive Modeling</h3>
+          </div>
+        </div>
+        <div class="grid-card gsap-reveal data">
+          <div class="card-img">
+            <img
+              src="./Assets/blog10_11zon_11zon.webp"
+              alt="Infrastructure"
+            />
+          </div>
+          <div class="card-body">
+            <span>Data Science</span>
+            <h3>Big Data Architecture</h3>
+          </div>
+        </div>
+
+        <div class="grid-card gsap-reveal cases">
+          <div class="card-img">
+            <img
+              src="./Assets/blog11_11zon_11zon.webp"
+              alt="Fintech"
+            />
+          </div>
+          <div class="card-body">
+            <span>Case Studies</span>
+            <h3>Global Bank AI Integration</h3>
+          </div>
+        </div>
+        <div class="grid-card gsap-reveal cases">
+          <div class="card-img">
+            <img
+              src="./Assets/blog12_11zon.webp"
+              alt="Healthcare"
+            />
+          </div>
+          <div class="card-body">
+            <span>Case Studies</span>
+            <h3>AI in Healthcare</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-section">
+      <div class="newsletter-content">
+        <h2 class="gsap-news-text">Subscribe for AI Insights</h2>
+        <p class="gsap-news-text">
+          Get weekly updates on AI trends, tools, and innovations.
+        </p>
+
+        <form class="newsletter-form gsap-news-form" action="./error.html">
+          <input
+            type="email"
+            id="newsEmail"
+            placeholder="yourname@gmail.com"
+            required
+          />
+          <button type="submit" class="news-btn">
+            <span>Join Now</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <footer class="premium-footer">
+      <div class="footer-upper">
+        <div class="footer-col brand-col">
+          <div class="logo footer-logo">
+            <a href="./index.html">
+              <img src="./Assets/logo.webp" alt="Nova AI Logo" />
+            </a>
+          </div>
+          <p class="brand-brief">
+            Advancing the frontier of autonomous finance. We integrate
+            medical-grade neural networks with high-frequency fiscal
+            intelligence to deliver the world's most precise AI banking
+            ecosystem.
+          </p>
+          <div class="footer-socials">
+            <a href="./error.html"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="./about.html">About </a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./login.html">Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Autonomous Services</h4>
+          <ul class="footer-links">
+            <li><a href="./error.html">Predictive Wealth Engines</a></li>
+            <li><a href="./error.html">Algorithmic Arbitrage</a></li>
+            <li><a href="./error.html">Deep Learning Risk Audit</a></li>
+            <li><a href="./error.html">Smart Contract Synthesis</a></li>
+            <li><a href="./error.html">Automated Treasury</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4 class="footer-title">Network Status</h4>
+          <p class="small-text">
+            Synchronize with our latest model deployments.
+          </p>
+          <form class="footer-subscribe" action="./error.html">
+            <input type="email" placeholder="Email Address" />
+            <button><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+          <div class="contact-info">
+            <span><i class="fa-solid fa-phone"></i>+912345678</span>
+            <span><i class="fa-solid fa-envelope"></i>support@stackly.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-container">
+          <div class="divider-line"></div>
+          <div class="bottom-flex">
+            <p class="copyright">
+              &copy; 2026 Stackly-AI Services. All Rights Reserved.
+            </p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- footer -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.from(".footer-col", {
+          scrollTrigger: {
+            trigger: ".premium-footer",
+            start: "top 90%",
+          },
+          opacity: 0,
+          y: 40,
+          stagger: 0.15,
+          duration: 1,
+          ease: "power2.out",
+        });
+
+        // Fade in the bottom bar divider
+        gsap.from(".divider-line", {
+          scrollTrigger: ".footer-bottom",
+          opacity: 0,
+          duration: 2,
+          ease: "power4.inOut",
+        });
+      });
+    </script>
+
+    <!-- hero -->
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      window.addEventListener("DOMContentLoaded", () => {
+        // 1. Entrance Reveal
+        gsap.from(".gsap-reveal", {
+          opacity: 0,
+          duration: 1.5,
+          stagger: 0.2,
+          ease: "power4.out",
+        });
+
+        // 2. Continuous Floating Animation
+        gsap.to(".hero-content", {
+          y: -15,
+          duration: 2,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+
+        // 3. Magnetic Interaction (Subtle Mouse Move)
+        window.addEventListener("mousemove", (e) => {
+          const { clientX, clientY } = e;
+          const xPos = (clientX / window.innerWidth - 0.5) * 40;
+          const yPos = (clientY / window.innerHeight - 0.5) * 40;
+
+          gsap.to(".hero-content", {
+            x: xPos,
+            y: yPos,
+            duration: 1.5,
+            ease: "power2.out",
+          });
+
+          // Background blobs react slower (Parallax)
+          gsap.to(".blob", {
+            x: -xPos * 0.5,
+            y: -yPos * 0.5,
+            duration: 2,
+            ease: "power1.out",
+          });
+        });
+      });
+    </script>
+
+    <!-- section header -->
+    <script>
+      // Ensure ScrollTrigger is registered
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Initialize Header Animations
+      const revealHeaders = () => {
+        // Select all elements with the reveal class
+        const revealElements = document.querySelectorAll(
+          ".section-header .gsap-reveal-text",
+        );
+
+        gsap.to(revealElements, {
+          opacity: 1,
+          y: 0, // Slides to original position
+          duration: 1.2,
+          stagger: 0.2, // Delays each element slightly for a "waterfall" effect
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: ".section-header", // The container that starts the animation
+            start: "top 85%", // Starts when header is near the bottom of screen
+            toggleActions: "play none none none",
+          },
+          // We set the starting Y position here so it doesn't jump in the HTML
+          onStart: function () {
+            gsap.set(revealElements, { y: 40 });
+          },
+        });
+      };
+
+      // Run after DOM is fully loaded
+      window.addEventListener("DOMContentLoaded", revealHeaders);
+    </script>
+
+    <!-- 3 -->
+
+    <script>
+      // 1. FILTER FUNCTION
+      function filterSelection(category) {
+        const cards = document.querySelectorAll(".blog-card");
+        const buttons = document.querySelectorAll(".filter-btn");
+
+        // Update active button UI
+        buttons.forEach((btn) => {
+          btn.classList.remove("active");
+          // Check if the button's text or attribute matches the category
+          if (btn.getAttribute("onclick").includes(category)) {
+            btn.classList.add("active");
+          }
+        });
+
+        // GSAP Shuffle Animation
+        // First, shrink and fade out all cards
+        gsap.to(cards, {
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.in",
+          onComplete: () => {
+            // After fade out, toggle the visibility classes
+            cards.forEach((card) => {
+              if (category === "all" || card.classList.contains(category)) {
+                card.style.display = "flex"; // Reset to flex to maintain your height logic
+                card.classList.remove("hide");
+              } else {
+                card.style.display = "none";
+                card.classList.add("hide");
+              }
+            });
+
+            // Second, pop back in the filtered cards
+            gsap.to(".blog-card:not(.hide)", {
+              scale: 1,
+              opacity: 1,
+              duration: 0.5,
+              stagger: 0.1,
+              ease: "back.out(1.7)",
+            });
+          },
+        });
+      }
+
+      // 2. INITIAL ENTRANCE REVEAL
+      document.addEventListener("DOMContentLoaded", () => {
+        // Reveal Section Header Text
+        gsap.to(".gsap-reveal-text", {
+          scrollTrigger: {
+            trigger: ".section-header",
+            start: "top 85%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power3.out",
+        });
+
+        // Reveal Grid Cards on Scroll
+        gsap.to(".blog-card", {
+          scrollTrigger: {
+            trigger: ".blog-grid-section",
+            start: "top 75%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          stagger: 0.15,
+          ease: "power4.out",
+        });
+      });
+    </script>
+
+    <!-- 4 -->
+
+    <script>
+      function filterSelection(category) {
+        const cards = document.querySelectorAll(".grid-card");
+        const buttons = document.querySelectorAll(".filter-btn");
+
+        // 1. Update active button UI
+        buttons.forEach((btn) => {
+          btn.classList.remove("active");
+          // Match the button based on the category passed
+          if (btn.getAttribute("onclick").includes(category)) {
+            btn.classList.add("active");
+          }
+        });
+
+        // 2. GSAP Shuffle Animation Sequence
+        // First: Fade out and scale down existing cards
+        gsap.to(cards, {
+          opacity: 1,
+          duration: 0.3,
+          ease: "power2.in",
+          onComplete: () => {
+            // After fade-out, update the DOM
+            cards.forEach((card) => {
+              if (category === "all" || card.classList.contains(category)) {
+                card.classList.remove("hide");
+                card.style.display = "flex"; // Keep your flex logic for equal height
+              } else {
+                card.classList.add("hide");
+                card.style.display = "none";
+              }
+            });
+
+            // Second: Fade in and "pop" the filtered cards
+            gsap.to(".grid-card:not(.hide)", {
+              opacity: 1,
+              duration: 0.5,
+              stagger: 0.1, // Creates a nice wave effect
+              ease: "back.out(1.7)", // Adds a slight high-end bounce
+            });
+          },
+        });
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // Register ScrollTrigger if you haven't
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Initial Entrance for the Section Header
+        gsap.to(".gsap-reveal-text", {
+          scrollTrigger: {
+            trigger: ".section-header",
+            start: "top 85%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power3.out",
+        });
+
+        // Initial Entrance for the Cards
+        gsap.to(".grid-card", {
+          scrollTrigger: {
+            trigger: ".grid-container",
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          stagger: 0.1,
+          ease: "power4.out",
+        });
+      });
+    </script>
+
+    <!-- 6 -->
+
+    <script>
+      // Function for form submission
+      function handleSubscribe(e) {
+        e.preventDefault();
+        const email = document.getElementById("newsEmail").value;
+        const msg = document.getElementById("subscribe-msg");
+
+        // Simple logic
+        msg.innerHTML = `<span style="color:rgb(120, 2, 120); margin-top:20px; display:block;">Neural Link Established for ${email}</span>`;
+        e.target.reset();
+      }
+
+      // GSAP Animations
+      gsap.from(".gsap-news-text", {
+        opacity: 1,
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".newsletter-section",
+          start: "top 70%",
+        },
+      });
+
+      gsap.from(".gsap-news-form", {
+        opacity: 1,
+        duration: 1,
+        delay: 0.5,
+        scrollTrigger: {
+          trigger: ".newsletter-section",
+          start: "top 70%",
+        },
+      });
+    </script>
+  </body>
+</html>

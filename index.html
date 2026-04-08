@@ -1,0 +1,1335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Services</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./Assets/logo.webp" alt="" />
+        </a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="./index.html" class="active-page">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="div">
+        <div class="div">
+          <a href="./login.html">
+            <button class="btn">Login</button>
+          </a>
+        </div>
+        <div class="menu-icon" id="menu-trigger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <!-- <div class="sidebar-logo">STACKLY<span>.</span></div> -->
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./Assets/logo.webp" alt="" />
+          </a>
+        </div>
+
+        <div class="close-icon" id="close-trigger">&times;</div>
+      </div>
+      <ul class="side-links">
+        <li class="side-item">
+          <a href="./index.html">Home</a>
+        </li>
+        <li class="side-item"><a href="./about.html">About</a></li>
+        <li class="side-item"><a href="./services.html">Services</a></li>
+        <li class="side-item"><a href="./blog.html">Blog</a></li>
+        <li class="side-item"><a href="./contact.html">Contact</a></li>
+        <li class="side-item"><a href="./login.html">Login</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <!-- <button class="side-log-btn">Open An Account</button> -->
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <section class="hero-section">
+      <div class="video-background">
+        <video autoplay muted loop playsinline class="bg-video">
+          <source src="./Assets/hero.mp4" type="video/mp4" />
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="micro-badge gsap-reveal">Trusted by 200+ companies</div>
+
+          <h1 class="gsap-reveal">
+            AI That Thinks, Learns, and <span>Scales With You</span>
+          </h1>
+
+          <p class="subtext gsap-reveal">
+            We build intelligent systems that automate workflows, uncover
+            insights, and accelerate digital transformation. Unlock the power of
+            artificial intelligence today.
+          </p>
+
+          <div class="cta-group gsap-reveal">
+            <a href="./error.html">
+              <button class="btn-primary">Get Started</button>
+            </a>
+            <a href="./error.html">
+              <button class="btn-secondary">Watch Demo</button>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="image-wrapper gsap-reveal">
+            <img
+              src="./Assets/ai-automation_11zon_11zon.webp"
+              alt="Neural Network"
+              class="main-hero-img"
+            />
+
+            <div class="stats-floating-card">
+              <span class="count-number" data-target="850">0</span>
+              <span class="count-label">Active Neural Nodes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trusted-section">
+      <div class="trusted-container">
+        <p class="trusted-label gsap-reveal-info">Market Leaders</p>
+        <h2 class="trusted-heading gsap-reveal-info">
+          Trusted by forward-thinking companies worldwide
+        </h2>
+
+        <div class="logo-wrapper">
+          <div class="logo-card gsap-reveal-logo">
+            <img
+              src="./Assets/PayPal.svg"
+              alt="Fintech"
+            />
+            <span class="logo-tag">Fintech Leader</span>
+          </div>
+          <div class="logo-card gsap-reveal-logo">
+            <img
+              src="./Assets/IBM_logo.svg"
+              alt="Health"
+            />
+            <span class="logo-tag">Healthcare Innovator</span>
+          </div>
+          <div class="logo-card gsap-reveal-logo">
+            <img
+              src="./Assets/Amazon_logo.svg"
+              alt="Cloud"
+            />
+            <span class="logo-tag">Logistics Giant</span>
+          </div>
+          <div class="logo-card gsap-reveal-logo">
+            <img
+              src="./Assets/Netflix_2015_logo.svg"
+              alt="Media"
+            />
+            <span class="logo-tag">Media Pioneer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="what-we-do">
+      <div class="section-header">
+        <div class="header-badge gsap-reveal-text">Innovation at Scale</div>
+        <h2 class="gsap-reveal-text">What We Do</h2>
+        <div class="header-line gsap-reveal-text"></div>
+        <p class="gsap-reveal-text">
+          We empower businesses with cutting-edge AI technologies designed to
+          solve real-world challenges.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-box gsap-reveal-card">
+          <div class="service-icon">01</div>
+          <h3>AI Automation</h3>
+          <p>
+            Streamline repetitive processes with intelligent automation,
+            reducing operational overhead and maximizing output speed.
+          </p>
+          <ul class="card-features">
+            <li>Workflow Optimization</li>
+            <li>Error Reduction</li>
+          </ul>
+        </div>
+        <div class="service-box gsap-reveal-card">
+          <div class="service-icon">02</div>
+          <h3>Machine Learning</h3>
+          <p>
+            Build predictive models that learn and improve over time,
+            transforming historical data into future foresight.
+          </p>
+          <ul class="card-features">
+            <li>Predictive Analysis</li>
+            <li>Neural Networks</li>
+          </ul>
+        </div>
+        <div class="service-box gsap-reveal-card">
+          <div class="service-icon">03</div>
+          <h3>Data Analytics</h3>
+          <p>
+            Turn raw data into actionable insights with deep cognitive
+            processing that uncovers hidden market patterns.
+          </p>
+          <ul class="card-features">
+            <li>Real-time Dashboards</li>
+            <li>Pattern Recognition</li>
+          </ul>
+        </div>
+        <div class="service-box gsap-reveal-card">
+          <div class="service-icon">04</div>
+          <h3>Chatbots</h3>
+          <p>
+            Deliver human-like conversations with AI-powered bots that handle
+            customer support and sales queries 24/7.
+          </p>
+          <ul class="card-features">
+            <li>NLP Integration</li>
+            <li>24/7 Availability</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="core-services">
+      <div class="services-container">
+        <div class="section-header">
+          <div class="header-badge gsap-reveal-text">Expert Solutions</div>
+          <h2 class="gsap-reveal-text">
+            Comprehensive
+            <span style="color: rgb(120, 2, 120)">AI Services</span> Tailored to
+            Your Needs
+          </h2>
+          <div class="header-line gsap-reveal-text"></div>
+          <p class="gsap-reveal-text">
+            From strategic consulting to custom neural architecture, we provide
+            the end-to-end expertise required to turn complex data into
+            competitive advantages.
+          </p>
+        </div>
+
+        <div class="core-grid">
+          <div class="core-card gsap-reveal-card">
+            <div class="card-inner">
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M12 2v20M2 12h20M12 2l4 4m-4-4l-4 4m4 16l-4-4m4 4l4-4"
+                  />
+                </svg>
+              </div>
+              <h3>AI Consulting</h3>
+              <p>
+                We analyze your business and design AI strategies that deliver
+                measurable impact and sustainable growth.
+              </p>
+              <a href="./error.html" class="card-cta"
+                >Learn More <span class="arrow">→</span></a
+              >
+            </div>
+          </div>
+
+          <div class="core-card gsap-reveal-card">
+            <div class="card-inner">
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.77 3.77z"
+                  />
+                </svg>
+              </div>
+              <h3>Custom AI Development</h3>
+              <p>
+                Build tailored AI solutions aligned with your goals, from
+                internal automation to customer-facing AI products.
+              </p>
+              <a href="./error.html" class="card-cta"
+                >Explore Solution <span class="arrow">→</span></a
+              >
+            </div>
+          </div>
+
+          <div class="core-card gsap-reveal-card">
+            <div class="card-inner">
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                  />
+                </svg>
+              </div>
+              <h3>Natural Language Processing</h3>
+              <p>
+                Enable machines to understand, interpret, and respond to human
+                language with human-like precision.
+              </p>
+              <a href="./error.html" class="card-cta"
+                >Learn More <span class="arrow">→</span></a
+              >
+            </div>
+          </div>
+
+          <div class="core-card gsap-reveal-card">
+            <div class="card-inner">
+              <div class="service-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h18a2 2 0 0 1 2 2zM12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15l4-4 4 4 4-4 4 4"
+                  />
+                </svg>
+              </div>
+              <h3>Computer Vision</h3>
+              <p>
+                Extract meaningful insights from images and videos to automate
+                quality control or security monitoring.
+              </p>
+              <a href="./error.html" class="card-cta"
+                >Explore Solution <span class="arrow">→</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <!-- Global Section Header -->
+      <div class="section-header">
+        <div class="header-badge gsap-reveal-text">Our Methodology</div>
+        <h2 class="gsap-reveal-text">How It Works</h2>
+        <div class="header-line gsap-reveal-text"></div>
+        <p class="gsap-reveal-text">
+          Our proven AI development process ensures accuracy, scalability, and
+          performance at every stage of the lifecycle.
+        </p>
+      </div>
+
+      <div class="process-container">
+        <!-- Step 1 -->
+        <div class="process-step gsap-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <div class="step-image">
+              <img
+                src="./Assets/data collection_11zon.webp"
+                alt="Data Collection"
+              />
+            </div>
+            <h3>Data Collection</h3>
+            <p>
+              We gather and structure high-quality data from various sources to
+              build a robust foundation .
+            </p>
+          </div>
+          <div class="connector-line"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-step gsap-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <div class="step-image">
+              <img
+                src="./Assets/model training_11zon.webp"
+                alt="Model Training"
+              />
+            </div>
+            <h3>Model Training</h3>
+            <p>
+              Advanced algorithms learn patterns from your data, fine-tuning
+              neural networks for maximum precision.
+            </p>
+          </div>
+          <div class="connector-line"></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-step gsap-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <div class="step-image">
+              <img
+                src="./Assets/deployment_11zon_11zon.webp"
+                alt="Deployment"
+              />
+            </div>
+            <h3>Deployment</h3>
+            <p>
+              We seamlessly integrate the trained AI models into your existing
+              cloud or on-premise infrastructure.
+            </p>
+          </div>
+          <div class="connector-line"></div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process-step gsap-step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <div class="step-image">
+              <img
+                src="./Assets/optimization_11zon_11zon.webp"
+                alt="Optimization"
+              />
+            </div>
+            <h3>Optimization</h3>
+            <p>
+              Continuous monitoring and feedback loops ensure your AI evolves
+              and improves performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="use-cases">
+      <div class="section-header">
+        <div class="header-badge gsap-reveal-text">Versatile Solutions</div>
+        <h2 class="gsap-reveal-text">AI Use Cases</h2>
+        <div class="header-line gsap-reveal-text"></div>
+        <p class="gsap-reveal-text">
+          AI solutions designed for every industry, from clinical precision to
+          global commerce.
+        </p>
+      </div>
+
+      <div class="tabs-container">
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-target="healthcare">
+            Healthcare
+          </button>
+          <button class="tab-btn" data-target="finance">Finance</button>
+          <button class="tab-btn" data-target="ecommerce">E-commerce</button>
+          <button class="tab-btn" data-target="education">Education</button>
+        </div>
+
+        <div class="tabs-display">
+          <div class="tab-content active" id="healthcare">
+            <div class="tab-text">
+              <h3>Healthcare</h3>
+              <p>
+                Revolutionize patient care through predictive diagnostics and
+                deep-learning patient insights. Our AI architectures empower
+                healthcare providers to transition from reactive treatments to
+                proactive, personalized care models, significantly improving
+                clinical outcomes while streamlining administrative workflows
+                and reducing provider burnout through automated clinical
+                documentation.
+              </p>
+            </div>
+            <div class="tab-visual">
+              <img
+                src="./Assets/healthcare_11zon_11zon.webp"
+                alt="Healthcare AI"
+              />
+            </div>
+          </div>
+
+          <div class="tab-content" id="finance">
+            <div class="tab-text">
+              <h3>Finance</h3>
+              <p>
+                Secure your infrastructure with advanced fraud detection and
+                smart risk analysis. By utilizing complex neural networks, our
+                systems identify microscopic anomalies in real-time global
+                transactions that traditional rule-based engines miss. We help
+                financial institutions optimize portfolio management and
+                automate compliance, ensuring maximum security in an
+                increasingly volatile digital economy.
+              </p>
+            </div>
+            <div class="tab-visual">
+              <img
+                src="./Assets/finance_11zon_11zon.webp"
+                alt="Finance AI"
+              />
+            </div>
+          </div>
+
+          <div class="tab-content" id="ecommerce">
+            <div class="tab-text">
+              <h3>E-commerce</h3>
+              <p>
+                Drive hyper-growth with personalized recommendation engines and
+                precision demand forecasting. Our AI solutions analyze massive
+                datasets of consumer behavior to optimize supply chains and
+                logistics in real-time. By predicting trends before they happen,
+                we enable brands to reduce inventory waste and significantly
+                increase customer lifetime value through perfectly timed,
+                context-aware shopping experiences.
+              </p>
+            </div>
+            <div class="tab-visual">
+              <img
+                src="./Assets/e-commerce_11zon_11zon.webp"
+                alt="E-commerce AI"
+              />
+            </div>
+          </div>
+
+          <div class="tab-content" id="education">
+            <div class="tab-text">
+              <h3>Education</h3>
+              <p>
+                Transform learning through adaptive platforms and intelligent AI
+                tutors that evolve alongside the student. Our technology adjusts
+                difficulty and teaching style in real-time based on individual
+                student progress, providing customized mastery paths for every
+                learner. We bridge the gap between classroom instruction and
+                home study, ensuring that every student receives the specific
+                support they need to succeed.
+              </p>
+            </div>
+            <div class="tab-visual">
+              <img
+                src="./Assets/education_11zon_11zon.webp"
+                alt="Education AI"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="featured-overlay">
+      <section class="featured-product">
+        <div class="product-overlay"></div>
+
+        <div class="product-container">
+          <div class="product-content gsap-product-reveal">
+            <div class="header-badge">Next-Gen Interface</div>
+            <h2 class="product-title">
+              AI Platform Built <span class="accent">for the Future</span>
+            </h2>
+            <p class="product-description">
+              A unified dashboard to manage, monitor, and scale your AI models
+              in real-time. Engineered for teams that demand precision and
+              global scalability.
+            </p>
+
+            <ul class="product-features">
+              <li class="gsap-feature-item">
+                <span class="feature-icon">📊</span>
+                <div class="feature-text">
+                  <strong>Real-time analytics</strong>
+                  <span>Monitor latency and accuracy as it happens.</span>
+                </div>
+              </li>
+              <li class="gsap-feature-item">
+                <span class="feature-icon">⚙️</span>
+                <div class="feature-text">
+                  <strong>Smart automation tools</strong>
+                  <span>Auto-scale resources based on live traffic.</span>
+                </div>
+              </li>
+              <li class="gsap-feature-item">
+                <span class="feature-icon">☁️</span>
+                <div class="feature-text">
+                  <strong>Cloud integration</strong>
+                  <span
+                    >Deploy across AWS, Azure, and Google Cloud instantly.</span
+                  >
+                </div>
+              </li>
+            </ul>
+
+            <div class="product-actions">
+              <a href="./error.html">
+                <button class="btn-primary">Get Started Now</button>
+              </a>
+              <a href="./error.html">
+                <button class="btn-secondary">View Demo</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="why-choose-us">
+      <div class="section-header">
+        <div class="header-badge gsap-reveal-text">The Competitive Edge</div>
+        <h2 class="gsap-reveal-text">Why Leading Companies Choose Us</h2>
+        <div class="header-line gsap-reveal-text"></div>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card gsap-benefit">
+          <div class="benefit-icon">🚀</div>
+          <h3>Scalable</h3>
+          <p>
+            Solutions that grow with your business, from startup prototypes to
+            global enterprise deployments.
+          </p>
+
+        </div>
+
+        <div class="benefit-card gsap-benefit">
+          <div class="benefit-icon">🛡️</div>
+          <h3>Secure</h3>
+          <p>
+            Enterprise-grade security and SOC2 compliance to protect your most
+            sensitive proprietary data.
+          </p>
+
+        </div>
+
+        <div class="benefit-card gsap-benefit">
+          <div class="benefit-icon">⚡</div>
+          <h3>Fast Processing</h3>
+          <p>
+            Lightning-fast AI performance with optimized inference engines and
+            low-latency response times.
+          </p>
+        </div>
+
+        <div class="benefit-card gsap-benefit">
+          <div class="benefit-icon">🎯</div>
+          <h3>Custom Models</h3>
+          <p>
+            Tailored AI architectures built specifically for your unique
+            industry needs and datasets.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="stats-container">
+        <div class="section-header">
+          <div class="header-badge gsap-reveal-text">Performance Metrics</div>
+          <h2 class="gsap-reveal-text">Delivering Measurable Results</h2>
+          <div class="header-line gsap-reveal-text"></div>
+          <p class="gsap-reveal-text">
+            Our AI solutions are backed by concrete data, driving efficiency and
+            unprecedented accuracy across global enterprise infrastructures.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item gsap-stat-card">
+            <div class="stat-number" data-target="500">0</div>
+            <div class="stat-suffix">+</div>
+            <p>Projects Completed</p>
+          </div>
+
+          <div class="stat-item gsap-stat-card">
+            <div class="stat-number" data-target="200">0</div>
+            <div class="stat-suffix">+</div>
+            <p>Global Clients</p>
+          </div>
+
+          <div class="stat-item gsap-stat-card">
+            <div class="stat-number" data-target="99">0</div>
+            <div class="stat-suffix">%</div>
+            <p>Accuracy Rate</p>
+          </div>
+
+          <div class="stat-item gsap-stat-card">
+            <div class="stat-label">24/7</div>
+            <p>AI Support</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-preview">
+      <div class="section-header">
+        <div class="header-badge gsap-reveal-text">Insights</div>
+        <h2 class="gsap-reveal-text">Latest Insights & Trends</h2>
+        <div class="header-line gsap-reveal-text"></div>
+      </div>
+
+      <div class="blog-grid">
+        <!-- Blog 1 -->
+        <article class="blog-card gsap-blog">
+          <div class="blog-image">
+            <img
+              src="./Assets/ai transfrom_11zon.webp"
+              alt="AI Transform"
+            />
+          </div>
+          <div class="blog-content">
+            <span class="blog-date">April 06, 2026</span>
+            <h3>How AI is Transforming Modern Businesses</h3>
+            <a href="./error.html" class="read-more">Read Insight →</a>
+          </div>
+        </article>
+
+        <!-- Blog 2 -->
+        <article class="blog-card gsap-blog">
+          <div class="blog-image">
+            <img
+              src="./Assets/ml trends_11zon_11zon.webp"
+              alt="ML Trends"
+            />
+          </div>
+          <div class="blog-content">
+            <span class="blog-date">March 28, 2026</span>
+            <h3>Top 5 Machine Learning Trends in 2026</h3>
+            <a href="./error.html" class="read-more">Read Insight →</a>
+          </div>
+        </article>
+
+        <!-- Blog 3 -->
+        <article class="blog-card gsap-blog">
+          <div class="blog-image">
+            <img
+              src="./Assets/ai-automation_11zon_11zon.webp"
+              alt="AI vs Automation"
+            />
+          </div>
+          <div class="blog-content">
+            <span class="blog-date">March 15, 2026</span>
+            <h3>AI vs Automation: What’s the Difference?</h3>
+            <a href="./error.html" class="read-more">Read Insight →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer class="premium-footer">
+      <div class="footer-upper">
+        <div class="footer-col brand-col">
+          <div class="logo footer-logo">
+            <a href="./index.html">
+              <img src="./Assets/logo.webp" alt="Nova AI Logo" />
+            </a>
+          </div>
+          <p class="brand-brief">
+            Advancing the frontier of autonomous finance. We integrate
+            medical-grade neural networks with high-frequency fiscal
+            intelligence to deliver the world's most precise AI banking
+            ecosystem.
+          </p>
+          <div class="footer-socials">
+            <a href="./error.html"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="./about.html">About </a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./login.html">Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Autonomous Services</h4>
+          <ul class="footer-links">
+            <li><a href="./error.html">Predictive Wealth Engines</a></li>
+            <li><a href="./error.html">Algorithmic Arbitrage</a></li>
+            <li><a href="./error.html">Deep Learning Risk Audit</a></li>
+            <li><a href="./error.html">Smart Contract Synthesis</a></li>
+            <li><a href="./error.html">Automated Treasury</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4 class="footer-title">Network Status</h4>
+          <p class="small-text">
+            Synchronize with our latest model deployments.
+          </p>
+          <form class="footer-subscribe" action="./error.html">
+            <input type="email" placeholder="Email Address" />
+            <button><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+          <div class="contact-info">
+            <span><i class="fa-solid fa-phone"></i>+912345678</span>
+            <span><i class="fa-solid fa-envelope"></i>support@stackly.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-container">
+          <div class="divider-line"></div>
+          <div class="bottom-flex">
+            <p class="copyright">
+              &copy; 2026 Stackly-AI Services. All Rights Reserved.
+            </p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- footer -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.from(".footer-col", {
+          scrollTrigger: {
+            trigger: ".premium-footer",
+            start: "top 90%",
+          },
+          opacity: 0,
+          y: 40,
+          stagger: 0.15,
+          duration: 1,
+          ease: "power2.out",
+        });
+
+        // Fade in the bottom bar divider
+        gsap.from(".divider-line", {
+          scrollTrigger: ".footer-bottom",
+          opacity: 0,
+          duration: 2,
+          ease: "power4.inOut",
+        });
+      });
+    </script>
+
+    <!-- hero -->
+
+    <script>
+      // HERO GSAP & OBSERVE LOGIC
+      window.addEventListener("load", () => {
+        const tl = gsap.timeline();
+
+        tl.to(".gsap-reveal", {
+          opacity: 1,
+          y: -30,
+          duration: 0.5,
+          stagger: 0.15,
+          ease: "power4.out",
+        });
+
+        const countElement = document.querySelector(".count-number");
+        const targetValue = parseInt(countElement.getAttribute("data-target"));
+
+        const startCounter = () => {
+          gsap.to(countElement, {
+            innerText: targetValue,
+            duration: 3,
+            snap: { innerText: 1 },
+            ease: "expo.out",
+            onUpdate: function () {
+              countElement.innerHTML =
+                Math.ceil(this.targets()[0].innerText) + "+";
+            },
+          });
+        };
+
+        // Intersection Observer for counting
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                startCounter();
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
+
+        observer.observe(countElement);
+      });
+    </script>
+
+    <!-- 2 , 3 -->
+
+    <script>
+      // Register ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+
+      window.addEventListener("load", () => {
+        // 1. Trusted By Section Animation
+        gsap.to(".gsap-reveal-info", {
+          scrollTrigger: { trigger: ".trusted-section", start: "top 80%" },
+          opacity: 1,
+          y: -20,
+          duration: 1,
+          stagger: 0.2,
+        });
+
+        gsap.to(".gsap-reveal-logo", {
+          scrollTrigger: { trigger: ".logo-wrapper", start: "top 85%" },
+          opacity: 1,
+          scale: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: "back.out(1.7)",
+        });
+
+        // 2. What We Do Section Animation
+        gsap.to(".gsap-reveal-text", {
+          scrollTrigger: { trigger: ".what-we-do", start: "top 80%" },
+          opacity: 1,
+          y: -30,
+          duration: 1,
+          stagger: 0.3,
+        });
+
+        gsap.to(".gsap-reveal-card", {
+          scrollTrigger: { trigger: ".services-grid", start: "top 75%" },
+          opacity: 1,
+          x: 0,
+          y: 0,
+          duration: 1.2,
+          stagger: 0.2,
+          ease: "power4.out",
+        });
+      });
+    </script>
+
+    <!-- 4 -->
+
+    <script>
+      // Register GSAP Plugins
+      gsap.registerPlugin(ScrollTrigger);
+
+      window.addEventListener("load", () => {
+        // 1. Text Heading Reveal
+        gsap.to(".gsap-reveal-text", {
+          scrollTrigger: {
+            trigger: ".core-services",
+            start: "top 80%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          ease: "power4.out",
+        });
+
+        // 2. Card Stagger Animation (Reveal from bottom + Scale)
+        gsap.fromTo(
+          ".gsap-reveal-card",
+          {
+            opacity: 0,
+            y: 60,
+            scale: 0.9,
+          },
+          {
+            scrollTrigger: {
+              trigger: ".core-grid",
+              start: "top 75%",
+            },
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 1,
+            stagger: 0.2,
+            ease: "expo.out",
+          },
+        );
+
+        // 3. Interactive Function for Button Click (Global Handler)
+        const setupCardButtons = () => {
+          const buttons = document.querySelectorAll(".card-cta");
+
+          buttons.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.preventDefault();
+              const serviceName =
+                btn.parentElement.querySelector("h3").innerText;
+              console.log(`Routing to detailed page for: ${serviceName}`);
+              // Add your navigation or modal trigger logic here
+            });
+          });
+        };
+
+        setupCardButtons();
+      });
+    </script>
+
+    <!-- section -->
+
+    <script>
+      // Register ScrollTrigger
+      gsap.registerPlugin(ScrollTrigger);
+
+      window.addEventListener("load", () => {
+        // Select all section headers on the page
+        const allHeaders = document.querySelectorAll(".section-header");
+
+        allHeaders.forEach((header) => {
+          // Find all text elements inside THIS specific header
+          const revealElements = header.querySelectorAll(".gsap-reveal-text");
+
+          gsap.fromTo(
+            revealElements,
+            {
+              opacity: 0,
+              y: 40,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 1.2,
+              stagger: 0.2, // Time between each element appearing
+              ease: "power4.out",
+              scrollTrigger: {
+                trigger: header,
+                start: "top 85%", // Starts animation when header is 85% from top of screen
+                toggleActions: "play none none none",
+              },
+            },
+          );
+        });
+      });
+    </script>
+
+    <!-- 5 -->
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      window.addEventListener("load", () => {
+        // 1. Function to handle section header animation (reusable)
+        const animateHeaders = () => {
+          const headers = document.querySelectorAll(".section-header");
+          headers.forEach((header) => {
+            gsap.to(header.querySelectorAll(".gsap-reveal-text"), {
+              scrollTrigger: {
+                trigger: header,
+                start: "top 85%",
+              },
+              opacity: 1,
+              y: 0,
+              duration: 1,
+              stagger: 0.2,
+              ease: "power3.out",
+            });
+          });
+        };
+
+        // 2. Process Steps Staggered Reveal
+        const animateSteps = () => {
+          gsap.to(".gsap-step", {
+            scrollTrigger: {
+              trigger: ".process-container",
+              start: "top 75%",
+            },
+            opacity: 1,
+            x: 0,
+            y: 0,
+            duration: 1.2,
+            stagger: 0.3,
+            ease: "expo.out",
+            // This starts the elements slightly from the side
+            onStart: function () {
+              gsap.from(".gsap-step", { x: 0, duration: 1.2, stagger: 0.3 });
+            },
+          });
+        };
+
+        // 3. Optional: Function for Interactive Step Tracking
+        const initProcessInteractions = () => {
+          const steps = document.querySelectorAll(".process-step");
+          steps.forEach((step, index) => {
+            step.addEventListener("mouseenter", () => {
+              console.log(`User exploring Step ${index + 1}`);
+            });
+          });
+        };
+
+        // Initialize all
+        animateHeaders();
+        animateSteps();
+        initProcessInteractions();
+      });
+    </script>
+
+    <script>
+      // Inside your animateSteps function:
+      gsap.from(".gsap-step", {
+        y: 100,
+        opacity: 0,
+        duration: 1.2,
+        stagger: 0.3,
+        ease: "power4.out",
+      });
+    </script>
+
+    <!-- 6 -->
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      window.addEventListener("load", () => {
+        const tabs = document.querySelectorAll(".tab-btn");
+        const contents = document.querySelectorAll(".tab-content");
+
+        // Initial reveal for the whole section
+        gsap.from(".tabs-container", {
+          scrollTrigger: {
+            trigger: ".use-cases",
+            start: "top 70%",
+          },
+          opacity: 0,
+          y: 50,
+          duration: 1.5,
+          ease: "power4.out",
+        });
+
+        // Function to Switch Tabs with Slow Reveal
+        const switchTab = (targetId) => {
+          const activeContent = document.getElementById(targetId);
+          const activeImg = activeContent.querySelector("img");
+          const activeText = activeContent.querySelector(".tab-text");
+
+          // 1. Reset all
+          contents.forEach((content) => content.classList.remove("active"));
+
+          // 2. Activate target
+          activeContent.classList.add("active");
+
+          // 3. SUPERIOR DOUBLE ANIMATION: Slow Visual Reveal
+          const tl = gsap.timeline();
+
+          // Animation A: The Text Slide
+          tl.fromTo(
+            activeText,
+            { x: -30, opacity: 0 },
+            { x: 0, opacity: 1, duration: 0.8, ease: "power2.out" },
+          );
+
+          // Animation B: The Slow Image Reveal (Scale + Blur + Opacity)
+          tl.fromTo(
+            activeImg,
+            {
+              opacity: 0,
+              scale: 1.3,
+              filter: "blur(20px)",
+            },
+            {
+              opacity: 1,
+              scale: 1,
+              filter: "blur(0px)",
+              duration: 2.5, // Slow reveal
+              ease: "expo.out",
+            },
+            "-=0.5", // Overlap with text
+          );
+        };
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => {
+            // UI Toggle
+            tabs.forEach((t) => t.classList.remove("active"));
+            tab.classList.add("active");
+
+            // Trigger GSAP Switch
+            const target = tab.getAttribute("data-target");
+            switchTab(target);
+          });
+        });
+
+        // Run once for initial active tab
+        switchTab("healthcare");
+      });
+    </script>
+
+    <!-- 7 -->
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      window.addEventListener("load", () => {
+        // Create Timeline for the Section
+        const productTL = gsap.timeline({
+          scrollTrigger: {
+            trigger: ".featured-product",
+            start: "top 70%",
+            toggleActions: "play none none none",
+          },
+        });
+
+        // 1. Reveal the Main Glass Card
+        productTL.to(".gsap-product-reveal", {
+          opacity: 1,
+          x: 0,
+          duration: 1.2,
+          ease: "power4.out",
+          onStart: () => {
+            gsap.from(".gsap-product-reveal", { x: -100 });
+          },
+        });
+
+        // 2. Staggered Feature Items (Double Animation)
+        productTL.to(
+          ".gsap-feature-item",
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: "back.out(1.7)",
+            onStart: () => {
+              gsap.from(".gsap-feature-item", { y: 30 });
+            },
+          },
+          "-=0.5",
+        ); // Overlap with card reveal
+
+        // 3. Optional: Subtle Floating Animation for the Card (Idle)
+        gsap.to(".product-content", {
+          y: "-=10",
+          duration: 3,
+          yoyo: true,
+          repeat: -1,
+          ease: "sine.inOut",
+        });
+      });
+    </script>
+
+    <!-- 8 -->
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      window.addEventListener("load", () => {
+        // 1. Entrance Reveal: Staggered Fade-In
+        gsap.to(".gsap-benefit", {
+          scrollTrigger: {
+            trigger: ".benefits-grid",
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          stagger: 0.2,
+          ease: "power4.out",
+          onStart: function () {
+            gsap.set(".gsap-benefit", { y: 60 });
+          },
+        });
+      });
+    </script>
+
+    <!-- 9 -->
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      const stats = document.querySelectorAll(".stat-number");
+
+      stats.forEach((stat) => {
+        const target = parseInt(stat.getAttribute("data-target"));
+
+        gsap.to(stat, {
+          innerText: target,
+          duration: 5.5,
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: stat,
+            start: "top 85%",
+          },
+          onUpdate: function () {
+            stat.innerText = Math.ceil(stat.innerText);
+          },
+        });
+      });
+
+      // Staggered Reveal for cards
+      gsap.from(".gsap-stat-card", {
+        scrollTrigger: {
+          trigger: ".stats-grid",
+          start: "top 80%",
+        },
+        opacity: 1,
+        stagger: 0.2,
+        duration: 1,
+        ease: "expo.out",
+      });
+    </script>
+
+    <!-- 10 -->
+
+    <script>
+      gsap.to(".gsap-blog", {
+        scrollTrigger: {
+          trigger: ".blog-grid",
+          start: "top 80%",
+        },
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        stagger: 0.2,
+        ease: "power3.out",
+        onStart: function () {
+          gsap.set(".gsap-blog", { y: 40 });
+        },
+      });
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Services</title>
+    <link rel="stylesheet" href="./contact.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./Assets/logo.webp" alt="" />
+        </a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="./index.html" class="active-page">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="div">
+        <div class="div">
+          <a href="./login.html">
+            <button class="btn">Login</button>
+          </a>
+        </div>
+        <div class="menu-icon" id="menu-trigger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <!-- <div class="sidebar-logo">STACKLY<span>.</span></div> -->
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./Assets/logo.webp" alt="" />
+          </a>
+        </div>
+
+        <div class="close-icon" id="close-trigger">&times;</div>
+      </div>
+      <ul class="side-links">
+        <li class="side-item">
+          <a href="./index.html">Home</a>
+        </li>
+        <li class="side-item"><a href="./about.html">About</a></li>
+        <li class="side-item"><a href="./services.html">Services</a></li>
+        <li class="side-item"><a href="./blog.html">Blog</a></li>
+        <li class="side-item"><a href="./contact.html">Contact</a></li>
+        <li class="side-item"><a href="./login.html">Login</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <!-- <button class="side-log-btn">Open An Account</button> -->
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <section class="contact-hero">
+      <div class="glow-blob" id="cursorGlow"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge gsap-contact-reveal">Contact Hub</div>
+        <h1 class="gsap-contact-reveal">
+          Let’s Build Something <br />
+          <span class="text-gradient">Intelligent</span> Together
+        </h1>
+        <p class="gsap-contact-reveal">
+          Reach out to discuss your AI ideas and transform your digital
+          infrastructure with neural intelligence.
+        </p>
+
+        <div class="hero-actions gsap-contact-reveal">
+          <a href="./error.html" class="primary-btn">Start Discussion</a>
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span>System Online: Accepting Projects</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-form-section" id="contact-form">
+      <div class="form-wrapper">
+        <div class="form-info gsap-form-reveal">
+          <div class="info-item">
+            <span class="info-label">Response Protocol</span>
+            <p class="microcopy">“We’ll get back within 24 hours.”</p>
+          </div>
+          <div class="system-status-widget gsap-form-reveal">
+            <div class="status-item">
+              <span class="status-label">Signal Strength</span>
+              <div class="status-bar">
+                <div class="bar-fill" style="width: 92%"></div>
+              </div>
+            </div>
+
+            <div class="status-item">
+              <span class="status-label">Encryption</span>
+              <span class="status-value">AES-256 Active</span>
+            </div>
+
+            <div class="status-item">
+              <span class="status-label">Neural Node</span>
+              <span class="status-value">Node-04-A</span>
+            </div>
+
+            <div class="data-stream-container">
+              <div class="stream-line"></div>
+              <div class="stream-particle"></div>
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="main-form gsap-form-reveal"
+          onsubmit="handleFormSubmit(event)"
+        >
+          <div class="input-group">
+            <input type="text" id="userName" required placeholder="Full Name" />
+            <label for="userName">Name</label>
+          </div>
+
+          <div class="input-row">
+            <div class="input-group">
+              <input
+                type="email"
+                id="userEmail"
+                required
+                placeholder="Email Address"
+              />
+              <label for="userEmail">Email</label>
+            </div>
+            <div class="input-group">
+              <input
+                type="text"
+                id="userCompany"
+                placeholder="Company Name"
+                required
+              />
+              <label for="userCompany">Company</label>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <textarea
+              id="userMessage"
+              required
+              placeholder="Describe your AI vision..."
+            ></textarea>
+            <label for="userMessage">Message</label>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Initialize Transmission</span>
+            <div class="btn-glow"></div>
+          </button>
+          <div id="formStatus"></div>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact-info-grid1">
+      <div class="section-header">
+        <div class="header-badge gsap-reveal-text" style="opacity: 0">
+          Connectivity
+        </div>
+        <h2 class="gsap-reveal-text" style="opacity: 0">
+          Global Contact <span class="accent-text">Nodes</span>
+        </h2>
+        <div class="header-line gsap-reveal-text" style="opacity: 0"></div>
+      </div>
+      <div class="contact-info-grid">
+        <div class="info-node gsap-info-reveal">
+          <div class="node-icon">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="node-details">
+            <span class="node-label">Digital Mail</span>
+            <a href="mailto:contact@ai-services.com" class="node-value"
+              >contact@ai-services.com</a
+            >
+          </div>
+        </div>
+
+        <div class="info-node gsap-info-reveal">
+          <div class="node-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="node-details">
+            <span class="node-label">Direct Line</span>
+            <a href="tel:+91XXXXXXXXXX" class="node-value">+91 XXXXX XXXXX</a>
+          </div>
+        </div>
+
+        <div class="info-node gsap-info-reveal">
+          <div class="node-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="node-details">
+            <span class="node-label">Physical HQ</span>
+            <p class="node-value">Silicon Valley, CA / Remote Node 01</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <div class="map-overlay gsap-map-reveal">
+        <div class="map-badge">
+          <span class="status-dot"></span>
+          <p>Find us on the map</p>
+        </div>
+      </div>
+      <div id="neural-map" class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.8354345093124!2d-122.4194155!3d37.7749295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sTwitter%20HQ!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+          width="100%"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        >
+        </iframe>
+      </div>
+    </section>
+
+    <footer class="premium-footer">
+      <div class="footer-upper">
+        <div class="footer-col brand-col">
+          <div class="logo footer-logo">
+            <a href="./index.html">
+              <img src="./Assets/logo.webp" alt="Nova AI Logo" />
+            </a>
+          </div>
+          <p class="brand-brief">
+            Advancing the frontier of autonomous finance. We integrate
+            medical-grade neural networks with high-frequency fiscal
+            intelligence to deliver the world's most precise AI banking
+            ecosystem.
+          </p>
+          <div class="footer-socials">
+            <a href="./error.html"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="./about.html">About </a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./login.html">Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Autonomous Services</h4>
+          <ul class="footer-links">
+            <li><a href="./error.html">Predictive Wealth Engines</a></li>
+            <li><a href="./error.html">Algorithmic Arbitrage</a></li>
+            <li><a href="./error.html">Deep Learning Risk Audit</a></li>
+            <li><a href="./error.html">Smart Contract Synthesis</a></li>
+            <li><a href="./error.html">Automated Treasury</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4 class="footer-title">Network Status</h4>
+          <p class="small-text">
+            Synchronize with our latest model deployments.
+          </p>
+          <form class="footer-subscribe" action="./error.html">
+            <input type="email" placeholder="Email Address" />
+            <button><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+          <div class="contact-info">
+            <span><i class="fa-solid fa-phone"></i>+912345678</span>
+            <span><i class="fa-solid fa-envelope"></i>support@stackly.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-container">
+          <div class="divider-line"></div>
+          <div class="bottom-flex">
+            <p class="copyright">
+              &copy; 2026 Stackly-AI Services. All Rights Reserved.
+            </p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- footer -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.from(".footer-col", {
+          scrollTrigger: {
+            trigger: ".premium-footer",
+            start: "top 90%",
+          },
+          opacity: 0,
+          y: 40,
+          stagger: 0.15,
+          duration: 1,
+          ease: "power2.out",
+        });
+
+        // Fade in the bottom bar divider
+        gsap.from(".divider-line", {
+          scrollTrigger: ".footer-bottom",
+          opacity: 0,
+          duration: 2,
+          ease: "power4.inOut",
+        });
+      });
+    </script>
+
+    <!-- hero -->
+    <script>
+      // --- INTERACTIVE GLOW FUNCTION ---
+      const glow = document.getElementById("cursorGlow");
+
+      window.addEventListener("mousemove", (e) => {
+        // Smoothly follow the cursor
+        gsap.to(glow, {
+          x: e.clientX,
+          y: e.clientY,
+          duration: 0.8,
+          ease: "power2.out",
+          opacity: 1, // Only show once the mouse moves
+        });
+      });
+
+      // --- GSAP ENTRANCE ANIMATION ---
+      document.addEventListener("DOMContentLoaded", () => {
+        const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+
+        tl.to(".gsap-contact-reveal", {
+          opacity: 1,
+          y: 0,
+          duration: 1.5,
+          stagger: 0.2,
+          delay: 0.5,
+        });
+
+        // Subtle floating animation for the text gradient
+        gsap.to(".text-gradient", {
+          opacity: 0.8,
+          duration: 2,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+      });
+    </script>
+
+    <!-- 2 -->
+
+    <script>
+      // --- FORM HANDLING ---
+      function handleFormSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector(".submit-btn");
+        const status = document.getElementById("formStatus");
+
+        // Simulate Processing
+        btn.innerHTML = "Processing Neural Link...";
+
+        setTimeout(() => {
+          gsap.to(e.target, { opacity: 1, y: -20, duration: 0.5 });
+          status.innerHTML = `<p style="color:rgb(120, 2, 120); font-weight:700; margin-top:20px;">Transmission Successful. We'll respond within 24 hours.</p>`;
+          gsap.from(status, { opacity: 1, scale: 0.9, duration: 1 });
+        }, 1500);
+      }
+
+      // --- GSAP REVEAL ---
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.to(".gsap-form-reveal", {
+          scrollTrigger: {
+            trigger: ".contact-form-section",
+            start: "top 70%",
+          },
+          opacity: 1,
+          y: 0,
+          duration: 1.2,
+          stagger: 0.3,
+          ease: "power3.out",
+        });
+      });
+    </script>
+
+    <script>
+      // Simulate signal fluctuations when user interacts with the form
+      const inputs = document.querySelectorAll(
+        ".input-group input, .input-group textarea",
+      );
+
+      inputs.forEach((input) => {
+        input.addEventListener("input", () => {
+          gsap.to(".bar-fill", {
+            width: `${Math.floor(Math.random() * (99 - 85 + 1) + 85)}%`,
+            duration: 0.3,
+            ease: "power2.out",
+          });
+        });
+      });
+    </script>
+
+    <!-- 3 , 4 -->
+
+    <script>
+      // --- GSAP REVEAL LOGIC ---
+      document.addEventListener("DOMContentLoaded", () => {
+        // Reveal Info Nodes
+        gsap.to(".gsap-info-reveal", {
+          scrollTrigger: {
+            trigger: ".contact-info-grid",
+            start: "top 85%",
+          },
+          opacity: 1,
+          y: 0,
+          stagger: 0.2,
+          duration: 1,
+          ease: "power3.out",
+        });
+
+        // Reveal Map Badge
+        gsap.to(".gsap-map-reveal", {
+          scrollTrigger: {
+            trigger: ".map-section",
+            start: "top 80%",
+          },
+          opacity: 1,
+          duration: 1.5,
+          ease: "expo.out",
+        });
+      });
+
+      // --- INTERACTIVE FUNCTION ---
+      function openMapLocation() {
+        // This could trigger a custom light-box or a new tab
+        window.open("https://goo.gl/maps/xyz", "_blank");
+      }
+    </script>
+
+    <!-- section header -->
+    <script>
+      // Ensure ScrollTrigger is registered
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Initialize Header Animations
+      const revealHeaders = () => {
+        // Select all elements with the reveal class
+        const revealElements = document.querySelectorAll(
+          ".section-header .gsap-reveal-text",
+        );
+
+        gsap.to(revealElements, {
+          opacity: 1,
+          y: 0, // Slides to original position
+          duration: 1.2,
+          stagger: 0.2, // Delays each element slightly for a "waterfall" effect
+          ease: "power4.out",
+          scrollTrigger: {
+            trigger: ".section-header", // The container that starts the animation
+            start: "top 85%", // Starts when header is near the bottom of screen
+            toggleActions: "play none none none",
+          },
+          // We set the starting Y position here so it doesn't jump in the HTML
+          onStart: function () {
+            gsap.set(revealElements, { y: 40 });
+          },
+        });
+      };
+
+      // Run after DOM is fully loaded
+      window.addEventListener("DOMContentLoaded", revealHeaders);
+    </script>
+  </body>
+</html>

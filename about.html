@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Services</title>
+    <link rel="stylesheet" href="./about.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./Assets/logo.webp" alt="" />
+        </a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="./index.html" class="active-page">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="div">
+        <div class="div">
+          <a href="./login.html">
+            <button class="btn">Login</button>
+          </a>
+        </div>
+        <div class="menu-icon" id="menu-trigger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <!-- <div class="sidebar-logo">STACKLY<span>.</span></div> -->
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./Assets/logo.webp" alt="" />
+          </a>
+        </div>
+
+        <div class="close-icon" id="close-trigger">&times;</div>
+      </div>
+      <ul class="side-links">
+        <li class="side-item">
+          <a href="./index.html">Home</a>
+        </li>
+        <li class="side-item"><a href="./about.html">About</a></li>
+        <li class="side-item"><a href="./services.html">Services</a></li>
+        <li class="side-item"><a href="./blog.html">Blog</a></li>
+        <li class="side-item"><a href="./contact.html">Contact</a></li>
+        <li class="side-item"><a href="./login.html">Login</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <!-- <button class="side-log-btn">Open An Account</button> -->
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <section class="hero-vortex">
+      <div class="vortex-overlay"></div>
+
+      <div class="hero-main-wrapper">
+        <div class="hero-inner">
+          <div class="badge-wrapper gsap-vortex-reveal">
+            <span class="modern-badge">The Future of Innovation</span>
+          </div>
+
+          <h1 class="gsap-vortex-reveal">
+            Driving the Future with <br />
+            <span class="text-glow">Artificial Intelligence</span>
+          </h1>
+
+          <p class="gsap-vortex-reveal">
+            We help businesses innovate, automate, and scale using <br />
+            proprietary advanced AI technologies.
+          </p>
+
+          <div class="btn-group gsap-vortex-reveal">
+            <a href="./error.html">
+              <button class="btn-primary shimmer">Explore Services</button>
+            </a>
+            <a href="./error.html">
+              <button class="btn-secondary">Learn More</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="story-timeline">
+      <div class="section-header" style="opacity: 1;"> <!-- Parent stays visible to trigger scroll -->
+    <div class="header-badge gsap-reveal-text">Our Journey</div>
+    <h2 class="gsap-reveal-text" >Evolving with Intelligence</h2>
+    <div class="header-line gsap-reveal-text"></div>
+    <p class="gsap-reveal-text" >
+        From a visionary startup to a global leader in AI architecture.
+    </p>
+</div>
+
+      <div class="timeline-container">
+        <div class="timeline-line">
+          <div class="timeline-progress"></div>
+        </div>
+
+        <div class="timeline-item left gsap-timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="year">2021</span>
+            <h3>The Genesis</h3>
+            <p>
+              Founded with a vision to make AI accessible, starting as a small
+              team of innovators in a digital lab.
+            </p>
+            <div class="timeline-img">
+              <img
+                src="./Assets/tl1_11zon_11zon.webp"
+                alt="Founded"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item right gsap-timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="year">2022</span>
+            <h3>Momentum</h3>
+            <p>
+              Achieved our first 100 enterprise clients, proving the scalability
+              of our neural architectures.
+            </p>
+            <div class="timeline-img">
+              <img
+                src="./Assets/tl2_11zon_11zon.webp"
+                alt="Global"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item left gsap-timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="year">2024</span>
+            <h3>Global Reach</h3>
+            <p>
+              Expansion into international markets, establishing hubs in London,
+              Singapore, and New York.
+            </p>
+            <div class="timeline-img">
+              <img
+                src="./Assets/tl3_11zon_11zon.webp"
+                alt="Global"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item right gsap-timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="year">2026</span>
+            <h3>The Future</h3>
+            <p>
+              Official launch of our proprietary AI Platform, a unified
+              dashboard for global scaling.
+            </p>
+            <div class="timeline-img">
+              <img
+                src="./Assets/tl4_11zon_11zon.webp"
+                alt="Global"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission-vision">
+    <div class="section-header">
+        <div class="header-badge gsap-reveal-text">Our Core</div>
+        <h2 class="gsap-reveal-text">Philosophy & Purpose</h2>
+        <div class="header-line gsap-reveal-text"></div>
+    </div>
+
+    <div class="mission-container">
+        <!-- Mission Card -->
+        <div class="glass-card gsap-mission" style="opacity: 0;">
+            <div class="card-icon">🎯</div>
+            <h3>Mission</h3>
+            <p>To simplify complex processes through intelligent automation, turning data into actionable intelligence for everyone.</p>
+            <!-- <div class="card-glow"></div> -->
+        </div>
+
+        <!-- Vision Card -->
+        <div class="glass-card gsap-vision" style="opacity: 0;">
+            <div class="card-icon">👁️</div>
+            <h3>Vision</h3>
+            <p>To create a future where AI empowers every business, fostering a world of limitless innovation and shared human potential.</p>
+            <!-- <div class="card-glow"></div> -->
+        </div>
+    </div>
+</section>
+
+<section class="our-team">
+    <div class="section-header">
+        <div class="header-badge gsap-reveal-text">Founding Team</div>
+        <h2 class="gsap-reveal-text">Architects of Intelligence</h2>
+        <div class="header-line gsap-reveal-text"></div>
+        <p class="gsap-reveal-text">Meet our team of AI engineers, data scientists, and creative thinkers building the future.</p>
+    </div>
+
+    <div class="team-grid">
+        <!-- Member 1 -->
+        <div class="team-member gsap-team" style="opacity: 0;">
+            <div class="avatar-wrapper">
+                <img src="./Assets/t1.webp" alt="Team">
+                <div class="member-overlay">
+                    <span>AI Engineer</span>
+                </div>
+            </div>
+            <h4>Alex Rivera</h4>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-member gsap-team" style="opacity: 0;">
+            <div class="avatar-wrapper">
+                <img src="./Assets/t3.webp" alt="Team">
+                <div class="member-overlay">
+                    <span>Data Scientist</span>
+                </div>
+            </div>
+            <h4>Sarah Chen</h4>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-member gsap-team" style="opacity: 0;">
+            <div class="avatar-wrapper">
+                <img src="./Assets/t4.webp" alt="Team">
+                <div class="member-overlay">
+                    <span>Product Designer</span>
+                </div>
+            </div>
+            <h4>Jordan Hayes</h4>
+        </div>
+    </div>
+</section>
+
+<section class="tech-stack">
+    <div class="section-header">
+        <div class="header-badge gsap-reveal-text">Our Ecosystem</div>
+        <h2 class="gsap-reveal-text">Powered by Modern Intelligence</h2>
+        <div class="header-line gsap-reveal-text"></div>
+        <p class="gsap-reveal-text">
+            We use cutting-edge tools and frameworks to deliver powerful, 
+            enterprise-grade AI solutions across every industry.
+        </p>
+    </div>
+
+    <div class="tech-grid">
+        <div class="tech-item gsap-tech-item" style="opacity: 0;">
+            <div class="tech-icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                <div class="tech-glow"></div>
+            </div>
+            <span>Python</span>
+        </div>
+
+        <div class="tech-item gsap-tech-item" style="opacity: 0;">
+            <div class="tech-icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow">
+                <div class="tech-glow"></div>
+            </div>
+            <span>TensorFlow</span>
+        </div>
+
+        <div class="tech-item gsap-tech-item" style="opacity: 0;">
+            <div class="tech-icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch">
+                <div class="tech-glow"></div>
+            </div>
+            <span>PyTorch</span>
+        </div>
+
+        <div class="tech-item gsap-tech-item" style="opacity: 0;">
+            <div class="tech-icon-box">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Cloud AI">
+                <div class="tech-glow"></div>
+            </div>
+            <span>Cloud AI APIs</span>
+        </div>
+    </div>
+</section>
+
+  <section class="achievements-section">
+    <div class="section-header">
+        <div class="header-badge gsap-reveal-text" style="opacity: 0;">Milestones</div>
+        <h2 class="gsap-reveal-text" style="opacity: 0;">Proven Excellence in AI</h2>
+        <div class="header-line gsap-reveal-text" style="opacity: 0;"></div>
+        <p class="gsap-reveal-text" style="opacity: 0;">
+            Our dedication to precision and innovation has earned us global recognition 
+            and a track record of transformative results.
+        </p>
+    </div>
+
+    <div class="achievements-container">
+        <div class="achievement-card gsap-achieve-item" style="opacity: 0;">
+            <div class="hex-bg">
+                <div class="count-wrapper">
+                    <span class="counter" data-target="500">0</span><span class="suffix">+</span>
+                </div>
+            </div>
+            <div class="achievement-info">
+                <h3>Projects Delivered</h3>
+                <p>Deploying advanced neural architectures across healthcare, finance, and logistics.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card gsap-achieve-item" style="opacity: 0;">
+            <div class="hex-bg">
+                <div class="count-wrapper">
+                    <span class="counter" data-target="200">0</span><span class="suffix">+</span>
+                </div>
+            </div>
+            <div class="achievement-info">
+                <h3>Global Clients</h3>
+                <p>Trusted by Fortune 500 companies and visionary startups in 30+ countries.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card gsap-achieve-item" style="opacity: 0;">
+            <div class="hex-bg">
+                <div class="award-icon">🏆</div>
+            </div>
+            <div class="achievement-info">
+                <h3>Industry Awards</h3>
+                <p>Recognized for "Best Medical AI Implementation" and "Innovation of the Year" 2025.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer class="premium-footer">
+      <div class="footer-upper">
+        <div class="footer-col brand-col">
+          <div class="logo footer-logo">
+            <a href="./index.html">
+              <img src="./Assets/logo.webp" alt="Nova AI Logo" />
+            </a>
+          </div>
+          <p class="brand-brief">
+            Advancing the frontier of autonomous finance. We integrate
+            medical-grade neural networks with high-frequency fiscal
+            intelligence to deliver the world's most precise AI banking
+            ecosystem.
+          </p>
+          <div class="footer-socials">
+            <a href="./error.html"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="./about.html">About </a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./login.html">Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Autonomous Services</h4>
+          <ul class="footer-links">
+            <li><a href="./error.html">Predictive Wealth Engines</a></li>
+            <li><a href="./error.html">Algorithmic Arbitrage</a></li>
+            <li><a href="./error.html">Deep Learning Risk Audit</a></li>
+            <li><a href="./error.html">Smart Contract Synthesis</a></li>
+            <li><a href="./error.html">Automated Treasury</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4 class="footer-title">Network Status</h4>
+          <p class="small-text">
+            Synchronize with our latest model deployments.
+          </p>
+          <form class="footer-subscribe" action="./error.html">
+            <input type="email" placeholder="Email Address" />
+            <button><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+          <div class="contact-info">
+            <span><i class="fa-solid fa-phone"></i>+912345678</span>
+            <span><i class="fa-solid fa-envelope"></i>support@stackly.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-container">
+          <div class="divider-line"></div>
+          <div class="bottom-flex">
+            <p class="copyright">
+              &copy; 2026 Stackly-AI Services. All Rights Reserved.
+            </p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- footer -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.from(".footer-col", {
+          scrollTrigger: {
+            trigger: ".premium-footer",
+            start: "top 90%",
+          },
+          opacity: 0,
+          y: 40,
+          stagger: 0.15,
+          duration: 1,
+          ease: "power2.out",
+        });
+
+        // Fade in the bottom bar divider
+        gsap.from(".divider-line", {
+          scrollTrigger: ".footer-bottom",
+          opacity: 0,
+          duration: 2,
+          ease: "power4.inOut",
+        });
+      });
+    </script>
+
+    <!-- hero -->
+
+    <script>
+      window.addEventListener("load", () => {
+        const tl = gsap.timeline();
+
+        // The Reveal: Scaling up while fading in
+        tl.from(".gsap-vortex-reveal", {
+          y: 50,
+          scale: 0.9,
+          filter: "blur(10px)",
+          opacity: 0,
+          duration: 1.5,
+          stagger: 0.2,
+          ease: "expo.out",
+        });
+
+        // Subtle Breathing Background Animation
+        gsap.to(".mesh-gradient", {
+          scale: 1.1,
+          duration: 8,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+      });
+    </script>
+
+    <!-- 2 -->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      window.addEventListener("load", () => {
+        // 1. Draw the Timeline Line on Scroll
+        gsap.to(".timeline-progress", {
+          height: "100%",
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".timeline-container",
+            start: "top 20%",
+            end: "bottom 80%",
+            scrub: 1,
+          },
+        });
+
+        // 2. SHARP REVEAL (No Blur)
+        const items = document.querySelectorAll(".gsap-timeline-item");
+
+        items.forEach((item) => {
+          gsap.fromTo(
+            item,
+            {
+              opacity: 0,
+              y: 40,
+              scale: 0.95,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.8,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: item,
+                start: "top 85%",
+                toggleActions: "play none none reverse",
+              },
+            },
+          );
+        });
+      });
+    </script>
+
+    <script>
+      // Ensure ScrollTrigger is registered
+gsap.registerPlugin(ScrollTrigger);
+
+// Initialize Header Animations
+const revealHeaders = () => {
+    // Select all elements with the reveal class
+    const revealElements = document.querySelectorAll('.section-header .gsap-reveal-text');
+
+    gsap.to(revealElements, {
+        opacity: 1,
+        y: 0,            // Slides to original position
+        duration: 1.2,
+        stagger: 0.2,    // Delays each element slightly for a "waterfall" effect
+        ease: "power4.out",
+        scrollTrigger: {
+            trigger: ".section-header", // The container that starts the animation
+            start: "top 85%",           // Starts when header is near the bottom of screen
+            toggleActions: "play none none none"
+        },
+        // We set the starting Y position here so it doesn't jump in the HTML
+        onStart: function() {
+            gsap.set(revealElements, { y: 40 });
+        }
+    });
+};
+
+// Run after DOM is fully loaded
+window.addEventListener('DOMContentLoaded', revealHeaders);
+    </script>
+
+    <!-- 3 -->
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener('load', () => {
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".mission-container",
+            start: "top 80%"
+        }
+    });
+
+    tl.to(".gsap-mission", { opacity: 1, x: 0, duration: 1, ease: "power4.out", onStart: () => gsap.set(".gsap-mission", {x: -100}) })
+      .to(".gsap-vision", { opacity: 1, x: 0, duration: 1, ease: "power4.out", onStart: () => gsap.set(".gsap-vision", {x: 100}) }, "-=0.7");
+});
+    </script>
+
+    <!-- 4: Our Team -->
+     <script>
+      gsap.to(".gsap-team", {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: ".team-grid",
+        start: "top 85%"
+    },
+    onStart: () => gsap.set(".gsap-team", {y: 50})
+});
+     </script>
+
+     <!-- 5 -->
+
+     <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener('load', () => {
+    // 1. ENTRANCE ANIMATION
+    gsap.to(".gsap-tech-item", {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        duration: 1,
+        stagger: 0.15,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+            trigger: ".tech-grid",
+            start: "top 85%",
+        },
+        onStart: () => {
+            gsap.set(".gsap-tech-item", { opacity: 0, scale: 0.5, y: 50 });
+        }
+    });
+
+    // 2. IDLE FLOATING ANIMATION (Looping)
+    const items = document.querySelectorAll('.tech-icon-box');
+    
+    items.forEach((item, index) => {
+        gsap.to(item, {
+            y: "-=15",
+            duration: 2 + (index * 0.2), // Different speeds for organic feel
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            delay: index * 0.1
+        });
+    });
+});
+     </script>
+
+     <!-- 6 -->
+      <script>
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener('load', () => {
+    // 1. Entrance Stagger
+    gsap.to(".gsap-achieve-item", {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        stagger: 0.3,
+        ease: "power4.out",
+        scrollTrigger: {
+            trigger: ".achievements-container",
+            start: "top 80%"
+        },
+        onStart: () => {
+            gsap.set(".gsap-achieve-item", { y: 60 });
+        }
+    });
+
+    // 2. Counter Animation Function
+    const counters = document.querySelectorAll('.counter');
+    
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        
+        gsap.to(counter, {
+            innerText: target,
+            duration: 3,
+            snap: { innerText: 1 }, // Ensures whole numbers only
+            scrollTrigger: {
+                trigger: counter,
+                start: "top 90%"
+            },
+            onUpdate: function() {
+                // Optional: add commas if numbers go over 1000
+                counter.innerHTML = Math.ceil(this.targets()[0].innerText);
+            }
+        });
+    });
+});
+      </script>
+  </body>
+</html>

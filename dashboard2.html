@@ -1,0 +1,1941 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Services</title>
+    <link rel="icon" href="./Assets/icon.webp" />
+    <link rel="stylesheet" href="./dashboard2.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body class="dashboard-body">
+    <div class="dashboard-layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+          <div class="logo-wrap">
+            <a href="./index.html">
+              <img src="./Assets/logo.webp" alt="AI Core Admin" class="logo" />
+            </a>
+          </div>
+          <button class="close-sidebar" id="close-sidebar">
+            <span class="material-icons" style="color: gray">
+              <i class="fa-solid fa-xmark"></i>
+            </span>
+          </button>
+        </div>
+
+        <div
+          class="patient-id-badge"
+          style="
+            background: rgba(32, 146, 192, 0.1);
+            border-left: 3px solid rgb(120, 2, 120);
+          "
+        >
+          <span class="material-icons" style="color: rgb(120, 2, 120)">
+            <i class="fa-solid fa-microchip"></i>
+          </span>
+          <div>
+            <p class="label">System Cluster</p>
+            <p class="value">NEURAL-CORE-PRO-V4</p>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav">
+          <p class="nav-section-title">Inference & Model Ops</p>
+
+          <button class="sidebar-link active" data-target="view-models">
+            <span class="material-icons">
+              <i class="fa-solid fa-brain"></i>
+            </span>
+            Model Registry
+          </button>
+
+          <button class="sidebar-link" data-target="view-training">
+            <span class="material-icons">
+              <i class="fa-solid fa-gears"></i>
+            </span>
+            Training & Fine-Tuning
+          </button>
+
+          <button class="sidebar-link" data-target="view-datasets">
+            <span class="material-icons">
+              <i class="fa-solid fa-database"></i>
+            </span>
+            Knowledge & Datasets
+          </button>
+
+          <button class="sidebar-link" data-target="view-deployment">
+            <span class="material-icons">
+              <i class="fa-solid fa-server"></i>
+            </span>
+            Endpoint Deployment
+          </button>
+
+          <button class="sidebar-link" data-target="view-compliance">
+            <span class="material-icons">
+              <i class="fa-solid fa-shield-halved"></i>
+            </span>
+            Safety & Ethics Audit
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <a href="index.html" class="sidebar-link logout-link">
+            <span class="material-icons">
+              <i class="fa-solid fa-house"></i>
+            </span>
+            Main Console
+          </a>
+          <a
+            href="login.html"
+            class="sidebar-link logout-link"
+            style="color: #ff4d4d"
+          >
+            <span class="material-icons">
+              <i class="fa-solid fa-power-off"></i>
+            </span>
+            Terminate Session
+          </a>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="top-header">
+          <div class="header-left">
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+              <span class="material-icons" style="color: rgb(120, 2, 120)">
+                <i class="fa-solid fa-bars"></i>
+              </span>
+            </button>
+            <div>
+              <h1 id="greeting" style="color: #f8fafc">AI Command: Michael</h1>
+              <p class="subtitle" style="color: var(--text-muted)">
+                Lead Neural Systems Architect
+              </p>
+            </div>
+          </div>
+
+          <div class="header-right">
+            <div style="display: flex; align-items: center; gap: 5px">
+              <div
+                class="status-monitor"
+                style="text-align: right; display: block"
+              >
+                <p
+                  style="
+                    font-size: 0.7rem;
+                    color: var(--text-muted);
+                    text-transform: uppercase;
+                    margin-bottom: 2px;
+                  "
+                >
+                  Inference Latency
+                </p>
+                <p
+                  style="
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    color: rgb(120, 2, 120);
+                  "
+                >
+                  14ms (Optimal)
+                </p>
+              </div>
+
+              <button
+                onclick="window.location.href = './alerts.html'"
+                class="icon-btn"
+                style="
+                  position: relative;
+                  background: none;
+                  border: none;
+                  cursor: pointer;
+                "
+              >
+                <span class="material-icons" style="color: #f8fafc">
+                  <i class="fa-solid fa-shield-virus"></i>
+                </span>
+                <span
+                  class="notification-dot"
+                  style="
+                    position: absolute;
+                    top: -2px;
+                    right: -2px;
+                    width: 8px;
+                    height: 8px;
+                    background: #8b0000;
+                    border-radius: 50%;
+                    border: 1px solid #000;
+                  "
+                ></span>
+              </button>
+            </div>
+
+            <div class="profile-menu-wrap" style="position: relative">
+              <div
+                class="user-avatar"
+                id="profile-avatar"
+                style="
+                  cursor: pointer;
+                  background: rgb(120, 2, 120);
+                  color: white;
+                  font-weight: bold;
+                  border: 2px solid rgba(255, 255, 255, 0.1);
+                "
+              >
+                MR
+              </div>
+
+              <div class="profile-dropdown glass-card" id="profile-dropdown">
+                <div class="profile-dropdown-header">
+                  <p class="text-muted text-sm">Operator Identity</p>
+                  <h4
+                    id="dropdown-email"
+                    style="
+                      word-break: break-all;
+                      margin-top: 4px;
+                      color: var(--text-muted);
+                    "
+                  >
+                    m.ross@stackly.ai.int
+                  </h4>
+                </div>
+                <hr
+                  class="divider"
+                  style="margin: 12px 0; border-color: rgba(255, 255, 255, 0.1)"
+                />
+
+                <a href="./error.html">
+                  <button
+                    class="sidebar-link"
+                    style="margin: 0; padding: 10px; width: 100%"
+                  >
+                    <span class="material-icons" style="font-size: 1.1rem">
+                      <i class="fa-solid fa-microchip"></i>
+                    </span>
+                    Cluster Permissions
+                  </button>
+                </a>
+
+                <button
+                  class="sidebar-link logout-link"
+                  onclick="
+                    sessionStorage.clear();
+                    window.location.href = 'login.html';
+                  "
+                  style="margin: 0; padding: 10px; width: 100%; color: #ff4d4d"
+                >
+                  <span class="material-icons" style="font-size: 1.1rem">
+                    <i class="fa-solid fa-power-off"></i>
+                  </span>
+                  Terminate Session
+                </button>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="dashboard-content">
+          <section id="view-models" class="content-view active-view">
+            <div class="overview-grid">
+              <div class="glass-card">
+                <div class="card-header">
+                  <h4 class="text-muted text-sm">Aggregate Model Accuracy</h4>
+                  <span class="material-icons" style="color: rgb(120, 2, 120)">
+                    <i class="fa-solid fa-brain"></i>
+                  </span>
+                </div>
+                <h2 class="mt-2">98.42%</h2>
+                <p class="text-sm mt-1" style="color: rgb(120, 2, 120)">
+                  <i class="fa-solid fa-arrow-trend-up"></i> +0.12%
+                  <span class="text-muted">vs v3.5 Baseline</span>
+                </p>
+              </div>
+
+              <div class="glass-card">
+                <div class="card-header">
+                  <h4 class="text-muted text-sm">Total Active Parameters</h4>
+                  <span class="material-icons" style="color: rgb(120, 2, 120)">
+                    <i class="fa-solid fa-network-wired"></i>
+                  </span>
+                </div>
+                <h2 class="mt-2">175B</h2>
+                <p class="text-sm mt-1">
+                  <span class="text-muted">Compute Load: </span> 64.2%
+                </p>
+              </div>
+
+              <div class="glass-card">
+                <div class="card-header">
+                  <h4 class="text-muted text-sm">Safety Alignment Score</h4>
+                  <span class="material-icons" style="color: #f5c518">
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </span>
+                </div>
+                <h2 class="mt-2">99.1%</h2>
+                <p class="text-sm mt-1" style="color: rgb(120, 2, 120)">
+                  RLHF Compliant <i class="fa-solid fa-circle-check"></i>
+                </p>
+              </div>
+            </div>
+
+            <div class="grid-2-col mt-4">
+              <div class="glass-card">
+                <div class="section-header">
+                  <h3>Deployment Pipeline Status</h3>
+                  <span
+                    class="badge"
+                    style="
+                      background: rgba(32, 146, 192, 0.1);
+                      color: rgb(120, 2, 120);
+                    "
+                    >Real-time</span
+                  >
+                </div>
+                <div class="funnel-container mt-4">
+                  <div
+                    class="funnel-step"
+                    style="
+                      width: 100%;
+                      background: rgba(32, 146, 192, 0.2);
+                      border-left: 4px solid rgb(120, 2, 120);
+                      padding: 12px;
+                      margin-bottom: 8px;
+                      border-radius: 4px;
+                    "
+                  >
+                    <div style="display: flex; justify-content: space-between">
+                      <span>Data Ingestion (TB)</span>
+                      <strong>4,240</strong>
+                    </div>
+                  </div>
+                  <div
+                    class="funnel-step"
+                    style="
+                      width: 70%;
+                      background: rgba(32, 146, 192, 0.15);
+                      border-left: 4px solid rgb(120, 2, 120);
+                      padding: 12px;
+                      margin-bottom: 8px;
+                      border-radius: 4px;
+                    "
+                  >
+                    <div style="display: flex; justify-content: space-between">
+                      <span>Pre-training Epochs</span>
+                      <strong>868</strong>
+                    </div>
+                  </div>
+                  <div
+                    class="funnel-step"
+                    style="
+                      width: 45%;
+                      background: rgba(32, 146, 192, 0.1);
+                      border-left: 4px solid rgb(120, 2, 120);
+                      padding: 12px;
+                      margin-bottom: 8px;
+                      border-radius: 4px;
+                    "
+                  >
+                    <div style="display: flex; justify-content: space-between">
+                      <span>Fine-Tuning Evaluated</span>
+                      <strong>390</strong>
+                    </div>
+                  </div>
+                  <div
+                    class="funnel-step"
+                    style="
+                      width: 25%;
+                      background: rgba(32, 146, 192, 0.05);
+                      border-left: 4px solid rgb(120, 2, 120);
+                      padding: 12px;
+                      border-radius: 4px;
+                    "
+                  >
+                    <div style="display: flex; justify-content: space-between">
+                      <span>Production Deployed</span>
+                      <strong>312</strong>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-muted text-sm mt-3">
+                  Overall Model Pass Rate: <strong>82.16%</strong>
+                </p>
+              </div>
+
+              <div class="glass-card">
+                <h3>Cluster Resource Allocation</h3>
+                <div class="vitals-list mt-4">
+                  <div class="vital-item">
+                    <span class="vital-label">NLP Processing</span>
+                    <div style="display: flex; align-items: center; gap: 10px">
+                      <div
+                        style="
+                          width: 100px;
+                          height: 8px;
+                          background: #333;
+                          border-radius: 4px;
+                          overflow: hidden;
+                        "
+                      >
+                        <div
+                          style="
+                            width: 55%;
+                            height: 100%;
+                            background: rgb(120, 2, 120);
+                          "
+                        ></div>
+                      </div>
+                      <span class="vital-value">55%</span>
+                    </div>
+                  </div>
+                  <div class="vital-item">
+                    <span class="vital-label">Computer Vision</span>
+                    <div style="display: flex; align-items: center; gap: 10px">
+                      <div
+                        style="
+                          width: 100px;
+                          height: 8px;
+                          background: #333;
+                          border-radius: 4px;
+                          overflow: hidden;
+                        "
+                      >
+                        <div
+                          style="
+                            width: 25%;
+                            height: 100%;
+                            background: rgb(120, 2, 120);
+                          "
+                        ></div>
+                      </div>
+                      <span class="vital-value">25%</span>
+                    </div>
+                  </div>
+                  <div class="vital-item">
+                    <span class="vital-label">Predictive Analytics</span>
+                    <div style="display: flex; align-items: center; gap: 10px">
+                      <div
+                        style="
+                          width: 100px;
+                          height: 8px;
+                          background: #333;
+                          border-radius: 4px;
+                          overflow: hidden;
+                        "
+                      >
+                        <div
+                          style="
+                            width: 20%;
+                            height: 100%;
+                            background: rgb(120, 2, 120);
+                          "
+                        ></div>
+                      </div>
+                      <span class="vital-value">20%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <div class="section-header">
+                <h3>Live Model Instances</h3>
+                <a href="./error.html">
+                  <button class="btn-outline btn-sm">
+                    Generate System Audit
+                  </button>
+                </a>
+              </div>
+              <div class="data-table-wrapper">
+                <table class="clinical-table">
+                  <thead>
+                    <tr>
+                      <th>Model ID</th>
+                      <th>Type</th>
+                      <th>Context Window</th>
+                      <th>Health Status</th>
+                      <th>Token Usage</th>
+                      <th>Sync Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Nexus-LLM-v4</strong></td>
+                      <td>Transformer</td>
+                      <td>128k</td>
+                      <td>
+                        <div
+                          style="display: flex; align-items: center; gap: 5px"
+                        >
+                          <div
+                            style="width: 50px; height: 4px; background: #333"
+                          >
+                            <div
+                              style="
+                                width: 95%;
+                                height: 100%;
+                                background: rgb(120, 2, 120);
+                              "
+                            ></div>
+                          </div>
+                          <small>Healthy</small>
+                        </div>
+                      </td>
+                      <td>82%</td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(32, 146, 192, 0.1);
+                            color: rgb(120, 2, 120);
+                          "
+                          >Primary</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Vision-Core-Beta</strong></td>
+                      <td>CNN / ViT</td>
+                      <td>N/A</td>
+                      <td>
+                        <div
+                          style="display: flex; align-items: center; gap: 5px"
+                        >
+                          <div
+                            style="width: 50px; height: 4px; background: #333"
+                          >
+                            <div
+                              style="
+                                width: 40%;
+                                height: 100%;
+                                background: #f5c518;
+                              "
+                            ></div>
+                          </div>
+                          <small>Degraded</small>
+                        </div>
+                      </td>
+                      <td>14%</td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(245, 197, 24, 0.1);
+                            color: #f5c518;
+                          "
+                          >Calibrating</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-training" class="content-view active-view">
+            <div class="section-header">
+              <div>
+                <h2
+                  style="margin-bottom: 10px; color: #f8fafc; margin-top: 15px"
+                >
+                  Neural Training & Fine-Tuning Telemetry
+                </h2>
+                <p class="text-muted">
+                  Real-time loss convergence, gradient health, and distributed
+                  cluster compute efficiency.
+                </p>
+              </div>
+              <form class="search-box" action="./error.html">
+                <span class="material-icons" style="color: rgb(120, 2, 120)">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input
+                  type="text"
+                  placeholder="Search Job ID or Model Branch (e.g. LLM-FT-7B)..."
+                />
+              </form>
+            </div>
+
+            <div class="data-table-wrapper glass-card">
+              <table class="clinical-table">
+                <thead>
+                  <tr>
+                    <th>Timestamp</th>
+                    <th>Compute Node</th>
+                    <th>Primary KPI</th>
+                    <th>Metric Value</th>
+                    <th>Convergence Goal</th>
+                    <th>Job Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Apr 08, 14:15</td>
+                    <td><strong>H100-CLUSTER-NY</strong></td>
+                    <td>Gradient Norm</td>
+                    <td style="color: #f5c518">
+                      2.85
+                      <span class="material-icons" style="font-size: 1rem">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                      </span>
+                    </td>
+                    <td class="text-muted">&lt; 1.00</td>
+                    <td>
+                      <span
+                        class="badge"
+                        style="
+                          background: rgba(245, 197, 24, 0.1);
+                          color: #f5c518;
+                        "
+                        >Exploding</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        onclick="window.location.href = './error.html'"
+                        class="btn-outline btn-sm"
+                      >
+                        CLIP GRAD
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Apr 08, 14:10</td>
+                    <td><strong>A100-EU-FRA-1</strong></td>
+                    <td>Validation Loss</td>
+                    <td style="color: rgb(120, 2, 120)">
+                      0.1124
+                      <span class="material-icons" style="font-size: 1rem">
+                        <i class="fa-solid fa-check"></i>
+                      </span>
+                    </td>
+                    <td class="text-muted">&lt; 0.1500</td>
+                    <td>
+                      <span
+                        class="badge"
+                        style="
+                          background: rgba(32, 146, 192, 0.1);
+                          color: rgb(120, 2, 120);
+                        "
+                        >Optimal</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        onclick="window.location.href = './error.html'"
+                        class="btn-outline btn-sm"
+                      >
+                        CHECKPOINT
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Apr 08, 14:05</td>
+                    <td><strong>TPU-APAC-HK</strong></td>
+                    <td>Throughput</td>
+                    <td style="color: #f8fafc">24.2k tps</td>
+                    <td class="text-muted">&gt; 18.0k tps</td>
+                    <td>
+                      <span
+                        class="badge"
+                        style="
+                          background: rgba(32, 146, 192, 0.1);
+                          color: rgb(120, 2, 120);
+                        "
+                        >High Velocity</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        onclick="window.location.href = './error.html'"
+                        class="btn-outline btn-sm"
+                      >
+                        SCALE
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="mt-4 mb-4" style="color: #f8fafc">
+              Dataset & Weights Governance
+            </h3>
+            <div class="grid-2-col">
+              <div
+                class="consent-item glass-card"
+                style="justify-content: space-between"
+              >
+                <div style="display: flex; gap: 16px; align-items: center">
+                  <span
+                    class="material-icons file-icon"
+                    style="color: rgb(120, 2, 120); margin: 0"
+                  >
+                    <i class="fa-solid fa-database"></i>
+                  </span>
+                  <div>
+                    <h4 style="color: #f8fafc">
+                      Financial Corpus v4.2 (Cleaned)
+                    </h4>
+                    <p class="text-muted text-sm">8.2B Tokens • JSONL</p>
+                  </div>
+                </div>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn-small"
+                >
+                  <span class="material-icons">
+                    <i class="fa-solid fa-download"></i>
+                  </span>
+                </button>
+              </div>
+              <div
+                class="consent-item glass-card"
+                style="justify-content: space-between"
+              >
+                <div style="display: flex; gap: 16px; align-items: center">
+                  <span
+                    class="material-icons file-icon"
+                    style="color: #8b0000; margin: 0"
+                  >
+                    <i class="fa-solid fa-microchip"></i>
+                  </span>
+                  <div>
+                    <h4 style="color: #f8fafc">Quantization Config (INT8)</h4>
+                    <p class="text-muted text-sm">
+                      Hardware Acceleration Profile
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn-small"
+                >
+                  <span class="material-icons">
+                    <i class="fa-solid fa-download"></i>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <h3>Scheduled Weight Merges</h3>
+              <p class="text-muted mb-3">
+                Upcoming LoRA adapter merges and scheduled pruning for edge
+                deployment.
+              </p>
+              <div class="data-table-wrapper">
+                <table class="clinical-table">
+                  <thead>
+                    <tr>
+                      <th>Operation ID</th>
+                      <th>Merge Date</th>
+                      <th>Stage</th>
+                      <th>Est. Latency Impact</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#OP-992-MERGE</strong></td>
+                      <td>Apr 09, 2026</td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(32, 146, 192, 0.1);
+                            color: rgb(120, 2, 120);
+                          "
+                        >
+                          Verification Pending
+                        </span>
+                      </td>
+                      <td class="text-muted">-12ms (Target)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div
+              class="glass-card mt-4"
+              style="border-left: 4px solid rgb(120, 2, 120)"
+            >
+              <div class="section-header">
+                <h3>Global Convergence Map (Loss/Epoch)</h3>
+                <span class="text-muted text-sm"
+                  >Distributed Ledger Live Graph</span
+                >
+              </div>
+              <div
+                style="
+                  width: 100%;
+                  height: 250px;
+                  background: rgba(32, 146, 192, 0.02);
+                  border-radius: 8px;
+                  border: 1px dashed rgba(32, 146, 192, 0.2);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-direction: column;
+                "
+              >
+                <span
+                  class="material-icons"
+                  style="font-size: 3rem; color: #1e3a8a"
+                >
+                  <i class="fa-solid fa-bolt-lightning"></i>
+                </span>
+                <p class="text-muted mt-2">
+                  Compute Engine (CE) Training Step Visualization
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-datasets" class="content-view active-view">
+            <h2 style="margin-bottom: 10px; color: #f8fafc; margin-top: 15px">
+              Knowledge Infrastructure & Neural Datasets
+            </h2>
+            <p class="text-muted mb-4">
+              Manage high-fidelity training corpuses, monitor vector database
+              ingestion, and supervise institutional knowledge graph expansions.
+            </p>
+
+            <div class="grid-2-col">
+              <div class="timeline glass-card">
+                <h3>Data Ingestion & Versioning Timeline</h3>
+                <hr class="divider" style="opacity: 0.1; margin: 15px 0" />
+                <div class="timeline-item mt-4">
+                  <div
+                    class="timeline-marker active-marker"
+                    style="
+                      background: rgb(120, 2, 120);
+                      box-shadow: 0 0 10px rgb(120, 2, 120);
+                    "
+                  ></div>
+                  <div class="timeline-content">
+                    <h4 style="color: rgb(120, 2, 120)">
+                      Vector Store Synchronization
+                    </h4>
+                    <h3>Quarterly Knowledge Refresh</h3>
+                    <p class="text-muted">
+                      Indexing 450M new financial records into the
+                      Pinecone/Milvus cluster. Expect temporary latency in RAG
+                      (Retrieval-Augmented Generation) queries.
+                    </p>
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="timeline-marker"></div>
+                  <div class="timeline-content">
+                    <h4>Schema Update</h4>
+                    <h3>Ontology v5.1 Deployment</h3>
+                    <p class="text-muted">
+                      Global update to the banking knowledge graph. Enhanced
+                      entity recognition for cross-border asset tracking now
+                      active.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="glass-card">
+                <h3>Data Engineering & Ethics Leads</h3>
+                <hr class="divider" style="opacity: 0.1; margin: 15px 0" />
+                <div class="vital-item mt-3">
+                  <div>
+                    <h4 style="color: #f8fafc">Marcus Thorne</h4>
+                    <p class="text-muted text-sm">Principal Data Architect</p>
+                  </div>
+                  <button
+                    onclick="window.location.href = './error.html'"
+                    class="btn-outline btn-sm"
+                  >
+                    Status
+                  </button>
+                </div>
+                <div class="vital-item mt-3">
+                  <div>
+                    <h4 style="color: #f8fafc">Sarah Jenkins</h4>
+                    <p class="text-muted text-sm">
+                      Head of AI Safety & Governance
+                    </p>
+                  </div>
+                  <button
+                    onclick="window.location.href = './error.html'"
+                    class="btn-outline btn-sm"
+                  >
+                    Message
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <h3>Active Dataset Ingestion (Pending Vectorization)</h3>
+              <div class="data-table-wrapper mt-3">
+                <table class="clinical-table">
+                  <thead>
+                    <tr>
+                      <th>Dataset ID</th>
+                      <th>Source Node</th>
+                      <th>Processing Status</th>
+                      <th>Token Count</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#DS-TRANS-NY</strong></td>
+                      <td>
+                        Swift-Net Archive
+                        <small class="text-muted">(Institutional)</small>
+                      </td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(124, 252, 0, 0.1);
+                            color: rgb(120, 2, 120);
+                          "
+                        >
+                          <i class="fa-solid fa-check-double"></i> Cleaned
+                        </span>
+                      </td>
+                      <td>1.2B Tokens</td>
+                      <td>
+                        <a href="./error.html">
+                          <button class="btn-outline btn-sm">Preview</button>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>#DS-LEGAL-EU</strong></td>
+                      <td>Reg-Monitor</td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(245, 197, 24, 0.1);
+                            color: #f5c518;
+                          "
+                        >
+                          <i class="fa-solid fa-spinner fa-spin"></i> Tokenizing
+                        </span>
+                      </td>
+                      <td>450M Tokens</td>
+                      <td>
+                        <a href="./error.html">
+                          <button class="btn-outline btn-sm">Pause</button>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>#DS-NEWS-LIVE</strong></td>
+                      <td>Global-Feed</td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(59, 130, 246, 0.1);
+                            color: rgb;
+                          "
+                        >
+                          <i class="fa-solid fa-shield-halved"></i> Scrubber
+                          Active
+                        </span>
+                      </td>
+                      <td>Streaming</td>
+                      <td>
+                        <a href="./error.html">
+                          <button class="btn-outline btn-sm">Config</button>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <h3>Knowledge Intervention & Manual Sanitization</h3>
+              <p class="text-muted mb-4">
+                Manually purge PII (Personally Identifiable Information), adjust
+                embedding weights, or flag data segments for "Ethical Bias"
+                review.
+              </p>
+              <div
+                style="
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 12px;
+                  margin-bottom: 16px;
+                "
+              >
+                <input
+                  type="text"
+                  placeholder="Search by Dataset ID, Entry Hash, or Tag..."
+                  style="
+                    flex-grow: 1;
+                    background: rgba(255, 255, 255, 0.05);
+                    border: 1px solid rgba(255, 255, 255, 0.1);
+                    color: white;
+                    padding: 12px;
+                    border-radius: 4px;
+                  "
+                />
+                <a href="./error.html">
+                  <button
+                    class="btn-primary"
+                    style="
+                      background: rgb(120, 2, 120);
+                      border: none;
+                      padding: 12px 24px;
+                      border-radius: 4px;
+                      color: #000;
+                      font-weight: bold;
+                      cursor: pointer;
+                    "
+                  >
+                    Locate Entries
+                  </button>
+                </a>
+              </div>
+              <div class="grid-2-col">
+                <div
+                  class="vital-item"
+                  style="
+                    background: rgba(229, 9, 20, 0.05);
+                    border: 1px solid rgba(229, 9, 20, 0.2);
+                    border-radius: 4px;
+                    padding: 10px;
+                  "
+                >
+                  <span style="color: #e50914; font-weight: bold"
+                    >Data Purge (Delete)</span
+                  >
+                  <small class="text-muted">Remove sensitive PII blocks</small>
+                </div>
+                <div
+                  class="vital-item"
+                  style="
+                    background: rgba(59, 130, 246, 0.05);
+                    border: 1px solid rgba(59, 130, 246, 0.2);
+                    border-radius: 4px;
+                    padding: 10px;
+                  "
+                >
+                  <span style="color: rgb; font-weight: bold"
+                    >Re-Weight Embeddings</span
+                  >
+                  <small class="text-muted">Adjust node importance</small>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-deployment" class="content-view active-view">
+            <h2 style="color: #f8fafc; margin-top: 15px">
+              Neural Endpoint Deployment & Infrastructure
+            </h2>
+
+            <div class="grid-2-col mt-4">
+              <div class="glass-card">
+                <h3>Active Model Endpoint</h3>
+                <hr class="divider" style="opacity: 0.1; margin: 15px 0" />
+                <p>
+                  <strong>Production URI:</strong>
+                  api.stackly.ai/v3/neural-ledger
+                </p>
+                <p><strong>Region:</strong> US-East (Low Latency Cluster)</p>
+                <p><strong>Deployment ID:</strong> NODE-88372-910X</p>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="btn-outline btn-sm mt-3"
+                >
+                  View Performance Metrics
+                </button>
+              </div>
+
+              <div class="glass-card">
+                <h3>System Health & Uptime</h3>
+                <hr class="divider" style="opacity: 0.1; margin: 15px 0" />
+                <div class="consent-item">
+                  <span
+                    class="material-icons status-good"
+                    style="color: rgb(120, 2, 120)"
+                  >
+                    <i class="fa-solid fa-circle-check"></i>
+                  </span>
+                  <div>
+                    <p><strong>Core Processing Engine</strong></p>
+                    <p class="text-muted text-sm">
+                      Status: Operational | 99.99% Uptime | Real-time Neural
+                      Sync
+                    </p>
+                  </div>
+                </div>
+                <div class="consent-item mt-2">
+                  <span
+                    class="material-icons status-good"
+                    style="color: rgb(120, 2, 120)"
+                  >
+                    <i class="fa-solid fa-circle-check"></i>
+                  </span>
+                  <div>
+                    <p><strong>SSL/TLS Encryption Verified</strong></p>
+                    <p class="text-muted text-sm">
+                      Cert Status: Active | SHA-256 | Next Renewal: Jan 2027
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <div class="section-header">
+                <h3>Live Traffic & Request Ledger</h3>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="btn-outline btn-sm"
+                >
+                  Download Syslogs (JSON)
+                </button>
+              </div>
+              <div class="data-table-wrapper">
+                <table class="clinical-table">
+                  <thead>
+                    <tr>
+                      <th>Timestamp</th>
+                      <th>Service / Endpoint</th>
+                      <th>Payload Size</th>
+                      <th>Latency</th>
+                      <th>Throughput</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>16:05:22 UTC</td>
+                      <td>/v3/predict-market-volatility</td>
+                      <td>1.2 MB</td>
+                      <td>14ms</td>
+                      <td><strong>4.2k req/s</strong></td>
+                      <td>
+                        <span
+                          class="badge badge-completed"
+                          style="
+                            background: rgba(124, 252, 0, 0.1);
+                            color: rgb(120, 2, 120);
+                          "
+                          >Active</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>16:04:10 UTC</td>
+                      <td>/v3/rebalance-weights</td>
+                      <td>850 KB</td>
+                      <td>210ms</td>
+                      <td><strong>120 req/s</strong></td>
+                      <td>
+                        <span
+                          class="badge badge-completed"
+                          style="
+                            background: rgba(124, 252, 0, 0.1);
+                            color: rgb(120, 2, 120);
+                          "
+                          >Success</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>16:02:45 UTC</td>
+                      <td>/v3/auth-neural-handshake</td>
+                      <td>12 KB</td>
+                      <td>8ms</td>
+                      <td><strong>85k req/s</strong></td>
+                      <td>
+                        <span
+                          class="badge badge-processing"
+                          style="
+                            background: rgba(59, 130, 246, 0.2);
+                            color: rgb;
+                          "
+                          >Queueing</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <div class="section-header">
+                <h3>Infrastructure Security & Firewall Integrity</h3>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn-small"
+                >
+                  <span class="material-icons"
+                    ><i class="fa-solid fa-shield-halved"></i
+                  ></span>
+                </button>
+              </div>
+              <hr class="divider" style="opacity: 0.1; margin: 15px 0" />
+              <div class="grid-2-col">
+                <div>
+                  <p class="text-muted text-sm">Deployment IP Range</p>
+                  <h4 class="mt-2" style="color: #f8fafc">
+                    10.0.4.12/24 (Private VPC)
+                  </h4>
+                  <p
+                    class="mt-2"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                      font-size: 0.9rem;
+                    "
+                  >
+                    <span
+                      class="material-icons text-muted"
+                      style="font-size: 1rem; color: rgb(120, 2, 120)"
+                    >
+                      <i class="fa-solid fa-lock"></i>
+                    </span>
+                    No Public Internet Exposure
+                  </p>
+                </div>
+                <div>
+                  <p class="text-muted text-sm">Orchestration Layer</p>
+                  <h4 class="mt-2" style="color: #f8fafc">
+                    Kubernetes Cluster v1.28
+                  </h4>
+                  <p
+                    class="mt-2"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      gap: 8px;
+                      font-size: 0.9rem;
+                    "
+                  >
+                    <span
+                      class="material-icons text-muted"
+                      style="font-size: 1rem"
+                    >
+                      <i class="fa-solid fa-cubes"></i>
+                    </span>
+                    Auto-Scaling Protocol Enabled
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="glass-card mt-4"
+              style="border-left: 4px solid rgb(120, 2, 120)"
+            >
+              <div class="section-header">
+                <h3>Linked Cloud Resources</h3>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="btn-outline btn-sm"
+                >
+                  Manage Cloud Credentials
+                </button>
+              </div>
+              <div
+                class="consent-item mt-3"
+                style="justify-content: space-between"
+              >
+                <div style="display: flex; gap: 16px; align-items: center">
+                  <span
+                    class="material-icons"
+                    style="font-size: 2rem; color: rgb(120, 2, 120)"
+                  >
+                    <i class="fa-solid fa-server"></i>
+                  </span>
+                  <div>
+                    <h4 style="color: #f8fafc">
+                      GPU Acceleration Node •••• 9801
+                    </h4>
+                    <p class="text-muted text-sm">
+                      NVIDIA H100 Cluster | Current Utilization: 42%
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn-small"
+                >
+                  <span class="material-icons"
+                    ><i class="fa-regular fa-trash-can"></i
+                  ></span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section id="view-compliance" class="content-view active-view">
+            <div class="section-header">
+              <div>
+                <h2
+                  style="margin-bottom: 10px; color: #f8fafc; margin-top: 15px"
+                >
+                  Safety, Ethics & Algorithmic Governance
+                </h2>
+                <p class="text-muted">
+                  Monitor real-time neural bias, ethical alignment scores, and
+                  regulatory safety protocols across all autonomous financial
+                  agents.
+                </p>
+              </div>
+              <form class="search-box" action="./error.html">
+                <span class="material-icons" style="color: rgb(120, 2, 120)">
+                  <i class="fa-solid fa-magnifying-glass-shield"></i>
+                </span>
+                <input
+                  type="text"
+                  placeholder="Audit Model Weights or Logic Blocks..."
+                />
+              </form>
+            </div>
+
+            <div class="data-table-wrapper glass-card">
+              <table class="clinical-table">
+                <thead>
+                  <tr>
+                    <th>Last Audit Scan</th>
+                    <th>Model Entity</th>
+                    <th>Bias Variance (BV)</th>
+                    <th>Alignment Score</th>
+                    <th>Ethical Status</th>
+                    <th>Compliance Log</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Apr 08, 14:30</td>
+                    <td><strong>Predictive Ledger v3</strong></td>
+                    <td style="color: rgb(120, 2, 120)">Negligible (0.02%)</td>
+                    <td>
+                      99.8%
+                      <span class="material-icons" style="font-size: 1rem">
+                        <i class="fa-solid fa-check-double"></i>
+                      </span>
+                    </td>
+                    <td>
+                      <span
+                        class="badge"
+                        style="
+                          background: rgba(124, 252, 0, 0.1);
+                          color: rgb(120, 2, 120);
+                          border: 1px solid rgba(124, 252, 0, 0.2);
+                        "
+                        >Certified</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        onclick="window.location.href = './error.html'"
+                        class="btn-outline btn-sm"
+                      >
+                        REVIEW
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Apr 08, 12:15</td>
+                    <td><strong>Risk Assessment Node</strong></td>
+                    <td style="color: rgb(120, 2, 120)">Optimal (LCR 120%)</td>
+                    <td>98.5%</td>
+                    <td>
+                      <span
+                        class="badge"
+                        style="
+                          background: rgba(124, 252, 0, 0.1);
+                          color: rgb(120, 2, 120);
+                          border: 1px solid rgba(124, 252, 0, 0.2);
+                        "
+                        >Certified</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        onclick="window.location.href = './error.html'"
+                        class="btn-outline btn-sm"
+                      >
+                        REVIEW
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Apr 07, 22:00</td>
+                    <td><strong>Market Sentiment Bot</strong></td>
+                    <td style="color: #f5c518">Drift Detected (High)</td>
+                    <td style="color: #f5c518">
+                      84.2%
+                      <span class="material-icons" style="font-size: 1rem">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                      </span>
+                    </td>
+                    <td>
+                      <span
+                        class="badge"
+                        style="
+                          background: rgba(245, 197, 24, 0.1);
+                          color: #f5c518;
+                          border: 1px solid rgba(245, 197, 24, 0.2);
+                        "
+                        >Recalibrating</span
+                      >
+                    </td>
+                    <td>
+                      <button
+                        onclick="window.location.href = './error.html'"
+                        class="btn-outline btn-sm"
+                      >
+                        FIX BIAS
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 class="mt-4 mb-4" style="color: #f8fafc">
+              Safety Rails & Ethical Gateways
+            </h3>
+            <div class="grid-2-col">
+              <div
+                class="consent-item glass-card"
+                style="justify-content: space-between"
+              >
+                <div style="display: flex; gap: 16px; align-items: center">
+                  <span
+                    class="material-icons file-icon"
+                    style="color: rgb(120, 2, 120); margin: 0"
+                  >
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </span>
+                  <div>
+                    <h4>Explainable AI (XAI) Engine</h4>
+                    <p class="text-muted text-sm">
+                      STATUS: Online | Traceable Logic Enabled
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn-small"
+                >
+                  <span class="material-icons"
+                    ><i class="fa-solid fa-code-compare"></i
+                  ></span>
+                </button>
+              </div>
+              <div
+                class="consent-item glass-card"
+                style="justify-content: space-between"
+              >
+                <div style="display: flex; gap: 16px; align-items: center">
+                  <span
+                    class="material-icons file-icon"
+                    style="color: rgb(120, 2, 120); margin: 0"
+                  >
+                    <i class="fa-solid fa-user-shield"></i>
+                  </span>
+                  <div>
+                    <h4>Privacy-Preserving Compute</h4>
+                    <p class="text-muted text-sm">
+                      Zero-Knowledge Proofs Active | 100% PII Masked
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onclick="window.location.href = './error.html'"
+                  class="icon-btn-small"
+                >
+                  <span class="material-icons"
+                    ><i class="fa-solid fa-fingerprint"></i
+                  ></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="glass-card mt-4">
+              <h3>Governance Framework & Audit Trail</h3>
+              <p class="text-muted mb-3">
+                Real-time monitoring of model decisions against ESG
+                (Environmental, Social, and Governance) standards and
+                international AI safety mandates.
+              </p>
+              <div class="data-table-wrapper">
+                <table class="clinical-table">
+                  <thead>
+                    <tr>
+                      <th>Regulatory Body</th>
+                      <th>Compliance Tier</th>
+                      <th>Last Verification</th>
+                      <th>Operational Outlook</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>#EU-AI-ACT (Compliance)</strong></td>
+                      <td>Tier 1 (High-Risk Fin)</td>
+                      <td>
+                        <span
+                          class="badge"
+                          style="
+                            background: rgba(59, 130, 246, 0.2);
+                            color: rgb;
+                          "
+                          >Verified Active</span
+                        >
+                      </td>
+                      <td class="text-muted">Full Adherence</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div
+              class="glass-card mt-4"
+              style="border-left: 4px solid rgb(120, 2, 120)"
+            >
+              <div class="section-header">
+                <h3>Model Integrity Reconciliation</h3>
+                <span class="text-muted text-sm"
+                  >Neural Weight Audit - Last 24 Hours</span
+                >
+              </div>
+              <div
+                style="
+                  width: 100%;
+                  height: 250px;
+                  background: rgba(124, 252, 0, 0.02);
+                  border-radius: 8px;
+                  border: 1px dashed rgba(124, 252, 0, 0.2);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-direction: column;
+                  padding: 20px;
+                  text-align: center;
+                "
+              >
+                <span
+                  class="material-icons"
+                  style="font-size: 3rem; color: #2a3d1b"
+                >
+                  <i class="fa-solid fa-brain"></i>
+                </span>
+                <p class="text-muted mt-2">
+                  Neural networks are currently synchronized with the Global
+                  Ethics Ledger. All decision-making paths have been audited for
+                  fairness and non-discrimination.
+                </p>
+                <a href="./error.html">
+                  <button
+                    class="btn-outline btn-sm mt-3"
+                    style="
+                      color: rgb(120, 2, 120);
+                      border-color: rgb(120, 2, 120);
+                    "
+                  >
+                    Generate Ethics Certificate (PDF)
+                  </button>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 1000,
+    easing: "ease-out-cubic",
+    startEvent: "aos:ready", // manual trigger
+  });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // =========================
+    // ✅ GET USER EMAIL
+    // =========================
+    const userEmailDisplay = document.getElementById("userEmailDisplay");
+    const dropdownEmail = document.getElementById("dropdown-email");
+    const greetingEl = document.getElementById("greeting");
+    const avatarBtn = document.getElementById("profile-avatar");
+
+    const activeEmail =
+      sessionStorage.getItem("userEmail") ||
+      sessionStorage.getItem("adminEmail");
+
+    if (!activeEmail) {
+      window.location.href = "login.html";
+      return;
+    }
+
+    // Show email
+    if (userEmailDisplay) {
+      userEmailDisplay.textContent = activeEmail;
+    }
+
+    if (dropdownEmail) {
+      dropdownEmail.textContent = activeEmail;
+    }
+
+    // Greeting (name from email)
+    if (greetingEl) {
+      let name = activeEmail.split("@")[0];
+      name = name.charAt(0).toUpperCase() + name.slice(1);
+      greetingEl.textContent = `Hello, ${name}`;
+    }
+
+    // Avatar first letter
+    if (avatarBtn) {
+      avatarBtn.textContent = activeEmail.charAt(0).toUpperCase();
+    }
+
+    // =========================
+    // ✅ PROFILE DROPDOWN
+    // =========================
+    const profileDropdown = document.getElementById("profile-dropdown");
+
+    if (avatarBtn && profileDropdown) {
+      avatarBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        profileDropdown.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          profileDropdown.classList.contains("active") &&
+          !profileDropdown.contains(event.target) &&
+          event.target !== avatarBtn
+        ) {
+          profileDropdown.classList.remove("active");
+        }
+      });
+    }
+
+    // =========================
+    // ✅ CHARTS FUNCTION
+    // =========================
+    function initCharts() {
+      const glucoseCtx = document.getElementById("glucoseChart");
+      if (glucoseCtx) {
+        new Chart(glucoseCtx, {
+          type: "line",
+          data: {
+            labels: ["Jan", "Feb", "Mar"],
+            datasets: [
+              {
+                label: "Glucose",
+                data: [95, 102, 110],
+                borderColor: "#00D4FF",
+                backgroundColor: "rgba(0,212,255,0.1)",
+                tension: 0.4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      }
+
+      const cholCtx = document.getElementById("cholesterolChart");
+      if (cholCtx) {
+        new Chart(cholCtx, {
+          type: "bar",
+          data: {
+            labels: ["LDL", "HDL", "Total"],
+            datasets: [
+              {
+                label: "Cholesterol",
+                data: [95, 55, 180],
+                backgroundColor: "rgba(16,185,129,0.6)",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      }
+    }
+
+    // =========================
+    // ✅ SIDEBAR NAVIGATION
+    // =========================
+    const sidebarLinks = document.querySelectorAll(
+      ".sidebar-link[data-target]",
+    );
+    const contentViews = document.querySelectorAll(".content-view");
+    const sidebar = document.getElementById("sidebar");
+
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        sidebarLinks.forEach((l) => l.classList.remove("active"));
+        this.classList.add("active");
+
+        contentViews.forEach((view) => view.classList.remove("active-view"));
+
+        const targetId = this.getAttribute("data-target");
+        const targetView = document.getElementById(targetId);
+
+        if (targetView) {
+          targetView.classList.add("active-view");
+
+          // Load charts only when analytics tab opens
+          if (targetId === "view-analytics") {
+            initCharts();
+          }
+        }
+
+        if (window.innerWidth <= 768 && sidebar) {
+          sidebar.classList.remove("mobile-open");
+        }
+      });
+    });
+
+    // =========================
+    // ✅ MOBILE SIDEBAR
+    // =========================
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const closeSidebarBtn = document.getElementById("close-sidebar");
+
+    if (mobileMenuBtn && sidebar) {
+      mobileMenuBtn.addEventListener("click", () => {
+        sidebar.classList.add("mobile-open");
+      });
+    }
+
+    if (closeSidebarBtn && sidebar) {
+      closeSidebarBtn.addEventListener("click", () => {
+        sidebar.classList.remove("mobile-open");
+      });
+    }
+
+    document.addEventListener("click", (event) => {
+      if (!sidebar || !mobileMenuBtn) return;
+
+      const isClickInsideSidebar = sidebar.contains(event.target);
+      const isClickOnHamburger = mobileMenuBtn.contains(event.target);
+
+      if (
+        !isClickInsideSidebar &&
+        !isClickOnHamburger &&
+        sidebar.classList.contains("mobile-open")
+      ) {
+        sidebar.classList.remove("mobile-open");
+      }
+    });
+  });
+</script> -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const userEmailDisplay = document.getElementById("userEmailDisplay");
+    const dropdownEmail = document.getElementById("dropdown-email");
+    const greetingEl = document.getElementById("greeting");
+    const avatarBtn = document.getElementById("profile-avatar");
+
+    // ✅ Correct keys
+    const activeEmail = sessionStorage.getItem("loggedInUser");
+    const role = sessionStorage.getItem("role");
+
+    if (!activeEmail) {
+      window.location.href = "login.html";
+      return;
+    }
+
+    // 🔐 Restrict admin page
+    if (role !== "admin") {
+      window.location.href = "dashboard.html";
+      return;
+    }
+
+    // ✅ Show email
+    if (userEmailDisplay) userEmailDisplay.textContent = activeEmail;
+    if (dropdownEmail) dropdownEmail.textContent = activeEmail;
+
+    // ✅ Greeting
+    if (greetingEl) {
+      let name = activeEmail.split("@")[0];
+      name = name.charAt(0).toUpperCase() + name.slice(1);
+      greetingEl.textContent = `Hey, ${name}`;
+    }
+
+    // ✅ Avatar
+    if (avatarBtn) {
+      avatarBtn.textContent = activeEmail.charAt(0).toUpperCase();
+    }
+
+    // =========================
+    // PROFILE DROPDOWN
+    // =========================
+    const profileDropdown = document.getElementById("profile-dropdown");
+
+    if (avatarBtn && profileDropdown) {
+      avatarBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        profileDropdown.classList.toggle("active");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (
+          profileDropdown.classList.contains("active") &&
+          !profileDropdown.contains(event.target) &&
+          event.target !== avatarBtn
+        ) {
+          profileDropdown.classList.remove("active");
+        }
+      });
+    }
+
+    // =========================
+    // CHARTS
+    // =========================
+    function initCharts() {
+      const glucoseCtx = document.getElementById("glucoseChart");
+      if (glucoseCtx) {
+        new Chart(glucoseCtx, {
+          type: "line",
+          data: {
+            labels: ["Jan", "Feb", "Mar"],
+            datasets: [
+              {
+                label: "Glucose",
+                data: [95, 102, 110],
+                borderColor: "#00D4FF",
+                backgroundColor: "rgba(0,212,255,0.1)",
+                tension: 0.4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      }
+
+      const cholCtx = document.getElementById("cholesterolChart");
+      if (cholCtx) {
+        new Chart(cholCtx, {
+          type: "bar",
+          data: {
+            labels: ["LDL", "HDL", "Total"],
+            datasets: [
+              {
+                label: "Cholesterol",
+                data: [95, 55, 180],
+                backgroundColor: "rgba(16,185,129,0.6)",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+          },
+        });
+      }
+    }
+
+    // =========================
+    // SIDEBAR NAV
+    // =========================
+    const sidebarLinks = document.querySelectorAll(
+      ".sidebar-link[data-target]",
+    );
+    const contentViews = document.querySelectorAll(".content-view");
+    const sidebar = document.getElementById("sidebar");
+
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        sidebarLinks.forEach((l) => l.classList.remove("active"));
+        this.classList.add("active");
+
+        contentViews.forEach((view) => view.classList.remove("active-view"));
+
+        const targetId = this.getAttribute("data-target");
+        const targetView = document.getElementById(targetId);
+
+        if (targetView) {
+          targetView.classList.add("active-view");
+
+          if (targetId === "view-analytics") {
+            initCharts();
+          }
+        }
+
+        if (window.innerWidth <= 768 && sidebar) {
+          sidebar.classList.remove("mobile-open");
+        }
+      });
+    });
+
+    // =========================
+    // MOBILE SIDEBAR
+    // =========================
+    const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+    const closeSidebarBtn = document.getElementById("close-sidebar");
+
+    if (mobileMenuBtn && sidebar) {
+      mobileMenuBtn.addEventListener("click", () => {
+        sidebar.classList.add("mobile-open");
+      });
+    }
+
+    if (closeSidebarBtn && sidebar) {
+      closeSidebarBtn.addEventListener("click", () => {
+        sidebar.classList.remove("mobile-open");
+      });
+    }
+
+    document.addEventListener("click", (event) => {
+      if (!sidebar || !mobileMenuBtn) return;
+
+      if (
+        !sidebar.contains(event.target) &&
+        !mobileMenuBtn.contains(event.target) &&
+        sidebar.classList.contains("mobile-open")
+      ) {
+        sidebar.classList.remove("mobile-open");
+      }
+    });
+  });
+</script>

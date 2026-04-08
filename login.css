@@ -1,0 +1,935 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  /* background-color: black; */
+  /* color: white; */
+  font-family: "lora", serif;
+  overflow-x: hidden;
+  background-color: black;
+  color: beige;
+}
+
+button {
+  cursor: pointer;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Header Foundation --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  height: 90px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+}
+
+.logo img {
+  width: 150px;
+}
+
+/* --- Navigation & Hover States --- */
+nav ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+nav ul li {
+  font-size: 21px;
+}
+
+/* --- Navigation Link Base --- */
+nav ul li a,
+.side-item a {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 0;
+  color: #1e293b; /* Default Navy */
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+/* --- The Underline (The "Glide") --- */
+nav ul li a::after,
+.side-item a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0; /* Hidden by default */
+  height: 3px;
+  background: rgb(120, 2, 120); /* Theme Blue */
+  transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth glide */
+}
+
+/* --- Hover State (Temporary Underline) --- */
+
+nav ul li a:hover,
+.side-item a:hover {
+  color: rgb(120, 2, 120);
+}
+
+/* --- Active State (Locked Underline) --- */
+/* This ensures that when the class is added by JS, the width stays at 100% */
+nav ul li a.active-page {
+  color: rgb(120, 2, 120) !important;
+}
+
+/* Hover Action */
+nav ul li a:hover::after,
+.side-item a:hover::after {
+  width: 100%;
+}
+
+/* Active Lock (Matches your new JS class) */
+nav ul li a.active-page::after {
+  width: 100% !important;
+  box-shadow: 0 2px 10px rgba(32, 146, 192, 0.4);
+}
+.div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* --- Animative Hamburger --- */
+.menu-icon {
+  width: 30px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #1e293b;
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+/* Hamburger Morphing Classes */
+.menu-icon.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+  background: rgb(120, 2, 120);
+}
+
+.menu-icon.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.menu-icon.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+  background: rgb(120, 2, 120);
+}
+
+/* 1. Hide hamburger by default (Desktop) */
+.menu-icon {
+  display: none;
+  z-index: 1200; /* Ensure it stays above everything */
+}
+
+/* 2. Responsive Switch (Mobile/Tablet) */
+@media screen and (max-width: 1024px) {
+  /* Hide the regular links */
+  nav ul {
+    display: none;
+  }
+
+  /* Show the hamburger */
+  .menu-icon {
+    display: flex; /* Makes the spans visible */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .div {
+    gap: 10px;
+  }
+}
+
+/* --- Sidebar Container (Top-to-Bottom) --- */
+.sidebar {
+  position: fixed;
+  top: -100vh; /* Hidden off-screen */
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: beige; /* Pure white for clarity */
+  padding: 30px 5%;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  /* Premium "Heavy" easing */
+  transition: top 0.7s cubic-bezier(0.85, 0, 0.15, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.active {
+  top: 0; /* Slide down into view */
+}
+
+/* --- Sidebar Top: Logo & Close --- */
+.sidebar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+.sidebar-logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  color: #0f172a; /* Deep Charcoal */
+  letter-spacing: -1.5px;
+}
+
+.sidebar-logo span {
+  color: rgb(120, 2, 120); /* Theme Blue */
+}
+
+.close-icon {
+  font-size: 50px; /* Large, easy to tap */
+  line-height: 1;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.close-icon:hover {
+  color: rgb(120, 2, 120);
+  transform: rotate(90deg);
+}
+
+/* --- Navigation Links --- */
+.side-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.side-item {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* FIX: Changed from .side-item li a to .side-item a */
+.side-item a {
+  text-decoration: none;
+  font-family: "Roboto Slab", serif;
+  font-size: larger; /* Changed from 'large' to specific px for better impact */
+  font-weight: 700;
+  color: #1e293b;
+  display: block; /* Important: makes the whole row clickable */
+  padding: 15px 0;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* Ensure hover state still targets the right element */
+.side-item a:hover {
+  color: rgb(120, 2, 120);
+  padding-left: 15px;
+}
+
+/* Fix the Security Dot pseudo-element */
+.side-item a::before {
+  content: "•";
+  position: absolute;
+  left: -20px;
+  color: rgb(120, 2, 120);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.side-item a:hover::before {
+  left: 0;
+  opacity: 1;
+}
+
+/* --- Sidebar Footer & CTA --- */
+.sidebar-footer {
+  margin-top: auto; /* Push to bottom */
+  text-align: center;
+}
+
+.side-log-btn {
+  width: max-content;
+  max-width: 350px;
+  padding: 15px 18px;
+  background-color: rgb(120, 2, 120);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(32, 146, 192, 0.25);
+}
+
+.side-log-btn:hover {
+  background-color: #0f172a; /* Switches to Navy on hover */
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.3);
+}
+
+/* --- Overlay Blur --- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5); /* Navy transparent tint */
+  backdrop-filter: blur(8px); /* Modern blur effect */
+  display: none;
+  z-index: 1999;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+@media screen and (min-width: 1025px) {
+  .sidebar.sidebar.active {
+    display: none;
+  }
+  .overlay.active {
+    display: none;
+  }
+}
+
+/* Sidebar items start hidden for GSAP to animate them in */
+.side-item {
+  opacity: 0;
+}
+
+.side-log-btn {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+
+/* footer */
+
+.premium-footer {
+  background: #020408;
+  color: #fff;
+  padding: 80px 5%;
+  font-family: "Inter", sans-serif;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+  margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+}
+
+.footer-upper {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 60px;
+  margin-bottom: 30px;
+}
+
+/* Brand Styling */
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.footer-logo i {
+  color: rgb(120, 2, 120);
+}
+.footer-logo span span {
+  color: rgb(120, 2, 120);
+}
+
+.brand-brief {
+  color: #718096;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+/* Footer Links & Hover Underline */
+.footer-title {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+.footer-links li {
+  margin-bottom: 18px;
+}
+
+.footer-links a {
+  color: #a0aec0;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background: rgb(120, 2, 120);
+  transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+/* Social Icons */
+.footer-socials {
+  display: flex;
+  gap: 15px;
+}
+.footer-socials a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.footer-socials  a:hover {
+  background: rgb(120, 2, 120);
+  transform: translateY(-5px);
+}
+
+/* Compact Newsletter */
+.footer-subscribe {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 5px;
+  border-radius: 50px;
+  margin: 20px 0;
+}
+
+.footer-subscribe input {
+  background: none;
+  border: none;
+  padding: 12px 20px;
+  color: #fff;
+  flex: 1;
+  outline: none;
+}
+
+.footer-subscribe button {
+  background: rgb(120, 2, 120);
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-subscribe button:hover {
+  transform: scale(1.1);
+}
+
+/* Bottom Bar */
+.divider-line {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  margin-bottom: 40px;
+}
+
+.bottom-flex {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  color: #4a5568;
+  font-size: 0.85rem;
+}
+
+.legal-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.legal-links a {
+  margin-left: 25px;
+  color: #4a5568;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.legal-links a:hover {
+  color: #fff;
+}
+
+/* Responsive Grid */
+@media screen and (max-width: 1130px) {
+  .footer-upper {
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+  }
+}
+
+@media screen and (max-width: 815px) {
+  .footer-upper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .bottom-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .legal-links a {
+    margin: 0 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .legal-links {
+    flex-wrap: wrap;
+    margin: auto;
+    max-width: 220px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer-logo {
+  margin-bottom: 30px;
+}
+
+.footer-title {
+  margin-top: 20px;
+}
+
+.btn {
+  position: relative;
+  padding: 10px 12px;
+  background-color: rgb(120, 2, 120); /* Your Theme Blue */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  overflow: hidden; /* Essential to clip the shimmer */
+  transition:
+    background 0.4s ease,
+    transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(32, 146, 192, 0.3);
+  font-family: "roboto slab", serif;
+}
+
+/* --- THE SHIMMER LAYER --- */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: all 0.6s;
+}
+
+/* Hover Effect 1: The Fast Sweep */
+.btn:hover::before {
+  left: 150%;
+  transition: 0.7s;
+}
+
+/* Hover Effect 2: Depth Shift */
+.btn:hover {
+  background-color: #0f172a; /* Dark Navy for contrast */
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.4);
+}
+
+
+
+
+/* structure */
+
+/* login */
+.Structure {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  padding: 100px 0px;
+}
+
+.login-wrapper {
+  width: 90%;
+  max-width: 1000px;
+}
+.login-card {
+  display: flex;
+  background: rgba(10, 10, 10, 0.6); 
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  overflow: hidden;
+  
+  /* UPDATED COLOR SCHEME: NEURAL PURPLE */
+  box-shadow: 0 0 40px rgba(120, 2, 120, 0.2); 
+  border: 1px solid rgb(120, 2, 120);
+}
+
+/* LEFT SECTION */
+.login-left {
+  flex: 1;
+  padding: 50px;
+  color: #fff;
+}
+
+.login-left h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Animated Shimmer Title */
+.login-left span {
+  color: transparent;
+  background: linear-gradient(
+    120deg,
+    rgb(120, 2, 120) 0%,    
+    #ffffff 50%,   
+    rgb(120, 2, 120) 100%   
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+  
+  /* Subtle glow to the text itself */
+  text-shadow: 0 0 15px rgba(120, 2, 120, 0.1);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.login-left ul {
+  list-style: none;
+  line-height: 2;
+  margin-bottom: 40px;
+  padding: 0;
+}
+
+/* Tip Box / Status Badge */
+.tip {
+  font-size: 14px;
+  opacity: 0.8;
+  padding: 10px 15px;
+  border: 2px solid rgb(120, 2, 120);
+  border-radius: 12px;
+  width: max-content;
+  color: rgb(120, 2, 120);
+  font-family: 'Courier New', monospace;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.tabb {
+  text-decoration: none;
+  color: white;
+  padding: 6px 15px;
+  border: 1px solid rgb(120, 2, 120);
+  border-radius: 8px;
+  margin: 0px 5px;
+  transition: 0.3s;
+}
+
+.tabb:hover {
+  color: #fff;
+  background: rgb(120, 2, 120);
+  border-color: rgb(120, 2, 120);
+  box-shadow: 0 0 15px rgba(120, 2, 120, 0.4);
+}
+
+/* RIGHT SECTION */
+.login-right {
+  flex: 1;
+  padding: 50px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+
+.login-right h2 {
+  font-size: 24px;
+  text-align: start;
+  margin-bottom: 10px;
+}
+
+.login-right p {
+  margin-bottom: 30px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+/* INPUT GROUP */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(120, 2, 120, 0.2);
+  outline: none;
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+  background: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: rgb(120, 2, 120);
+  box-shadow: 0 0 15px rgba(120, 2, 120, 0.2);
+}
+
+/* PASSWORD TOGGLE */
+.password-group {
+  position: relative;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 13px;
+  color: rgb(120, 2, 120);
+  font-weight: 700;
+}
+
+/* Forgot Password Link */
+.forgot {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  color: rgb(120, 2, 120);
+  text-decoration: none;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.forgot:hover {
+  text-shadow: 0 0 8px rgb(120, 2, 120);
+  filter: brightness(1.2);
+}
+
+/* LOGIN BUTTON */
+.login-btn1 {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+  background: linear-gradient(90deg, rgb(120, 2, 120), rgb(80, 0, 80));
+  color: #fff; /* White text for better contrast on purple */
+  transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.login-btn1:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(120, 2, 120, 0.5);
+  filter: brightness(1.2);
+}
+
+/* SIGNUP */
+.signup {
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.signup a {
+  color: rgb(120, 2, 120);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.signup a:hover {
+  text-decoration: underline;
+}
+
+
+/* ============================= */
+/* Tablet View (max-width: 992px) */
+/* ============================= */
+
+@media screen and (max-width: 992px) {
+  .Structure {
+    height: 100%;
+    padding: 40px 20px;
+  }
+
+  .login-card {
+    flex-direction: column;
+  }
+
+  .login-left,
+  .login-right {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .login-right h2,
+  .login-right p {
+    text-align: center;
+  }
+
+  .tip {
+    width: 100%;
+  }
+}
+
+/* ============================= */
+/* Mobile View (max-width: 600px) */
+/* ============================= */
+
+@media screen and (max-width: 600px) {
+  .Structure {
+    padding: 30px 20px;
+  }
+
+  .login-wrapper {
+    width: 95%;
+  }
+
+  .login-left,
+  .login-right {
+    padding: 20px;
+  }
+
+  .login-left h1 {
+    font-size: 22px;
+  }
+
+  .login-left ul {
+    font-size: 14px;
+  }
+
+  .tip {
+    font-size: 10px;
+    padding: 8px 10px;
+  }
+
+  .login-right h2 {
+    font-size: 20px;
+  }
+
+  .login-right p {
+    font-size: 13px;
+  }
+
+  .input-group input,
+  .input-group select {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .login-btn1 {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .signup {
+    font-size: 13px;
+  }
+
+  .tabb {
+    margin: 0px 2px;
+  }
+}
+
+/* extra small */
+
+@media screen and (max-width: 450px) {
+  .Structure {
+    padding: 50px 10px;
+  }
+}

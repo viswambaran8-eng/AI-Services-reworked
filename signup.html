@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Services</title>
+    <link rel="stylesheet" href="./signup.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./Assets/logo.webp" alt="" />
+        </a>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="./index.html" class="active-page">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./services.html">Services</a></li>
+          <li><a href="./blog.html">Blog</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="div">
+        <div class="div">
+          <a href="./login.html">
+            <button class="btn">Login</button>
+          </a>
+        </div>
+        <div class="menu-icon" id="menu-trigger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <!-- <div class="sidebar-logo">STACKLY<span>.</span></div> -->
+        <div class="logo">
+          <a href="./index.html">
+            <img src="./Assets/logo.webp" alt="" />
+          </a>
+        </div>
+
+        <div class="close-icon" id="close-trigger">&times;</div>
+      </div>
+      <ul class="side-links">
+        <li class="side-item">
+          <a href="./index.html">Home</a>
+        </li>
+        <li class="side-item"><a href="./about.html">About</a></li>
+        <li class="side-item"><a href="./services.html">Services</a></li>
+        <li class="side-item"><a href="./blog.html">Blog</a></li>
+        <li class="side-item"><a href="./contact.html">Contact</a></li>
+        <li class="side-item"><a href="./login.html">Login</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <!-- <button class="side-log-btn">Open An Account</button> -->
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+
+        <section class="Structure">
+      <div class="signout-wrapper">
+        <div class="signout-card">
+          <!-- LEFT SIDE -->
+          <div class="signout-left">
+            <h1>Create your account on <span>Stackly AI Services</span></h1>
+
+            <ul>
+              <li>✔ Access institutional-grade liquidity & asset classes</li>
+              <li>✔ Real-time tracking of cross-border settlements</li>
+              <li>✔ Secure procurement for corporate treasury & funds</li>
+              <li>✔ View algorithmic market sheets and risk analytics</li>
+              <li>✔ 24/7 Priority advisory and capital maintenance</li>
+            </ul>
+
+            <div class="tip">
+              Tip: Press
+              <a href="./error.html" class="tabb"><strong>Tab</strong></a>
+              to move fields
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE -->
+          <div class="signout-right">
+            <h2>Create Account</h2>
+            <p class="headings">
+              Join Stackly Video Hub and start uploading your content.
+            </p>
+
+            <form id="signupForm">
+              <!-- FULL NAME -->
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="fullname"
+                  placeholder="Full Name"
+                  required
+                />
+              </div>
+
+              <!-- ROLE -->
+              <div class="input-group">
+                <select id="role" required>
+                  <option value="">Select Role</option>
+                  <option value="administrator">Admin</option>
+                  <!-- <option value="editor">Editor</option> -->
+                  <option value="user">User</option>
+                </select>
+              </div>
+
+              <!-- EMAIL -->
+              <div class="input-group">
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="you@gmail.com"
+                  required
+                />
+              </div>
+
+              <!-- CHANNEL / ORGANIZATION -->
+              <div class="input-group">
+                <input
+                  type="text"
+                  id="channel"
+                  placeholder="Channel Name / Organization"
+                  required
+                />
+              </div>
+
+              <!-- PASSWORD -->
+              <div class="input-group password-group">
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Password"
+                  required
+                />
+                <span id="togglePassword">Show</span>
+              </div>
+
+              <!-- CONFIRM PASSWORD -->
+              <div class="input-group password-group">
+                <input
+                  type="password"
+                  id="confirmPassword"
+                  placeholder="Confirm Password"
+                  required
+                />
+                <span id="toggleConfirmPassword">Show</span>
+              </div>
+
+              <!-- TERMS -->
+              <!-- <div class="input-group checkbox-group"> -->
+              <label
+                style="
+                  font-size: 14px;
+                  text-align: center;
+                  width: 100%;
+                  display: flex;
+                  gap: 10px;
+                  justify-content: center;
+                  align-items: center;
+                "
+              >
+                <input type="checkbox" id="terms" required />
+                I agree to the Terms of Service and Privacy Policy.
+              </label>
+              <!-- </div> -->
+
+              <!-- BUTTON -->
+              <button type="submit" class="signout-btn">Create Account</button>
+
+              <div class="link">
+                <p class="links">
+                  Already have an account?
+                  <a href="./login.html">Sign-In</a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const signupForm = document.getElementById("signupForm");
+
+      const password = document.getElementById("password");
+      const confirmPassword = document.getElementById("confirmPassword");
+
+      const togglePassword = document.getElementById("togglePassword");
+      const toggleConfirmPassword = document.getElementById(
+        "toggleConfirmPassword",
+      );
+
+      /* SHOW / HIDE PASSWORD */
+
+      togglePassword.addEventListener("click", () => {
+        const type = password.type === "password" ? "text" : "password";
+        password.type = type;
+
+        togglePassword.textContent = type === "password" ? "Show" : "Hide";
+      });
+
+      toggleConfirmPassword.addEventListener("click", () => {
+        const type = confirmPassword.type === "password" ? "text" : "password";
+        confirmPassword.type = type;
+
+        toggleConfirmPassword.textContent =
+          type === "password" ? "Show" : "Hide";
+      });
+
+      /* SIGNUP VALIDATION */
+
+      signupForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const fullname = document.getElementById("fullname").value.trim();
+        const role = document.getElementById("role").value;
+        const email = document.getElementById("email").value.trim();
+        const channel = document.getElementById("channel").value.trim();
+        const pass = password.value.trim();
+        const confirmPass = confirmPassword.value.trim();
+        const terms = document.getElementById("terms").checked;
+
+        const gmailPattern = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+
+        const passwordPattern =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$/;
+
+        if (fullname.length < 3) {
+          alert("Full name must be at least 3 characters");
+          return;
+        }
+
+        if (!role) {
+          alert("Please select your role");
+          return;
+        }
+
+        if (!gmailPattern.test(email)) {
+          alert("Email must end with @gmail.com");
+          return;
+        }
+
+        if (channel.length < 3) {
+          alert("Enter valid channel / organization name");
+          return;
+        }
+
+        if (!passwordPattern.test(pass)) {
+          alert(
+            "Password must contain:\n- Uppercase letter\n- Lowercase letter\n- Number\n- Special symbol\n- Minimum 6 characters",
+          );
+          return;
+        }
+
+        if (pass !== confirmPass) {
+          alert("Passwords do not match");
+          return;
+        }
+
+        if (!terms) {
+          alert("You must agree to Terms and Privacy Policy");
+          return;
+        }
+
+        alert("Account created successfully!");
+
+        window.location.href = "login.html";
+      });
+    </script>
+
+
+    <footer class="premium-footer">
+      <div class="footer-upper">
+        <div class="footer-col brand-col">
+          <div class="logo footer-logo">
+            <a href="./index.html">
+              <img src="./Assets/logo.webp" alt="Nova AI Logo" />
+            </a>
+          </div>
+          <p class="brand-brief">
+            Advancing the frontier of autonomous finance. We integrate
+            medical-grade neural networks with high-frequency fiscal
+            intelligence to deliver the world's most precise AI banking
+            ecosystem.
+          </p>
+          <div class="footer-socials">
+            <a href="./error.html"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="./error.html"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="./about.html">About </a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./login.html">Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Autonomous Services</h4>
+          <ul class="footer-links">
+            <li><a href="./error.html">Predictive Wealth Engines</a></li>
+            <li><a href="./error.html">Algorithmic Arbitrage</a></li>
+            <li><a href="./error.html">Deep Learning Risk Audit</a></li>
+            <li><a href="./error.html">Smart Contract Synthesis</a></li>
+            <li><a href="./error.html">Automated Treasury</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4 class="footer-title">Network Status</h4>
+          <p class="small-text">
+            Synchronize with our latest model deployments.
+          </p>
+          <form class="footer-subscribe" action="./error.html">
+            <input type="email" placeholder="Email Address" />
+            <button><i class="fa-solid fa-paper-plane"></i></button>
+          </form>
+          <div class="contact-info">
+            <span><i class="fa-solid fa-phone"></i>+912345678</span>
+            <span><i class="fa-solid fa-envelope"></i>support@stackly.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-container">
+          <div class="divider-line"></div>
+          <div class="bottom-flex">
+            <p class="copyright">
+              &copy; 2026 Stackly-AI Services. All Rights Reserved.
+            </p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Cookie Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- footer -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        gsap.from(".footer-col", {
+          scrollTrigger: {
+            trigger: ".premium-footer",
+            start: "top 90%",
+          },
+          opacity: 0,
+          y: 40,
+          stagger: 0.15,
+          duration: 1,
+          ease: "power2.out",
+        });
+
+        // Fade in the bottom bar divider
+        gsap.from(".divider-line", {
+          scrollTrigger: ".footer-bottom",
+          opacity: 0,
+          duration: 2,
+          ease: "power4.inOut",
+        });
+      });
+    </script>
+  </body>
+</html>
