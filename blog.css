@@ -74,7 +74,7 @@ nav ul li a::after,
   left: 0;
   width: 0; /* Hidden by default */
   height: 3px;
-  background: rgb(120, 2, 120); /* Theme Blue */
+  background: rgb(163, 6, 163); /* Theme Blue */
   transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth glide */
 }
 
@@ -82,13 +82,13 @@ nav ul li a::after,
 
 nav ul li a:hover,
 .side-item a:hover {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
 }
 
 /* --- Active State (Locked Underline) --- */
 /* This ensures that when the class is added by JS, the width stays at 100% */
 nav ul li a.active-page {
-  color: rgb(120, 2, 120) !important;
+  color: rgb(163, 6, 163) !important;
 }
 
 /* Hover Action */
@@ -130,7 +130,7 @@ nav ul li a.active-page::after {
 /* Hamburger Morphing Classes */
 .menu-icon.open span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
 }
 
 .menu-icon.open span:nth-child(2) {
@@ -140,7 +140,7 @@ nav ul li a.active-page::after {
 
 .menu-icon.open span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
 }
 
 /* 1. Hide hamburger by default (Desktop) */
@@ -206,7 +206,7 @@ nav ul li a.active-page::after {
 }
 
 .sidebar-logo span {
-  color: rgb(120, 2, 120); /* Theme Blue */
+  color: rgb(163, 6, 163); /* Theme Blue */
 }
 
 .close-icon {
@@ -219,7 +219,7 @@ nav ul li a.active-page::after {
 }
 
 .close-icon:hover {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   transform: rotate(90deg);
 }
 
@@ -254,7 +254,7 @@ nav ul li a.active-page::after {
 
 /* Ensure hover state still targets the right element */
 .side-item a:hover {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   padding-left: 15px;
 }
 
@@ -263,7 +263,7 @@ nav ul li a.active-page::after {
   content: "•";
   position: absolute;
   left: -20px;
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   opacity: 0;
   transition: all 0.3s ease;
 }
@@ -283,7 +283,7 @@ nav ul li a.active-page::after {
   width: max-content;
   max-width: 350px;
   padding: 15px 18px;
-  background-color: rgb(120, 2, 120);
+  background-color: rgb(163, 6, 163);
   color: #ffffff;
   border: none;
   border-radius: 12px;
@@ -371,10 +371,10 @@ nav ul li a.active-page::after {
 }
 
 .footer-logo i {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
 }
 .footer-logo span span {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
 }
 
 .brand-brief {
@@ -415,7 +415,7 @@ nav ul li a.active-page::after {
   height: 1px;
   bottom: -4px;
   left: 0;
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -445,7 +445,7 @@ nav ul li a.active-page::after {
 }
 
 .footer-socials a:hover {
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   transform: translateY(-5px);
 }
 
@@ -468,7 +468,7 @@ nav ul li a.active-page::after {
 }
 
 .footer-subscribe button {
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   border: none;
   width: 45px;
   height: 45px;
@@ -567,7 +567,7 @@ a {
 .btn {
   position: relative;
   padding: 10px 12px;
-  background-color: rgb(120, 2, 120); /* Your Theme Blue */
+  background-color: rgb(163, 6, 163); /* Your Theme Blue */
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -673,7 +673,7 @@ a {
 .blob-1 {
   width: 500px;
   height: 500px;
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   top: -10%;
   left: -10%;
   animation: move 20s infinite alternate;
@@ -713,7 +713,7 @@ a {
 }
 
 .text-glow {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   text-shadow: 0 0 30px rgba(120, 2, 120, 0.5);
 }
 
@@ -726,7 +726,7 @@ a {
 
 .hero-badge {
   background: rgba(120, 2, 120, 0.2);
-  border: 1px solid rgb(120, 2, 120);
+  border: 1px solid rgb(163, 6, 163);
   color: #fff;
   padding: 8px 20px;
   border-radius: 50px;
@@ -901,7 +901,7 @@ a {
 }
 
 .card-body span {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   font-weight: 700;
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -915,7 +915,7 @@ a {
 
 /* Hover Effects */
 .blog-card:hover {
-  border-color: rgb(120, 2, 120);
+  border-color: rgb(163, 6, 163);
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(120, 2, 120, 0.1);
 }
@@ -1006,8 +1006,8 @@ a {
   display: inline-block;
   padding: 8px 20px;
   background: rgba(139, 0, 0, 0.1); /* Subtle DarkRed tint */
-  border: 1px solid rgb(120, 2, 120);
-  color: rgb(120, 2, 120); /* Your Theme Color */
+  border: 1px solid rgb(163, 6, 163);
+  color: rgb(163, 6, 163); /* Your Theme Color */
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -1030,7 +1030,7 @@ a {
 .header-line {
   width: 80px;
   height: 4px;
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   margin: 0 auto 30px auto;
   border-radius: 10px;
   position: relative;
@@ -1105,8 +1105,8 @@ a {
     display: inline-block;
     padding: 8px 20px;
     background: rgba(120, 2, 120, 0.1);
-    border: 1px solid rgb(120, 2, 120);
-    color: rgb(120, 2, 120);
+    border: 1px solid rgb(163, 6, 163);
+    color: rgb(163, 6, 163);
     border-radius: 50px;
     font-size: 0.8rem;
     font-weight: 700;
@@ -1124,9 +1124,9 @@ a {
 .header-line {
     width: 60px;
     height: 3px;
-    background: rgb(120, 2, 120);
+    background: rgb(163, 6, 163);
     margin: 0 auto;
-    box-shadow: 0 0 10px rgb(120, 2, 120);
+    box-shadow: 0 0 10px rgb(163, 6, 163);
 }
 
 /* --- FILTER BUTTONS --- */
@@ -1150,9 +1150,9 @@ a {
 }
 
 .filter-btn.active, .filter-btn:hover {
-    background: rgb(120, 2, 120);
+    background: rgb(163, 6, 163);
     color: #fff;
-    border-color: rgb(120, 2, 120);
+    border-color: rgb(163, 6, 163);
     box-shadow: 0 5px 20px rgba(120, 2, 120, 0.4);
 }
 
@@ -1241,7 +1241,7 @@ a {
 /* --- RE-APPLYING YOUR SUPERIOR HOVER --- */
 .grid-card:hover {
     transform: translateY(-10px);
-    border-color: rgb(120, 2, 120);
+    border-color: rgb(163, 6, 163);
     box-shadow: 0 15px 35px rgba(120, 2, 120, 0.15);
 }
 
@@ -1252,8 +1252,8 @@ a {
     left: 0;
     width: 0%;
     height: 3px;
-    background: rgb(120, 2, 120);
-    box-shadow: 0 0 15px rgb(120, 2, 120);
+    background: rgb(163, 6, 163);
+    box-shadow: 0 0 15px rgb(163, 6, 163);
     transition: width 0.4s ease;
 }
 
@@ -1344,7 +1344,7 @@ a {
 }
 
 .newsletter-form:focus-within {
-    border-color: rgb(120, 2, 120);
+    border-color: rgb(163, 6, 163);
     box-shadow: 0 0 25px rgba(120, 2, 120, 0.2);
     border-radius: 50px;
 }
@@ -1361,7 +1361,7 @@ a {
 }
 
 .news-btn {
-    background: rgb(120, 2, 120);
+    background: rgb(163, 6, 163);
     color: #fff;
     border: none;
     padding: 15px 35px;
@@ -1373,7 +1373,7 @@ a {
 
 .news-btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgb(120, 2, 120);
+    box-shadow: 0 0 20px rgb(163, 6, 163);
 }
 
 @keyframes neural-pulse {

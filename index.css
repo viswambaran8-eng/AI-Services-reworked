@@ -74,7 +74,7 @@ nav ul li a::after,
   left: 0;
   width: 0; /* Hidden by default */
   height: 3px;
-  background: rgb(120, 2, 120); /* Theme Blue */
+  background: rgb(163, 6, 163); /* Theme Blue */
   transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth glide */
 }
 
@@ -82,13 +82,13 @@ nav ul li a::after,
 
 nav ul li a:hover,
 .side-item a:hover {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
 }
 
 /* --- Active State (Locked Underline) --- */
 /* This ensures that when the class is added by JS, the width stays at 100% */
 nav ul li a.active-page {
-  color: rgb(120, 2, 120) !important;
+  color: rgb(163, 6, 163) !important;
 }
 
 /* Hover Action */
@@ -130,7 +130,7 @@ nav ul li a.active-page::after {
 /* Hamburger Morphing Classes */
 .menu-icon.open span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
 }
 
 .menu-icon.open span:nth-child(2) {
@@ -140,7 +140,7 @@ nav ul li a.active-page::after {
 
 .menu-icon.open span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
 }
 
 /* 1. Hide hamburger by default (Desktop) */
@@ -206,7 +206,7 @@ nav ul li a.active-page::after {
 }
 
 .sidebar-logo span {
-  color: rgb(120, 2, 120); /* Theme Blue */
+  color: rgb(163, 6, 163); /* Theme Blue */
 }
 
 .close-icon {
@@ -219,7 +219,7 @@ nav ul li a.active-page::after {
 }
 
 .close-icon:hover {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   transform: rotate(90deg);
 }
 
@@ -254,7 +254,7 @@ nav ul li a.active-page::after {
 
 /* Ensure hover state still targets the right element */
 .side-item a:hover {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   padding-left: 15px;
 }
 
@@ -263,7 +263,7 @@ nav ul li a.active-page::after {
   content: "•";
   position: absolute;
   left: -20px;
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   opacity: 0;
   transition: all 0.3s ease;
 }
@@ -283,7 +283,7 @@ nav ul li a.active-page::after {
   width: max-content;
   max-width: 350px;
   padding: 15px 18px;
-  background-color: rgb(120, 2, 120);
+  background-color: rgb(163, 6, 163);
   color: #ffffff;
   border: none;
   border-radius: 12px;
@@ -371,10 +371,10 @@ nav ul li a.active-page::after {
 }
 
 .footer-logo i {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
 }
 .footer-logo span span {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
 }
 
 .brand-brief {
@@ -415,7 +415,7 @@ nav ul li a.active-page::after {
   height: 1px;
   bottom: -4px;
   left: 0;
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -445,7 +445,7 @@ nav ul li a.active-page::after {
 }
 
 .footer-socials a:hover {
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   transform: translateY(-5px);
 }
 
@@ -468,7 +468,7 @@ nav ul li a.active-page::after {
 }
 
 .footer-subscribe button {
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   border: none;
   width: 45px;
   height: 45px;
@@ -567,7 +567,7 @@ a {
 .btn {
   position: relative;
   padding: 10px 12px;
-  background-color: rgb(120, 2, 120); /* Your Theme Blue */
+  background-color: rgb(163, 6, 163); /* Your Theme Blue */
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -673,8 +673,8 @@ a {
   padding: 10px 20px;
   border-radius: 100px;
   background: rgba(120, 2, 120, 0.15);
-  border: 1px solid rgb(120, 2, 120);
-  color: rgb(120, 2, 120);
+  border: 1px solid rgb(163, 6, 163);
+  color: rgb(163, 6, 163);
   font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 30px;
@@ -688,7 +688,7 @@ a {
 }
 
 .hero-content h1 span {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
 }
 
 .subtext {
@@ -721,7 +721,7 @@ a {
 }
 
 .btn-primary {
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   color: white;
   border: none;
   box-shadow: 0 10px 30px rgba(120, 2, 120, 0.4);
@@ -730,7 +730,7 @@ a {
 .btn-secondary {
   background: #000;
   color: white;
-  border: 2px solid rgb(120, 2, 120);
+  border: 2px solid rgb(163, 6, 163);
   backdrop-filter: blur(5px);
 }
 
@@ -810,7 +810,7 @@ a {
 
 /* Secondary Button Specific: Fill effect on hover */
 .btn-secondary:hover {
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   border-color: rgba(255, 255, 255, 0.5);
 }
 
@@ -856,7 +856,7 @@ a {
 .count-number {
   font-size: 2.2rem;
   font-weight: 800;
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
 }
 
 @media (max-width: 991px) {
@@ -953,7 +953,7 @@ a {
 }
 
 .trusted-label {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   letter-spacing: 3px;
   font-size: 0.8rem;
   font-weight: 700;
@@ -999,7 +999,7 @@ a {
 
 .logo-card:hover {
   background: rgba(120, 2, 120, 0.08);
-  border-color: rgb(120, 2, 120);
+  border-color: rgb(163, 6, 163);
   transform: translateY(-10px);
 }
 
@@ -1049,7 +1049,7 @@ a {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: rgb(120, 2, 120); /* Your accent color */
+  color: rgb(163, 6, 163); /* Your accent color */
   margin-bottom: 15px;
 }
 
@@ -1065,7 +1065,7 @@ a {
 .header-line {
   width: 60px;
   height: 4px;
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   margin: 0 auto 30px auto;
   border-radius: 2px;
 }
@@ -1108,7 +1108,7 @@ a {
 .service-icon {
   font-size: 3rem;
   font-weight: 900;
-  -webkit-text-stroke: 1px rgb(120, 2, 120);
+  -webkit-text-stroke: 1px rgb(163, 6, 163);
   color: transparent;
   margin-bottom: 20px;
 }
@@ -1135,14 +1135,14 @@ a {
 .card-features li {
   font-size: 0.75rem;
   background: rgba(120, 2, 120, 0.1);
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   padding: 5px 12px;
   border-radius: 50px;
   font-weight: 600;
 }
 
 .service-box:hover {
-  border-color: rgb(120, 2, 120);
+  border-color: rgb(163, 6, 163);
   background: #000;
   box-shadow: 0 20px 40px rgba(120, 2, 120, 0.15);
   transform: translateY(-15px);
@@ -1181,7 +1181,7 @@ a {
 }
 
 .accent {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
 }
 
 .core-grid {
@@ -1220,7 +1220,7 @@ a {
   width: 60px;
   height: 60px;
   background: rgba(120, 2, 120, 0.1);
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1255,13 +1255,13 @@ a {
 }
 
 .card-cta .arrow {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   transition: transform 0.3s;
 }
 
 /* Hover Effects */
 .core-card:hover {
-  border-color: rgb(120, 2, 120);
+  border-color: rgb(163, 6, 163);
   transform: translateY(-10px) scale(1.02);
 }
 
@@ -1361,7 +1361,7 @@ a {
   justify-content: center;
   font-size: 1.5rem;
   font-weight: 800;
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   margin: 0 auto 30px auto;
   position: relative;
   box-shadow: 0 0 20px rgba(120, 2, 120, 0.2);
@@ -1408,7 +1408,7 @@ a {
 
 /* Hover States */
 .process-step:hover .step-content {
-  border-color: rgb(120, 2, 120);
+  border-color: rgb(163, 6, 163);
   transform: translateY(-15px);
   background: #0a0a0a;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
@@ -1420,7 +1420,7 @@ a {
 }
 
 .process-step:hover .step-number {
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   color: #fff;
   box-shadow: 0 0 30px rgba(120, 2, 120, 0.6);
 }
@@ -1541,9 +1541,9 @@ a {
 
 /* --- THE ACTIVE STATE (Keep your original with a slight boost) --- */
 .tab-btn.active {
-  background: rgb(120, 2, 120);
+  background: rgb(163, 6, 163);
   color: #fff;
-  border-color: rgb(120, 2, 120);
+  border-color: rgb(163, 6, 163);
   transform: translateY(-2px);
   box-shadow:
     0 0 25px rgba(120, 2, 120, 0.5),
@@ -1570,7 +1570,7 @@ a {
 .tab-text h3 {
   font-size: 2.7rem;
   margin-bottom: 20px;
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   text-align: center;
 }
 
@@ -1793,7 +1793,7 @@ a {
 /* Superior Hover State: The Glow */
 .benefit-card:hover {
     transform: translateY(-10px);
-    border-color: rgb(120, 2, 120);
+    border-color: rgb(163, 6, 163);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
@@ -1843,7 +1843,7 @@ a {
 
 .stat-item:hover {
     transform: translateY(-10px);
-    border-color: rgb(120, 2, 120);
+    border-color: rgb(163, 6, 163);
     background: rgba(120, 2, 120, 0.08);
 }
 
@@ -1851,7 +1851,7 @@ a {
     display: inline-block;
     font-size: clamp(2.5rem, 4vw, 3.5rem);
     font-weight: 800;
-    color: rgb(120, 2, 120);
+    color: rgb(163, 6, 163);
     text-shadow: 0 0 20px rgba(120, 2, 120, 0.3);
 }
 
@@ -1908,7 +1908,7 @@ a {
 }
 
 .blog-date {
-    color: rgb(120, 2, 120);
+    color: rgb(163, 6, 163);
     font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -1928,14 +1928,14 @@ a {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
-    border-bottom: 2px solid rgb(120, 2, 120);
+    border-bottom: 2px solid rgb(163, 6, 163);
     padding-bottom: 4px;
     transition: letter-spacing 0.3s ease;
 }
 
 /* Hover Effects */
 .blog-card:hover {
-    border-color: rgb(120, 2, 120);
+    border-color: rgb(163, 6, 163);
     transform: translateY(-10px);
 }
 

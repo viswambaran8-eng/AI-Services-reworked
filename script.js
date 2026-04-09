@@ -62,8 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // --- OPENING TIMELINE ---
       const tl = gsap.timeline();
 
-      
-
       // Stagger items into view
       tl.fromTo(
         sideItems,
@@ -97,8 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
         stagger: 0.7,
       });
 
-     
-
       gsap.to(".side-log-btn", {
         opacity: 1,
         scale: 1,
@@ -121,4 +117,94 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 5. Initialize States
   markActivePage();
+});
+
+
+
+
+
+
+
+
+// industry tract service page
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".marquee-track");
+  const container = document.querySelector(".industry-marquee-container");
+  const contentSet = document.querySelector(".marquee-content");
+
+  let scrollPos = 0;
+  let isPaused = false;
+  let isDragging = false;
+  let startX, dragScrollPos;
+  
+  const autoSpeed = 1.2; // Speed of auto-scroll
+  let setWidth = contentSet.offsetWidth;
+
+  // --- 1. Animation Loop ---
+  function animate() {
+    if (!isPaused && !isDragging) {
+      scrollPos -= autoSpeed;
+      
+      // Infinite Reset Logic
+      if (Math.abs(scrollPos) >= setWidth) {
+        scrollPos = 0;
+      }
+      
+      track.style.transform = `translateX(${scrollPos}px)`;
+    }
+    requestAnimationFrame(animate);
+  }
+
+  // --- 2. Manual Drag/Scroll Logic ---
+  const startDrag = (e) => {
+    isDragging = true;
+    isPaused = true;
+    // Handle both mouse and touch events
+    startX = (e.pageX || e.touches[0].pageX) - track.offsetLeft;
+    dragScrollPos = scrollPos;
+  };
+
+  const moveDrag = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = (e.pageX || e.touches[0].pageX) - track.offsetLeft;
+    const walk = x - startX;
+    
+    scrollPos = dragScrollPos + walk;
+
+    // Boundary check for infinite feel during drag
+    if (scrollPos > 0) scrollPos = -setWidth;
+    if (Math.abs(scrollPos) >= setWidth) scrollPos = 0;
+
+    track.style.transform = `translateX(${scrollPos}px)`;
+  };
+
+  const stopDrag = () => {
+    isDragging = false;
+    isPaused = false;
+  };
+
+  // --- 3. Event Listeners ---
+  // Mouse Events
+  container.addEventListener("mousedown", startDrag);
+  window.addEventListener("mousemove", moveDrag);
+  window.addEventListener("mouseup", stopDrag);
+
+  // Touch Events (Mobile/Tab)
+  container.addEventListener("touchstart", startDrag);
+  container.addEventListener("touchmove", moveDrag);
+  container.addEventListener("touchend", stopDrag);
+
+  // Hover Pause (Optional - remove if you only want drag-to-pause)
+  container.addEventListener("mouseenter", () => (isPaused = true));
+  container.addEventListener("mouseleave", () => {
+    if(!isDragging) isPaused = false;
+  });
+
+  // Re-calculate on resize
+  window.addEventListener("resize", () => {
+    setWidth = contentSet.offsetWidth;
+  });
+
+  animate();
 });

@@ -24,12 +24,12 @@
       body {
         height: 100vh;
         overflow: hidden;
-        /* Deep Blue Cosmic Gradient */
-        background: radial-gradient(circle at center, #0a192f 0%, #020617 100%);
+        /* Deep Purple/Magenta Cosmic Gradient */
+        background: radial-gradient(circle at center, #1a021a 0%, #020205 100%);
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #e2e8f0;
+        color: #fce7fc;
       }
 
       /* Pseudo-element Starfield */
@@ -55,23 +55,23 @@
         background-position:
           0 0,
           40px 60px;
-        opacity: 0.1;
+        opacity: 0.15;
         z-index: 0;
       }
 
-      /* Floating Blue Blobs */
+      /* Floating Magenta Blobs */
       .blob {
         position: absolute;
         border-radius: 50%;
-        filter: blur(60px);
-        opacity: 0.5;
+        filter: blur(80px);
+        opacity: 0.4;
         z-index: 1;
       }
 
       .blob.one {
         width: 300px;
         height: 300px;
-        background: #3b82f6; /* Royal Blue */
+        background: rgb(163, 6, 163); /* Primary Magenta */
         top: -50px;
         left: -50px;
       }
@@ -79,7 +79,7 @@
       .blob.two {
         width: 400px;
         height: 400px;
-        background: #06b6d4; /* Cyan */
+        background: #700270; /* Deep Purple */
         bottom: -100px;
         right: -100px;
       }
@@ -87,7 +87,7 @@
       .blob.three {
         width: 250px;
         height: 250px;
-        background: #1d4ed8; /* Deep Blue */
+        background: #ff00ff; /* Electric Neon */
         top: 60%;
         left: 20%;
       }
@@ -99,15 +99,15 @@
         text-align: center;
         padding: 50px 60px;
         border-radius: 30px;
-        background: rgba(15, 23, 42, 0.3);
+        background: rgba(26, 2, 26, 0.4);
         backdrop-filter: blur(25px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         box-shadow:
-          0 0 60px rgba(59, 130, 246, 0.2),
-          0 0 100px rgba(6, 182, 212, 0.1);
+          0 0 60px rgba(163, 6, 163, 0.2),
+          0 0 100px rgba(112, 2, 112, 0.1);
       }
 
-      /* 404 text with Blue Glitch Glow */
+      /* 404 text with Magenta Glitch Glow */
       .glitch {
         margin-top: 50px;
         margin-bottom: 50px;
@@ -116,15 +116,15 @@
         margin-top: -30px;
         background: linear-gradient(
           45deg,
-          #3b82f6,
-          #06b6d4,
-          #93c5fd,
-          #06b6d4,
-          #3b82f6
+          rgb(163, 6, 163),
+          #ff00ff,
+          #f5d0f5,
+          #ff00ff,
+          rgb(163, 6, 163)
         );
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.8));
+        filter: drop-shadow(0 0 15px rgba(163, 6, 163, 0.8));
       }
 
       h2 {
@@ -136,22 +136,27 @@
       p {
         opacity: 0.8;
         margin: 14px 0 30px;
-        color: #94a3b8;
+        color: #d1b8d1;
       }
 
-      /* Button - Cyber Blue style */
+      /* Button - Cyber Magenta style */
       .btn {
         display: inline-block;
         padding: 14px 40px;
         border-radius: 40px;
-        background: linear-gradient(135deg, #3b82f6, #06b6d4);
+        background: linear-gradient(135deg, rgb(163, 6, 163), #700270);
         color: #ffffff;
         text-decoration: none;
         font-weight: 600;
         letter-spacing: 1px;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        box-shadow: 0 10px 30px rgba(163, 6, 163, 0.4);
+        transition: transform 0.2s ease;
+      }
+
+      .btn:active {
+        transform: scale(0.95);
       }
 
       /* Pseudo-element highlight for button */
@@ -270,9 +275,11 @@
       <div class="glitch">404</div>
       <h2>Page Not Found</h2>
       <p>Looks like this page drifted into another universe.</p>
-      <a href="./index.html" class="btn">Go Back Home</a>
+      <div class="div" style="display: flex;flex-wrap: wrap;gap: 10px;justify-content: center; align-items: center;">
+        <a href="./index.html" class="btn">Go Back Home</a>
 
-      <a href="javascript:void(0)" class="btn" onclick="goBack()">Go Back</a>
+        <a href="javascript:void(0)" class="btn" onclick="goBack()">Go Back</a>
+      </div>
     </div>
 
     <script>

@@ -88,7 +88,7 @@ nav ul li a:hover,
 /* --- Active State (Locked Underline) --- */
 /* This ensures that when the class is added by JS, the width stays at 100% */
 nav ul li a.active-page {
-  color: rgb(120, 2, 120) !important;
+  color: rgb(163, 6, 163) !important;
 }
 
 /* Hover Action */
@@ -639,7 +639,7 @@ a {
   border-radius: 20px;
   overflow: hidden;
 
-  /* UPDATED COLOR SCHEME: rgb(120, 2, 120) */
+  /* UPDATED COLOR SCHEME: rgb(163, 6, 163) */
   box-shadow: 0 0 40px rgba(120, 2, 120, 0.15);
   border: 1px solid rgb(120, 2, 120);
 }
@@ -660,9 +660,9 @@ a {
   color: transparent;
   background: linear-gradient(
     120deg,
-    rgb(120, 2, 120) 0%,
+    rgb(163, 6, 163) 0%,
     #ffffff 50%,
-    rgb(120, 2, 120) 100%
+    rgb(163, 6, 163) 100%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;

@@ -223,7 +223,7 @@ body.dashboard-body {
   background: rgba(120, 2, 120, 0.15);
   
   /* Setting the text and icon color to the deep purple */
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
   
   /* Adding a subtle glow to enhance the interactive feel */
   text-shadow: 0 0 8px rgba(120, 2, 120, 0.4);
@@ -233,7 +233,7 @@ body.dashboard-body {
 /* Optional: Ensuring the icons inside inherit the color smoothly */
 .sidebar-link.active .material-icons,
 .sidebar-link:hover .material-icons {
-  color: rgb(120, 2, 120);
+  color: rgb(163, 6, 163);
 }
 
 .sidebar-link .material-icons {
